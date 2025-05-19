@@ -1,0 +1,49 @@
+.provinciaElegida {
+  fill: #ffd414;
+  stroke-width: 2px;
+  stroke: rgb(0, 0, 0);
+}
+
+.provinciaElegida:hover {
+  fill: #ff5733;
+  cursor: pointer;
+  stroke-width: 2px;
+  stroke: rgb(0, 0, 0);
+
+}
+
+/* Estilo para la provincia seleccionada */
+.provinciaSeleccionada {
+  fill: #ff5733; /* Color distinto para la provincia seleccionada */
+  stroke-width: 2px;
+  stroke: rgb(0, 0, 0);
+}
+  
+  .argentina-flag-background {
+    background: linear-gradient(
+      to bottom,
+      #6DB3F2 0%,    /* Azul empieza en 0% */
+      #6DB3F2 33.33%, /* Azul termina en 33.33% */
+      white 33.33%,   /* Blanco empieza en 33.33% */
+      white 66.66%,   /* Blanco termina en 66.66% */
+      #6DB3F2 66.66%  /* Azul empieza en 66.66% y continúa hasta el final */
+    );
+  }
+  
+/* Archivo global.css o configuración extendida de Tailwind */
+@keyframes flash {
+  0%, 100% {
+    transform: translateY(0);
+
+    border-color: #E9CFCB; /* color terciario inicial */
+  }
+  50% {
+    transform: translateY(-5px);
+    border-color: #FF6347; /* color de cambio */
+  }
+}
+
+.animate-flash {
+  animation: flash 2s infinite;
+}
+

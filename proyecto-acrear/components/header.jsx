@@ -1,4 +1,4 @@
-'use client';
+'use clent';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '../context/language-context';

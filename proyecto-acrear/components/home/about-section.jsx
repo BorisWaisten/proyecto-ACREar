@@ -6,8 +6,8 @@ export default function AboutSection() {
   const { lang } = useLanguage();
 
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between px-6 py-16 bg-[var(--color-background)]">
-      <div className="mb-8 md:mb-0 md:w-1/3 flex justify-center">
+    <section className="flex flex-row md:flex-row items-center justify-between px-6 py-16 bg-[var(--color-background)]">
+      <div className="mb-8 w-full md:mb-0 md:w-1/3 flex justify-center">
         <Image
           src="/logos/logo-acrear2.png"
           alt="Logo ACREar"
