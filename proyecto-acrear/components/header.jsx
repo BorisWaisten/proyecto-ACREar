@@ -9,9 +9,9 @@ export default function Header() {
 
   const navItems = [
     { key: 'home', label: lang === 'es' ? 'HOME' : 'HOME', href: '/' },
-    { key: 'nosotros', label: lang === 'es' ? 'NOSOTROS' : 'ABOUT', href: '/nosotros' },
-    { key: 'servicios', label: lang === 'es' ? 'SERVICIOS' : 'SERVICES', href: '/servicios' },
-    { key: 'trading', label: lang === 'es' ? 'PRODUCTOS' : 'TRADING', href: '/productos' }
+    { key: 'about', label: lang === 'es' ? 'NOSOTROS' : 'ABOUT', href: '/about' },
+    { key: 'services', label: lang === 'es' ? 'SERVICIOS' : 'SERVICES', href: '/services' },
+    { key: 'trading', label: lang === 'es' ? 'PRODUCTOS' : 'TRADING', href: '/trading' }
   ];
 
   const handleLangChange = (newLang) => {

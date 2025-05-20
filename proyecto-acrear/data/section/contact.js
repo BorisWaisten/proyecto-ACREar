@@ -1,0 +1,28 @@
+export const translations = {
+  es: {
+    contact: 'Contacto',
+    contactInfo: 'Información de contacto',
+    title: 'Envíanos tu mensaje',
+    email: 'Tu correo',
+    message: 'Tu mensaje',
+    emailPlaceholder: 'ejemplo@acrear.org',
+    messagePlaceholder: 'Escribe tu consulta aquí...',
+    sendMessage: 'Enviar',
+    emailSentSuccess: '¡Email enviado correctamente!',
+    emailSentError: 'Hubo un error al enviar.',
+    emailSubject: 'Consulta desde la web',
+  },
+  en: {
+    contact: 'Contact Us',
+    contactInfo: 'Contact Information',
+    title: 'Send us a message',
+    email: 'Your email',
+    message: 'Your message',
+    emailPlaceholder: 'example@acrear.org',
+    messagePlaceholder: 'Write your enquiry here...',
+    sendMessage: 'Send',
+    emailSentSuccess: 'Email sent successfully!',
+    emailSentError: 'There was an error sending.',
+    emailSubject: 'Web inquiry',
+  },
+};

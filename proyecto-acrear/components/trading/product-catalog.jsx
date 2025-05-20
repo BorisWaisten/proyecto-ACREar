@@ -1,0 +1,86 @@
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
+import clsx from 'clsx';
+
+const products = [
+  { key: 'mieles', label: 'MIELES' },
+  { key: 'legumbres', label: 'LEGUMBRES' },
+  { key: 'aceites', label: 'ACEITES' },
+  { key: 'nueces', label: 'NUECES' },
+  { key: 'carnes', label: 'CARNES' },
+  { key: 'frutas', label: 'FRUTAS' },
+  { key: 'encurtidos', label: 'ENCURTIDOS' },
+  { key: 'dulces', label: 'DULCES' },
+  { key: 'semillas', label: 'SEMILLAS' },
+  { key: 'hierbas', label: 'HIERBAS' },
+  { key: 'macerados', label: 'MACERADOS' },
+];
+
+export default function ProductCatalog() {
+  const [activeProduct, setActiveProduct] = useState(null);
+
+  const handleSelect = (key) => {
+    setActiveProduct((prev) => (prev === key ? null : key));
+  };
+
+  return (
+    <section className="bg-[var(--color-background)] py-16 px-4">
+      <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-primary)] text-center mb-12">
+        CATÁLOGO DE PRODUCTOS
+      </h2>
+
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        {products.map((p) => (
+          <button
+            key={p.key}
+            onClick={() => handleSelect(p.key)}
+            className={clsx(
+              'w-24 h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center font-semibold transition-all duration-300 text-white',
+              activeProduct === p.key
+                ? 'bg-[var(--color-primary)] scale-110'
+                : 'bg-[var(--color-accent)] hover:bg-[var(--color-primary)]'
+            )}
+          >
+            <span className="text-center text-xs">{p.label}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Card de imágenes */}
+      {activeProduct && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 transition-all duration-700 animate-fade-in">
+          {[1, 2, 3, 4].map((n) => (
+            <div
+              key={n}
+              className="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform"
+            >
+              <Image
+                src={`/fotos/${activeProduct}-${n}.jpg`}
+                alt={`${activeProduct} ${n}`}
+                width={400}
+                height={300}
+                className="object-cover w-full h-64"
+              />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Catálogo completo */}
+      <div className="text-center mt-12">
+        <p className="text-[var(--color-primary)] font-semibold text-lg mb-4">
+          Mirá nuestro catálogo completo aquí
+        </p>
+        <a
+          href="/docs/catalogo-acrear.pdf"
+          download
+          className="inline-block px-6 py-3 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-secondary)] transition-colors"
+        >
+          Descargar catálogo
+        </a>
+      </div>
+    </section>
+  );
+}
