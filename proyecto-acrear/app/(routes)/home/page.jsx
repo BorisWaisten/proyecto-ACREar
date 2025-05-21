@@ -1,4 +1,5 @@
 import AboutSection from '@/components/home/about-section';
+import ArgMaps from '@/components/home/arg-maps';
 import EventsSection from '@/components/home/events-section';
 import OfficesSection from '@/components/home/offices-section';
 import ServicesSection from '@/components/home/services-section';
@@ -12,6 +13,7 @@ export default function HomePage() {
       <ServicesSection />
       <EventsSection />
       <OfficesSection />
+      <ArgMaps />
     </>
   );
 }

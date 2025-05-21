@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
 
         {/* Logo */}
-        <div className="flex flex-col items-start animate-fade-in hover:scale-105 transition-all duration-500">
+        <div className="flex flex-col items-start animate-fade-in md:scale-150 md:hover:scale-[1.6] transition-all duration-500">
           <Image src="/logos/logo-acrear.svg" alt="Logo ACREar" width={140} height={70} />
         </div>
 

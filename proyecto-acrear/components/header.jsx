@@ -8,7 +8,7 @@ export default function Header() {
   const { lang, toggleLang } = useLanguage();
 
   const navItems = [
-    { key: 'home', label: lang === 'es' ? 'HOME' : 'HOME', href: '/' },
+    { key: 'home', label: lang === 'es' ? 'INICIO' : 'HOME', href: '/' },
     { key: 'about', label: lang === 'es' ? 'NOSOTROS' : 'ABOUT', href: '/about' },
     { key: 'services', label: lang === 'es' ? 'SERVICIOS' : 'SERVICES', href: '/services' },
     { key: 'trading', label: lang === 'es' ? 'PRODUCTOS' : 'TRADING', href: '/trading' }
@@ -24,9 +24,9 @@ export default function Header() {
     <AppBar position="static" elevation={0} sx={{ backgroundColor: 'var(--color-background)', color: 'var(--color-primary)' }}>
       <Toolbar className="justify-between">
         {/* Logo izquierdo */}
-        <Box className="flex items-center md:pl-10">
+        <Box className="flex items-center md:pl-16 md:py-2">
           <Link href="/">
-            <Image src="/logos/logo-acrear.svg" alt="Logo" width={120} height={60} priority className='md:w-32 md:scale-[2.5] md:h-20'/>
+            <Image src="/logos/logo-acrear.svg" alt="Logo" width={120} height={60} priority className='md:w-32 md:scale-[3.2]  md:h-20'/>
           </Link>
         </Box>
 

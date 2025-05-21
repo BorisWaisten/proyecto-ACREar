@@ -11,7 +11,7 @@ export default function ArgMaps({handleClick}) {
       };
 
     return (
-        <svg  fill="#ffd414" className="w-full h-full md:w-[80vh] lg:w-[80vh] md:h-full lg:h-full" 
+        <svg  fill="#132d3d" className="w-full h-full md:w-[80vh] lg:w-[80vh] md:h-full lg:h-full" 
         height="850" 
         stroke="white" 
         strokeLinecap="round" 
