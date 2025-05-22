@@ -6,19 +6,19 @@ const services = [
     title: 'SERVICIOS AL SECTOR PÚBLICO',
     description:
       'Brindamos herramientas técnicas y estratégicas para fortalecer la gestión provincial y municipal, potenciando capacidades locales e integrando a las regiones en el comercio global.',
-    href: '/servicios',
+    href: '/services',
   },
   {
     title: 'SERVICIOS AL SECTOR PRIVADO',
     description:
       'Impulsamos a las empresas hacia la internacionalización, con soluciones concretas en representación, exportación, servicios aduaneros y expansión comercial.',
-    href: '/servicios',
+    href: '/services',
   },
   {
     title: 'VINCULACIÓN PÚBLICO-PRIVADA',
     description:
       'Creamos un espacio activo de diálogo y colaboración para diseñar políticas comerciales eficaces que conecten al Estado con el entramado productivo regional.',
-    href: '/servicios',
+    href: '/services',
   },
 ];
 

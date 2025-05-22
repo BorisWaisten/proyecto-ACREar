@@ -31,14 +31,14 @@ function Card({ name, role, avatar }) {
 
 export default function StaffSection() {
   return (
-    <section className="bg-[var(--color-background)] py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+    <section className="bg-[var(--color-secondary)] py-16     space-y-12">
       
       {/* Autoridades */}
       <div>
-        <h3 className="text-2xl font-bold text-[var(--color-primary)] text-center mb-8">
+        <h3 className="text-2xl font-bold text-[var(--color-accent)] text-center mb-8">
           AUTORIDADES
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 px-2 sm:px-4 md:px-8 lg:px-8 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {authorities.map((person, i) => (
             <Card key={i} {...person} />
           ))}
@@ -47,7 +47,7 @@ export default function StaffSection() {
 
       {/* Equipo Técnico */}
       <div>
-        <h3 className="text-2xl font-bold text-[var(--color-primary)] text-center mb-8">
+        <h3 className="text-2xl font-bold text-[var(--color-accent)] text-center mb-8">
           EQUIPO TÉCNICO
         </h3>
         <div className="grid grid-cols-1 gap-8 justify-items-center">

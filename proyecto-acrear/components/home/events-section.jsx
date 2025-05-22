@@ -8,19 +8,19 @@ const events = [
     title: 'INTERNACIONALIZÁ TU EMPRESA',
     text: 'Te acompañamos en cada etapa de la exportación.',
     img: '/fotos/evento-1.png', // reemplazar con tus imágenes reales
-    link: '/servicios',
+    link: '/',
   },
   {
     title: 'ACREar',
     text: 'Promovemos el desarrollo de las economías regionales de la Argentina.',
     img: '/fotos/evento-2.jpg',
-    link: '/nosotros',
+    link: '/',
   },
   {
     title: 'ASISTENCIA TÉCNICA A LAS EMPRESAS',
     text: 'Fortalecé las capacidades de tu equipo.',
     img: '/fotos/evento-3.jpg',
-    link: '/servicios',
+    link: '/',
   },
 ];
 
@@ -35,8 +35,8 @@ export default function EventsSection() {
   };
 
   return (
-    <section className="w-full py-16 bg-[var(--color-background)] px-4">
-      <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-primary)] text-center mb-12">
+    <section className="w-full py-16 bg-[var(--color-secondary)] px-4">
+      <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-accent)] text-center mb-12">
         EVENTOS
       </h2>
 
