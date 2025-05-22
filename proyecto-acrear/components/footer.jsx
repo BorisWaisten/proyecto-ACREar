@@ -5,11 +5,11 @@ import SocialIcons from './social-icons';
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--color-background)] text-[var(--color-primary)]">
+    <footer className="text-[var(--color-primary)] ">
       <div className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
 
         {/* Logo */}
-        <div className="flex flex-col items-start animate-fade-in md:scale-150 md:hover:scale-[1.6] transition-all duration-500">
+        <div className="flex flex-col items-start animate-fade-in md:scale-150 md:hover:scale-[1.6] lg:scale-[1.3] lg:pl-6 transition-all duration-500">
           <Image src="/logos/logo-acrear.svg" alt="Logo ACREar" width={140} height={70} />
         </div>
 

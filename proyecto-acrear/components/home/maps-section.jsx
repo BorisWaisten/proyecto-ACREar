@@ -22,21 +22,20 @@ export default function MapSection() {
           <ArgMaps onSelect={setSelectedId} />
         </div>
 
-        {/* Info dinámica */}
-        <div className="flex flex-col items-center justify-center bg-[var(--color-background)] rounded-xl p-8 shadow-md">
-          <h3 className="text-2xl font-bold text-[var(--color-primary)] mb-4">
-            {provincia.name}
-          </h3>
-          <Image
-            src={provincia.icon}
-            alt={provincia.activity}
-            width={120}
-            height={120}
-            className="mb-4"
-          />
-          <p className="text-center text-sm text-gray-800">
-            {provincia.activity}
-          </p>
+      <div className="flex flex-col text-[var(--color-primary)] justify-center mx-auto">
+        <p className='text-lg md:pb-6 md:text-2xl font-bold text-center'>{provincia.name}</p>
+          {provincia.activities.map((act, idx) => (
+            <div key={idx} className="flex items-center gap-4">
+              <Image
+                src={provincia.icons[idx]}
+                alt={act}
+                width={60}
+                height={60}
+                className="mb-2"
+              />
+              <p className="text-sm text-center">{act}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

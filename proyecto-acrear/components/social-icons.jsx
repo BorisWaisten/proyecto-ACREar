@@ -18,14 +18,14 @@ const icons = [
 
 export default function SocialIcons() {
   return (
-    <ul className="flex justify-center items-center gap-4 mt-6">
+    <ul className="grid grid-cols-5  items-center gap-6 mt-6">
       {icons.map((item, i) => (
         <li key={i} className="list-none">
           <a
             href={item.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative w-16 h-16 flex items-center justify-center rounded-full border-4 border-white bg-white overflow-hidden group"
+            className="relative w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-full border-4 border-white bg-white overflow-hidden group"
           >
             <FontAwesomeIcon
               icon={item.icon}
