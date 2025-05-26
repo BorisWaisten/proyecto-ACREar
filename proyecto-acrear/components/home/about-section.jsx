@@ -17,7 +17,7 @@ export default function AboutSection() {
         className="mb-8 w-full md:mb-0 md:w-1/3 flex justify-center"
       >
         <Image
-          src="/logos/logo-ACREar2.png"
+          src="/logos/logo-acrear2.png"
           alt="Logo ACREarg"
           width={180}
           height={180}
