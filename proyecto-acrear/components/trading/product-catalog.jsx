@@ -2,21 +2,31 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Slider from 'react-slick';
 import clsx from 'clsx';
 
 const products = [
-  { key: 'mieles', label: 'MIELES' },
+  { key: 'miel', label: 'MIELES' },
   { key: 'legumbres', label: 'LEGUMBRES' },
-  { key: 'aceites', label: 'ACEITES' },
-  { key: 'nueces', label: 'NUECES' },
-  { key: 'carnes', label: 'CARNES' },
-  { key: 'frutas', label: 'FRUTAS' },
+  { key: 'aceite', label: 'ACEITES' },
+  { key: 'frutossecos', label: 'FRUTOS SECOS' },
+  { key: 'carne', label: 'CARNES' },
+  { key: 'fruta', label: 'FRUTAS' },
   { key: 'encurtidos', label: 'ENCURTIDOS' },
   { key: 'dulces', label: 'DULCES' },
   { key: 'semillas', label: 'SEMILLAS' },
-  { key: 'hierbas', label: 'HIERBAS' },
-  { key: 'macerados', label: 'MACERADOS' },
+  { key: 'especia', label: 'HIERBAS' },
 ];
+
+const sliderSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  centerMode: true,
+};
 
 export default function ProductCatalog() {
   const [activeProduct, setActiveProduct] = useState(null);
@@ -31,37 +41,59 @@ export default function ProductCatalog() {
         CATÁLOGO DE PRODUCTOS
       </h2>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+      {/* Filtros */}
+      <div className="flex flex-wrap justify-center gap-4 mb-12">
         {products.map((p) => (
           <button
             key={p.key}
             onClick={() => handleSelect(p.key)}
             className={clsx(
-              'w-24 h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center font-semibold transition-all duration-300 text-white',
+              'w-[3.5rem] h-12 md:w-28 md:h-28 rounded-full flex items-center justify-center font-semibold transition-all duration-300 text-white',
               activeProduct === p.key
                 ? 'bg-[var(--color-primary)] scale-110'
                 : 'bg-[var(--color-accent)] hover:bg-[var(--color-primary)]'
             )}
           >
-            <span className="text-center text-xs">{p.label}</span>
+            <span className="text-center text-[0.5rem] md:text-xs">{p.label}</span>
           </button>
         ))}
       </div>
 
-      {/* Card de imágenes */}
+      {/* Mobile Carousel */}
       {activeProduct && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 transition-all duration-700 animate-fade-in">
+        <div className="sm:hidden mb-10">
+          <Slider {...sliderSettings}>
+            {[1, 2, 3, 4].map((n) => (
+              <div key={n} className="px-2">
+                <div className="bg-white rounded-lg shadow-md overflow-hidden h-48 flex items-center justify-center transition-transform transform hover:scale-105">
+                  <Image
+                    src={`/fotos/${activeProduct}/${activeProduct}${n}.jpg`}
+                    alt={`${activeProduct} ${n}`}
+                    width={400}
+                    height={300}
+                    className="object-cover h-48 w-full"
+                  />
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      )}
+
+      {/* Desktop Grid */}
+      {activeProduct && (
+        <div className="hidden sm:grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 transition-all duration-700 animate-fade-in">
           {[1, 2, 3, 4].map((n) => (
             <div
               key={n}
               className="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform"
             >
               <Image
-                src={`/fotos/${activeProduct}-${n}.jpg`}
+                src={`/fotos/${activeProduct}/${activeProduct}${n}.jpg`}
                 alt={`${activeProduct} ${n}`}
                 width={400}
                 height={300}
-                className="object-cover w-full h-64"
+                className="object-cover h-48 md:w-full md:h-64"
               />
             </div>
           ))}
@@ -74,7 +106,7 @@ export default function ProductCatalog() {
           Mirá nuestro catálogo completo aquí
         </p>
         <a
-          href="/docs/catalogo-acrear.pdf"
+          href="/catalogo-acrearg.pdf"
           download
           className="inline-block px-6 py-3 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-secondary)] transition-colors"
         >

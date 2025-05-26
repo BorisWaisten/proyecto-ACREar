@@ -1,33 +1,37 @@
 'use client';
-import Image from 'next/image';
+
 import { useLanguage } from '@/context/language-context';
 import { translations } from '@/data/section/contact';
+import { LocationOn } from '@mui/icons-material';
 
-export default function ContactInfo() {
+const offices = [
+  { labelKey: 'sedeCaba', address: 'Av. Siempre Viva 123, CABA', phone: '+54 11 1234-5678' },
+  { labelKey: 'sedeSantaFe', address: 'Bv. Gálvez 456, Santa Fe',    phone: '+54 342 234-5678' },
+  { labelKey: 'sedeSgo',    address: 'Salta 789, Santiago del Estero',phone: '+54 385 345-6789' },
+];
+
+export default function ContactInfo({ className = '' }) {
   const { lang } = useLanguage();
   const t = translations[lang] || translations.es;
 
   return (
-    <div className="bg-[var(--color-terciary)] rounded-lg shadow-lg p-8 flex-1 flex flex-col gap-6">
-      <h3 className="text-xl font-bold text-[var(--color-secondary)]">{t.contactInfo}</h3>
-      <div className="flex items-center gap-4">
-        <Image src="/logos/logoEmail.png" width={32} height={32} alt="Email" />
-        <a href="mailto:contacto@acrearg.org" className="text-[var(--color-primary)] hover:text-[var(--color-accent)] transition">
-          contacto@acrearg.org
-        </a>
-      </div>
-      <div className="flex items-center gap-4">
-        <Image src="/logos/logoPhone.png" width={32} height={32} alt="Teléfono" />
-        <a href="tel:+541112345678" className="text-[var(--color-primary)] hover:text-[var(--color-accent)] transition">
-          +54 11 1234 5678
-        </a>
-      </div>
-      {/* <div className="flex items-center gap-4">
-        <Image src="/icons/location.svg" width={32} height={32} alt="Ubicación" />
-        <p className="text-[var(--color-primary)]">
-          Av. Siempre Viva 123, Ciudad Autónoma de Buenos Aires
-        </p>
-      </div> */}
+    <div className={`${className}  rounded-xl shadow-lg p-8 flex flex-col gap-8`}>
+      <h3 className=" md:text-xl font-bold text-[var(--color-accent)]">
+        {t.contactInfo}
+      </h3>
+
+      {offices.map((o) => (
+        <div key={o.labelKey} className="flex items-start gap-4">
+          <LocationOn fontSize="large" className="text-[var(--color-primary)] mt-1" />
+          <div>
+            <p className="font-semibold text-[var(--color-primary)]">
+              {t[o.labelKey]}
+            </p>
+            <p className="text-[var(--color-primary)] text-sm">{o.address}</p>
+            <p className="text-[var(--color-primary)] text-sm">{o.phone}</p>
+          </div>
+        </div>
+      ))}
     </div>
-  );
+);
 }

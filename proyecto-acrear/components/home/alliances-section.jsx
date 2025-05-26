@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import Image from 'next/image';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const allianceData = [
   {
@@ -47,7 +48,6 @@ const allianceData = [
 export default function NuestraComunidad() {
   const [activeIndex, setActiveIndex] = useState(0);
   const selected = allianceData[activeIndex];
-
   const isReverse = selected.key === 'entidades';
 
   const settings = {
@@ -56,26 +56,17 @@ export default function NuestraComunidad() {
     autoplaySpeed: 1500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    rtl: isReverse, // para rotación a la izquierda
+    rtl: isReverse,
     responsive: [
-      {
-        breakpoint: 640,
-        settings: { slidesToShow: 2 },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 3 },
-      },
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 5 },
-      },
+      { breakpoint: 640, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 3 } },
+      { breakpoint: 1024, settings: { slidesToShow: 5 } },
     ],
     arrows: false,
   };
 
   return (
-    <section className="max-w-7xl mx-auto  px-6 py-20">
+    <section className="max-w-7xl mx-auto px-6 py-20">
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-10 text-[var(--color-primary)]">
         Nuestra Comunidad
       </h2>
@@ -97,22 +88,33 @@ export default function NuestraComunidad() {
         ))}
       </div>
 
-      <Slider {...settings}>
-        {selected.logos.map((logo, i) => (
-          <div key={i} className="px-4">
-            <div className="lg:h-[8.5rem] flex items-center justify-center">
-              <Image
-                src={logo}
-                alt={`logo-${i}`}
-                width={120}
-                height={80}
-                quality={100}
-                className="object-contain lg:scale-125 max-h-full max-w-full"
-              />
-            </div>
-          </div>
-        ))}
-      </Slider>
+      {/* Animación con framer-motion */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={selected.key}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -30 }}
+          transition={{ duration: 0.4 }}
+        >
+          <Slider {...settings}>
+            {selected.logos.map((logo, i) => (
+              <div key={i} className="px-4">
+                <div className="lg:h-[8.5rem] flex items-center justify-center">
+                  <Image
+                    src={logo}
+                    alt={`logo-${i}`}
+                    width={120}
+                    height={80}
+                    quality={100}
+                    className="object-contain lg:scale-125 max-h-full max-w-full"
+                  />
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </motion.div>
+      </AnimatePresence>
     </section>
   );
 }

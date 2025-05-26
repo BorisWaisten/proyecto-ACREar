@@ -10,8 +10,8 @@ export default function ContactPage() {
       </h2>
 
       <div className="flex flex-col md:flex-row w-full max-w-7xl gap-8">
-        <ContactInfo />
-        <ContactForm />
+        <ContactInfo className="flex-1" />
+        <ContactForm className="flex-1" />
       </div>
     </div>
   );
