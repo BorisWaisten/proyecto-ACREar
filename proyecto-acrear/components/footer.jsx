@@ -10,7 +10,7 @@ export default function Footer() {
 
         {/* Logo */}
         <div className="flex flex-col items-start animate-fade-in md:scale-150 md:hover:scale-[1.6] lg:scale-[1.3] lg:pl-6 transition-all duration-500">
-          <Image src="/logos/logo-acrear.svg" alt="Logo ACREar" width={140} height={70} />
+          <Image src="/logos/logo-acrear.svg" alt="Logo ACREarg" width={140} height={70} />
         </div>
 
         {/* Compañía */}
@@ -27,7 +27,7 @@ export default function Footer() {
         <div className="animate-fade-in transition-all duration-500 hover:translate-y-[-2px]">
           <h4 className="font-bold mb-3 hover:text-[var(--color-accent)] transition-colors duration-300">Contacto</h4>
           <ul className="text-sm space-y-1">
-            <li className="hover:text-[var(--color-accent)] transition-all">Email: contacto@acrear.org</li>
+            <li className="hover:text-[var(--color-accent)] transition-all">Email: contacto@acrearg.org</li>
             <li className="hover:text-[var(--color-accent)] transition-all">Teléfono: +54 11 1234 5678</li>
           </ul>
         </div>

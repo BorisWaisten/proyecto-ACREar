@@ -11,7 +11,7 @@ export default function VideoSection() {
         <iframe
           className="w-full h-full"
           src="https://www.youtube.com/embed/6OOXn0rcBZI"
-          title="Video Institucional ACREar"
+          title="Video Institucional ACREarg"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />

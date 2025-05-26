@@ -11,7 +11,7 @@ const events = [
     link: '/',
   },
   {
-    title: 'ACREar',
+    title: 'ACREarg',
     text: 'Promovemos el desarrollo de las economías regionales de la Argentina.',
     img: '/fotos/evento-2.jpg',
     link: '/',

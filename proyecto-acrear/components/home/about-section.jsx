@@ -17,8 +17,8 @@ export default function AboutSection() {
         className="mb-8 w-full md:mb-0 md:w-1/3 flex justify-center"
       >
         <Image
-          src="/logos/logo-acrear2.png"
-          alt="Logo ACREar"
+          src="/logos/logo-ACREar2.png"
+          alt="Logo ACREarg"
           width={180}
           height={180}
         />
@@ -32,11 +32,11 @@ export default function AboutSection() {
         viewport={{ once: true }}
         className="md:w-2/3 flex flex-col items-start"
       >
-        <h2 className="mx-auto md:mx-0 text-2xl font-bold text-[var(--color-primary)] mb-4">ACREar</h2>
+        <h2 className="mx-auto md:mx-0 text-2xl font-bold text-[var(--color-primary)] mb-4">ACREarg</h2>
 
         <div className="bg-[var(--color-secondary)] text-white rounded-xl px-6 py-4 leading-relaxed font-[Open Sans]">
           <p className="mb-2">
-            ACREar es la Cámara Argentina de Economías Regionales.
+            ACREarg es la Cámara Argentina de Economías Regionales.
             Reunimos productores, exportadores y actores estratégicos para impulsar el desarrollo productivo
             y conectar a las economías regionales con el mundo.
           </p>

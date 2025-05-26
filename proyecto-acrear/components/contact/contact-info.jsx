@@ -12,8 +12,8 @@ export default function ContactInfo() {
       <h3 className="text-xl font-bold text-[var(--color-secondary)]">{t.contactInfo}</h3>
       <div className="flex items-center gap-4">
         <Image src="/logos/logoEmail.png" width={32} height={32} alt="Email" />
-        <a href="mailto:contacto@acrear.org" className="text-[var(--color-primary)] hover:text-[var(--color-accent)] transition">
-          contacto@acrear.org
+        <a href="mailto:contacto@acrearg.org" className="text-[var(--color-primary)] hover:text-[var(--color-accent)] transition">
+          contacto@acrearg.org
         </a>
       </div>
       <div className="flex items-center gap-4">
