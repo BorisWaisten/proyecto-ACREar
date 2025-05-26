@@ -90,21 +90,43 @@ export default function PublicSectorServices() {
         </Slider>
       </div>
 
-      {/* Desktop Grid */}
-      <div className="hidden lg:grid grid-cols-3 gap-6 justify-items-center">
-        {servicios.map((item, i) => (
-          <motion.div
-            key={i}
-            className="bg-[#214D64] text-white p-6 rounded-xl border-2 border-[#CD8A53] w-full max-w-sm shadow-lg hover:scale-105 transition-transform duration-300"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <h4 className="text-md sm:text-lg font-bold text-center mb-2">{item.title}</h4>
-            <p className="text-sm text-center leading-relaxed">{item.description}</p>
-          </motion.div>
-        ))}
+      {/* Desktop: pirámide inversa */}
+      <div className="hidden lg:flex flex-col items-center space-y-10">
+        {/* Fila superior (3) */}
+        <div className="flex justify-center gap-6 w-full ">
+          {servicios.slice(0, 3).map((item, i) => (
+            <motion.div
+              key={i}
+              className="bg-[#214D64] text-white p-6 rounded-xl border-2 border-[#CD8A53] shadow-lg w-1/3"
+              custom={i}
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <h3 className="text-lg font-bold text-center mb-2">{item.title}</h3>
+              <p className="text-sm text-center">{item.description}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Fila inferior centrada (2) */}
+        <div className="flex justify-center gap-6 w-full ">
+          {servicios.slice(3).map((item, j) => (
+            <motion.div
+              key={j + 3}
+              className="bg-[#214D64] text-white p-6 rounded-xl border-2 border-[#CD8A53] shadow-lg w-1/3 "
+              custom={j + 3}
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <h3 className="text-lg font-bold text-center mb-2">{item.title}</h3>
+              <p className="text-sm text-center">{item.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

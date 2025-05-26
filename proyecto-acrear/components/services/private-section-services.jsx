@@ -31,8 +31,47 @@ export default function PrivateSectorServices() {
       description:
         'Orientamos en el acceso a líneas de financiamiento para potenciar la capacidad exportadora.',
     },
+    {
+      title: 'INTERNACIONALIZACIÓN DE EMPRESAS',
+      description:
+        'Acompañamos a las empresas en su proceso de internacionalización con estrategias a medida, facilitando su inserción en los mercados globales.',
+    },
+    {
+      title: 'FORMACIÓN',
+      description:
+        'Brindamos capacitaciones relativas a nuevas tendencias del comercio internacional, requerimientos de los mercados de destino, aspectos culturales, herramientas de comercio exterior y logística internacional.',
+    },
+    {
+      title: 'PROMOCIÓN DE EXPORTACIONES',
+      description:
+        'Impulsamos la promoción de la producción regional en ferias, rondas de negocios y plataformas internacionales, posicionando la oferta argentina en mercados exigentes.',
+    },
+    {
+      title: 'BÚSQUEDA DE CLIENTES EN DESTINO',
+      description:
+        'Acompañamos a las empresas desde el diagnóstico hasta la expansión comercial para facilitar su inserción internacional.',
+    },
+    {
+      title: 'SERVICIOS ADUANEROS',
+      description:
+        'Acompañamos cada operación para garantizar agilidad, seguridad y eficiencia, gestionando documentación y cumplimiento normativo.',
+    },
+    {
+      title: 'SERVICIO EN DEPÓSITO FISCAL',
+      description:
+        'Ofrecemos servicios de depósito fiscal para facilitar el almacenamiento, optimizando tiempos y costos logísticos.',
+    },
+    {
+      title: 'GESTIÓN CONTABLE Y FISCAL EN COMERCIO EXTERIOR',
+      description:
+        'Asistimos en la tramitación de impuestos locales e internacionales, garantizando cumplimiento y optimización tributaria.',
+    },
+    {
+      title: 'ASESORAMIENTO EN FINANCIAMIENTO',
+      description:
+        'Asesoramos a empresas en el acceso a créditos, programas de apoyo y vinculación con inversores para proyectos productivos y expansión internacional.',
+    },
   ];
-
   const settings = {
     dots: true,
     infinite: false,
