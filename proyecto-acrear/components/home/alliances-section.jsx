@@ -40,7 +40,6 @@ const allianceData = [
       '/entidades/entidad-5.png',
       '/entidades/entidad-6.png',
       '/entidades/entidad-7.png',
-      '/entidades/entidad-8.png',
     ],
   },
 ];
@@ -98,7 +97,6 @@ export default function NuestraComunidad() {
         ))}
       </div>
 
-      {/* Carousel */}
       <Slider {...settings}>
         {selected.logos.map((logo, i) => (
           <div key={i} className="px-4">

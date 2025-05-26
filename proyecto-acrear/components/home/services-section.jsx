@@ -1,17 +1,18 @@
 'use client';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const services = [
-  {
-    title: 'SERVICIOS AL SECTOR PÚBLICO',
-    description:
-      'Brindamos herramientas técnicas y estratégicas para fortalecer la gestión provincial y municipal, potenciando capacidades locales e integrando a las regiones en el comercio global.',
-    href: '/services',
-  },
   {
     title: 'SERVICIOS AL SECTOR PRIVADO',
     description:
       'Impulsamos a las empresas hacia la internacionalización, con soluciones concretas en representación, exportación, servicios aduaneros y expansión comercial.',
+    href: '/services',
+  },
+  {
+    title: 'SERVICIOS AL SECTOR PÚBLICO',
+    description:
+      'Brindamos herramientas técnicas y estratégicas para fortalecer la gestión provincial y municipal, potenciando capacidades locales e integrando a las regiones en el comercio global.',
     href: '/services',
   },
   {
@@ -24,16 +25,31 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="w-full py-16 px-4 bg-[var(--color-background)] text-center">
-      <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-primary)] mb-12">SERVICIOS</h2>
+    <motion.section
+      className="w-full py-16 px-4 bg-[var(--color-background)] text-center"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-primary)] mb-12">
+        SERVICIOS
+      </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {services.map((service, index) => (
-          <div
+          <motion.div
             key={index}
             className="bg-[var(--color-secondary)] text-white rounded-xl p-6 flex flex-col items-center shadow-md transition hover:scale-[1.02]"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.4,
+              delay: index * 0.15,
+              ease: 'easeOut',
+            }}
+            viewport={{ once: true }}
           >
-            {/* Ícono SVG inline */}
             <div className="mb-4 text-[var(--color-accent)]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -59,9 +75,9 @@ export default function ServicesSection() {
                 Ver más
               </button>
             </Link>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

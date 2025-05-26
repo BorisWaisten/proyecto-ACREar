@@ -11,9 +11,9 @@ export default function HomePage() {
     <>
       <AboutSection />
       <VideoSection />
+      <MapSection />
       <ServicesSection />
       <EventsSection />
-      <MapSection />
       <OfficesSection />
       <OurAllianceUS />
     </>

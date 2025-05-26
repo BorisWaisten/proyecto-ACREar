@@ -13,13 +13,13 @@ const events = [
   {
     title: 'ACREarg',
     text: 'Promovemos el desarrollo de las economías regionales de la Argentina.',
-    img: '/fotos/evento-2.jpg',
+    img: '/fotos/evento-4.avif',
     link: '/',
   },
   {
     title: 'ASISTENCIA TÉCNICA A LAS EMPRESAS',
     text: 'Fortalecé las capacidades de tu equipo.',
-    img: '/fotos/evento-3.jpg',
+    img: '/fotos/evento-5.avif',
     link: '/',
   },
 ];
@@ -36,9 +36,9 @@ export default function EventsSection() {
 
   return (
     <section className="w-full py-16 bg-[var(--color-secondary)] px-4">
-      <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-accent)] text-center mb-12">
+      {/* <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-accent)] text-center mb-12">
         EVENTOS
-      </h2>
+      </h2> */}
 
       <div className="max-w-5xl mx-auto">
         <Slider {...settings}>

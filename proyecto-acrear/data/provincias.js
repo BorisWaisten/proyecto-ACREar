@@ -133,7 +133,7 @@ export const provincias = [
     icons: [
       "/icons/bodega.png",
       "/icons/durazno.png",
-      "/icons/tomate.png",
+      "/icons/hortalizas.png",
       "/icons/industria.png",
     ],
     activities: [
