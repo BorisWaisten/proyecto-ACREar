@@ -7,31 +7,6 @@ import Slider from 'react-slick';
 export default function PrivateSectorServices() {
   const servicios = [
     {
-      title: 'INTELIGENCIA COMERCIAL',
-      description:
-        'Asesoramos sobre mercados internacionales, normativas, documentación, posicionamiento estratégico y más.',
-    },
-    {
-      title: 'MISIÓN COMERCIAL',
-      description:
-        'Organizamos agendas de negocios para explorar nuevos mercados, generar contactos y cerrar ventas.',
-    },
-    {
-      title: 'CONSULTORÍA EN EXPORTACIÓN',
-      description:
-        'Brindamos asistencia integral para iniciar o mejorar procesos de exportación.',
-    },
-    {
-      title: 'GESTIÓN DE CERTIFICACIONES',
-      description:
-        'Asistimos en la obtención de certificaciones de calidad necesarias para mercados internacionales.',
-    },
-    {
-      title: 'FINANCIAMIENTO PARA EXPORTAR',
-      description:
-        'Orientamos en el acceso a líneas de financiamiento para potenciar la capacidad exportadora.',
-    },
-    {
       title: 'INTERNACIONALIZACIÓN DE EMPRESAS',
       description:
         'Acompañamos a las empresas en su proceso de internacionalización con estrategias a medida, facilitando su inserción en los mercados globales.',
@@ -135,7 +110,7 @@ export default function PrivateSectorServices() {
       </div>
 
       {/* Desktop Grid */}
-      <div className="hidden lg:grid grid-cols-3 gap-6 justify-items-center">
+      <div className="hidden lg:grid grid-cols-4 gap-6 justify-items-center">
         {servicios.map((item, i) => (
           <motion.div
             key={i}
