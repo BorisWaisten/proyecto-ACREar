@@ -1,53 +1,72 @@
 'use client';
 
+import { motion } from 'framer-motion';
+import Slider from 'react-slick';
+
+
 export default function PrivateSectorServices() {
   const servicios = [
     {
-      title: 'INTERNACIONALIZACIÓN DE EMPRESAS',
+      title: 'INTELIGENCIA COMERCIAL',
       description:
-        'Acompañamos a las empresas en su proceso de internacionalización con estrategias a medida, facilitando su inserción en los mercados globales.',
+        'Asesoramos sobre mercados internacionales, normativas, documentación, posicionamiento estratégico y más.',
     },
     {
-      title: 'FORMACIÓN',
+      title: 'MISIÓN COMERCIAL',
       description:
-        'Brindamos capacitaciones sobre tendencias del comercio internacional, requerimientos de destino, cultura comercial, logística y herramientas de comercio exterior.',
+        'Organizamos agendas de negocios para explorar nuevos mercados, generar contactos y cerrar ventas.',
     },
     {
-      title: 'PROMOCIÓN DE EXPORTACIONES',
+      title: 'CONSULTORÍA EN EXPORTACIÓN',
       description:
-        'Impulsamos la promoción de la producción regional en ferias, rondas y plataformas internacionales para posicionar la oferta argentina globalmente.',
+        'Brindamos asistencia integral para iniciar o mejorar procesos de exportación.',
     },
     {
-      title: 'BÚSQUEDA DE CLIENTES EN DESTINO',
+      title: 'GESTIÓN DE CERTIFICACIONES',
       description:
-        'Asistimos a las empresas en el diagnóstico y expansión comercial con estrategias para encontrar y fidelizar clientes en destino.',
+        'Asistimos en la obtención de certificaciones de calidad necesarias para mercados internacionales.',
     },
     {
-      title: 'SERVICIOS ADUANEROS',
+      title: 'FINANCIAMIENTO PARA EXPORTAR',
       description:
-        'Acompañamos cada operación para garantizar agilidad, seguridad y eficiencia, gestionando documentación y normativa.',
-    },
-    {
-      title: 'SERVICIOS DE DEPÓSITO FISCAL',
-      description:
-        'Ofrecemos servicios de depósito fiscal para almacenamiento optimizado de productos, reduciendo tiempos y costos logísticos.',
-    },
-    {
-      title: 'GESTIÓN CONTABLE Y FISCAL',
-      description:
-        'Asistimos en impuestos locales e internacionales vinculados al comercio exterior, asegurando cumplimiento fiscal y eficiencia tributaria.',
-    },
-    {
-      title: 'FINANCIAMIENTO PARA PROYECCIÓN INTERNACIONAL',
-      description:
-        'Asesoramos a empresas en créditos, programas de apoyo e inversores para certificar y expandir proyectos productivos internacionalmente.',
-    },
-    {
-      title: 'INFORMES COMERCIALES',
-      description:
-        'Accedé a estudios e informes comerciales personalizados sobre mercados, competencia, tendencias y normativa internacional.',
+        'Orientamos en el acceso a líneas de financiamiento para potenciar la capacidad exportadora.',
     },
   ];
+
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: 'unslick',
+      },
+    ],
+  };
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, delay: i * 0.1 },
+    }),
+  };
 
   return (
     <section className="bg-[var(--color-background)] py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -55,15 +74,42 @@ export default function PrivateSectorServices() {
         SECTOR PRIVADO
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+      {/* Mobile Carousel */}
+      <div className="block lg:hidden">
+        <Slider {...settings}>
+          {servicios.map((item, i) => (
+            <div key={i} className="px-2">
+              <motion.div
+                className="bg-[#214D64] h-[10rem] text-white p-6 rounded-xl border-2 border-[#CD8A53] shadow-lg"
+                custom={i}
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                <h4 className="text-sm font-bold text-center mb-2">{item.title}</h4>
+                <p className="text-sm text-center leading-relaxed">{item.description}</p>
+              </motion.div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+
+      {/* Desktop Grid */}
+      <div className="hidden lg:grid grid-cols-3 gap-6 justify-items-center">
         {servicios.map((item, i) => (
-          <div
+          <motion.div
             key={i}
             className="bg-[#214D64] text-white p-6 rounded-xl border-2 border-[#CD8A53] w-full max-w-sm shadow-lg hover:scale-105 transition-transform duration-300"
+            custom={i}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
           >
             <h4 className="text-md sm:text-lg font-bold text-center mb-2">{item.title}</h4>
-            <p className="text-sm text-justify leading-relaxed">{item.description}</p>
-          </div>
+            <p className="text-sm text-center leading-relaxed">{item.description}</p>
+          </motion.div>
         ))}
       </div>
     </section>
