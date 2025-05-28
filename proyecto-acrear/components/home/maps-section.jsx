@@ -2,10 +2,9 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import ArgMaps from '@/components/home/arg-maps';
-import { provincias } from '@/data/provincias';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function MapSection() {
+export default function MapSection({ regional, provincias }) {
   const [selectedId, setSelectedId] = useState(provincias[0].id);
   const provincia = provincias.find((p) => p.id === selectedId);
 
@@ -18,7 +17,7 @@ export default function MapSection() {
       viewport={{ once: true, amount: 0.2 }}
     >
       <h2 className="text-2xl md:text-3xl font-bold text-center text-[var(--color-primary)]">
-        NUESTRAS ECONOMÍAS REGIONALES
+        {regional.title}
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

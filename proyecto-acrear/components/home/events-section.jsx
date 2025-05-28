@@ -3,28 +3,19 @@ import Slider from 'react-slick';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const events = [
-  {
-    title: 'INTERNACIONALIZÁ TU EMPRESA',
-    text: 'Te acompañamos en cada etapa de la exportación.',
-    img: '/fotos/evento-1.png', // reemplazar con tus imágenes reales
-    link: '/',
-  },
-  {
-    title: 'ACREarg',
-    text: 'Promovemos el desarrollo de las economías regionales de la Argentina.',
-    img: '/fotos/evento-4.avif',
-    link: '/',
-  },
-  {
-    title: 'ASISTENCIA TÉCNICA A LAS EMPRESAS',
-    text: 'Fortalecé las capacidades de tu equipo.',
-    img: '/fotos/evento-5.avif',
-    link: '/',
-  },
-];
 
-export default function EventsSection() {
+export default function EventsSection({ events }) {
+  const eventsLocal = [
+    {
+      ...events.internacionale
+    },
+    {
+      ...events.acrearg
+    },
+    {
+     ...events.asistencie
+    },
+  ];
   const settings = {
     dots: true,
     infinite: true,
@@ -36,13 +27,10 @@ export default function EventsSection() {
 
   return (
     <section className="w-full py-16 bg-[var(--color-secondary)] px-4">
-      {/* <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-accent)] text-center mb-12">
-        EVENTOS
-      </h2> */}
 
       <div className="max-w-5xl mx-auto">
         <Slider {...settings}>
-          {events.map((event, index) => (
+          {eventsLocal.map((event, index) => (
             <div key={index} className="px-4">
               <div className="relative rounded-xl overflow-hidden shadow-lg">
                 <Image
@@ -57,7 +45,7 @@ export default function EventsSection() {
                   <p className="text-sm md:text-base mb-4">{event.text}</p>
                   <Link href={event.link}>
                     <button className="bg-[var(--color-accent)] hover:brightness-90 text-white font-semibold px-6 py-2 rounded-full transition-all">
-                      Ver más
+                      {events.button}
                     </button>
                   </Link>
                 </div>

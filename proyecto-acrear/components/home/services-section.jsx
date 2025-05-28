@@ -2,28 +2,19 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-const services = [
-  {
-    title: 'SERVICIOS AL SECTOR PRIVADO',
-    description:
-      'Impulsamos a las empresas hacia la internacionalización, con soluciones concretas en representación, exportación, servicios aduaneros y expansión comercial.',
-    href: '/services',
-  },
-  {
-    title: 'SERVICIOS AL SECTOR PÚBLICO',
-    description:
-      'Brindamos herramientas técnicas y estratégicas para fortalecer la gestión provincial y municipal, potenciando capacidades locales e integrando a las regiones en el comercio global.',
-    href: '/services',
-  },
-  {
-    title: 'VINCULACIÓN PÚBLICO-PRIVADA',
-    description:
-      'Creamos un espacio activo de diálogo y colaboración para diseñar políticas comerciales eficaces que conecten al Estado con el entramado productivo regional.',
-    href: '/services',
-  },
-];
 
-export default function ServicesSection() {
+export default function ServicesSection({services}) {
+  const servicesLocal = [
+    {
+      ...services.sectorPrivate
+    },
+    {
+      ...services.sectorPublic
+    },
+    {
+      ...services.publicPrivate
+    },
+  ];
   return (
     <motion.section
       className="w-full py-16 px-4 bg-[var(--color-background)] text-center"
@@ -33,11 +24,11 @@ export default function ServicesSection() {
       viewport={{ once: true, amount: 0.2 }}
     >
       <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-primary)] mb-12">
-        SERVICIOS
+        {services.title}
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {services.map((service, index) => (
+        {servicesLocal.map((service, index) => (
           <motion.div
             key={index}
             className="bg-[var(--color-secondary)] text-white rounded-xl p-6 flex flex-col items-center shadow-md transition hover:scale-[1.02]"
@@ -72,7 +63,7 @@ export default function ServicesSection() {
 
             <Link href={service.href}>
               <button className="bg-[var(--color-accent)] hover:brightness-90 text-white font-semibold px-6 py-2 rounded-full transition-all">
-                Ver más
+                {services.button}
               </button>
             </Link>
           </motion.div>

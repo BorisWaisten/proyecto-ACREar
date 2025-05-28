@@ -7,23 +7,17 @@ import { AppBar, Toolbar, Box, IconButton, Button } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { motion, AnimatePresence } from 'framer-motion';
-import SvgEn from './animations/svg-language/svg-es';
-import SvgEs from './animations/svg-language/svg-en';
+import SvgEn from './animations/svg-language/svg-en';
+import SvgEs from './animations/svg-language/svg-es';
+import { navItems } from '@/data/header';
 
 export default function Header() {
   const { lang, toggleLang } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const navItems = [
-    { key: 'home',    label: lang==='es'?'INICIO':'HOME',       href:'/' },
-    { key: 'about',   label: lang==='es'?'NOSOTROS':'ABOUT',    href:'/about' },
-    { key: 'services',label: lang==='es'?'SERVICIOS':'SERVICES',href:'/services' },
-    { key: 'trading', label: lang==='es'?'PRODUCTOS':'TRADING', href:'/trading' },
-    { key: 'contact', label: lang==='es'?'CONTACTO':'CONTACT',  href:'/contact' },
-  ];
 
   const handleLangChange = (newLang) => {
-    if ((lang==='es'&&newLang==='en')||(lang==='en'&&newLang==='es')) {
+    if ((lang==='es'&& newLang==='en')||(lang==='en'&& newLang==='es')) {
       toggleLang();
     }
   };
@@ -59,7 +53,7 @@ export default function Header() {
             {navItems.map((item) => (
               <Link key={item.key} href={item.href}>
                 <Button sx={{ color: 'var(--color-accent)', fontWeight: 600 }} disableRipple>
-                  {item.label}
+                  {item.label[lang]}
                 </Button>
               </Link>
             ))}
@@ -117,7 +111,7 @@ export default function Header() {
                         fullWidth
                         sx={{ justifyContent: 'flex-start', color:'var(--color-accent)', fontWeight:600 }}
                       >
-                        {item.label}
+                        {item.label[lang]}
                       </Button>
                     </Link>
                   ))}
