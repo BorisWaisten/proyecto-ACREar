@@ -14,11 +14,11 @@ export default function HomePage() {
   const { lang, toggleLang } = useLanguage();
   return (
     <>
+      <EventsSection events={home[lang].events}/>
       <AboutSection about={home[lang].about} />
       <VideoSection video={home[lang].video}/>
       <MapSection regional={home[lang].regional} provincias={provincias[lang]}/>
       <ServicesSection services={home[lang].services}/>
-      <EventsSection events={home[lang].events}/>
       <OfficesSection offices = {home[lang].offices}/>
       <OurAllianceUS alliances={home[lang].alliances}/>
     </>

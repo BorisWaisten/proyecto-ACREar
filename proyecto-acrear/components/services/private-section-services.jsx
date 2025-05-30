@@ -4,49 +4,8 @@ import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 
 
-export default function PrivateSectorServices() {
-  const servicios = [
-    {
-      title: 'INTERNACIONALIZACIÓN DE EMPRESAS',
-      description:
-        'Acompañamos a las empresas en su proceso de internacionalización con estrategias a medida, facilitando su inserción en los mercados globales.',
-    },
-    {
-      title: 'FORMACIÓN',
-      description:
-        'Brindamos capacitaciones relativas a nuevas tendencias del comercio internacional, requerimientos de los mercados de destino, aspectos culturales, herramientas de comercio exterior y logística internacional.',
-    },
-    {
-      title: 'PROMOCIÓN DE EXPORTACIONES',
-      description:
-        'Impulsamos la promoción de la producción regional en ferias, rondas de negocios y plataformas internacionales, posicionando la oferta argentina en mercados exigentes.',
-    },
-    {
-      title: 'BÚSQUEDA DE CLIENTES EN DESTINO',
-      description:
-        'Acompañamos a las empresas desde el diagnóstico hasta la expansión comercial para facilitar su inserción internacional.',
-    },
-    {
-      title: 'SERVICIOS ADUANEROS',
-      description:
-        'Acompañamos cada operación para garantizar agilidad, seguridad y eficiencia, gestionando documentación y cumplimiento normativo.',
-    },
-    {
-      title: 'SERVICIO EN DEPÓSITO FISCAL',
-      description:
-        'Ofrecemos servicios de depósito fiscal para facilitar el almacenamiento, optimizando tiempos y costos logísticos.',
-    },
-    {
-      title: 'GESTIÓN CONTABLE Y FISCAL EN COMERCIO EXTERIOR',
-      description:
-        'Asistimos en la tramitación de impuestos locales e internacionales, garantizando cumplimiento y optimización tributaria.',
-    },
-    {
-      title: 'ASESORAMIENTO EN FINANCIAMIENTO',
-      description:
-        'Asesoramos a empresas en el acceso a créditos, programas de apoyo y vinculación con inversores para proyectos productivos y expansión internacional.',
-    },
-  ];
+export default function PrivateSectorServices({ privateServices , title}) {
+
   const settings = {
     dots: true,
     infinite: false,
@@ -85,13 +44,13 @@ export default function PrivateSectorServices() {
   return (
     <section className="bg-[var(--color-background)] py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <h2 className="text-center text-lg font-semibold text-[var(--color-secondary)] uppercase mb-8 tracking-wide">
-        SECTOR PRIVADO
+        {title}
       </h2>
 
       {/* Mobile Carousel */}
       <div className="block lg:hidden">
         <Slider {...settings}>
-          {servicios.map((item, i) => (
+          {privateServices.map((item, i) => (
             <div key={i} className="px-2">
               <motion.div
                 className="bg-[#214D64] h-[10rem] text-white p-6 rounded-xl border-2 border-[#CD8A53] shadow-lg"
@@ -111,7 +70,7 @@ export default function PrivateSectorServices() {
 
       {/* Desktop Grid */}
       <div className="hidden lg:grid grid-cols-4 gap-6 justify-items-center">
-        {servicios.map((item, i) => (
+        {privateServices.map((item, i) => (
           <motion.div
             key={i}
             className="bg-[#214D64] text-white p-6 rounded-xl border-2 border-[#CD8A53] w-full max-w-sm shadow-lg hover:scale-105 transition-transform duration-300"

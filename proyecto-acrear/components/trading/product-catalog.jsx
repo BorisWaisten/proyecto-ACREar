@@ -4,20 +4,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import clsx from 'clsx';
-
-const products = [
-  { key: 'miel', label: 'MIELES' },
-  { key: 'legumbres', label: 'LEGUMBRES' },
-  { key: 'aceite', label: 'ACEITES' },
-  { key: 'frutossecos', label: 'FRUTOS SECOS' },
-  { key: 'carne', label: 'CARNES' },
-  { key: 'fruta', label: 'FRUTAS' },
-  { key: 'encurtidos', label: 'ENCURTIDOS' },
-  { key: 'dulces', label: 'DULCES' },
-  { key: 'semillas', label: 'SEMILLAS' },
-  { key: 'especia', label: 'HIERBAS' },
-];
-
+import { tradingData } from '@/data/section/trading';
+import { useLanguage } from '@/context/language-context';
 const sliderSettings = {
   dots: true,
   infinite: true,
@@ -29,6 +17,8 @@ const sliderSettings = {
 };
 
 export default function ProductCatalog() {
+  const { lang } = useLanguage();
+  const { products } = tradingData[lang];
   const [activeProduct, setActiveProduct] = useState(null);
 
   const handleSelect = (key) => {
