@@ -1,25 +1,34 @@
 // src/data/section/contact.js
 
-export const translations = {
+export const contactData       = {
   es: {
-    contact: 'Contacto',
     contactInfo: '¿DÓNDE NOS PODÉS ENCONTRAR?',
     title: 'Contáctanos',
     locations: [
       {
         title: 'SEDE CABA',
-        address: 'XXXX',
-        phone: 'Tel.',
+        address: 'Av. Siempre Viva 123, CABA',
+        phone: '+54 11 1234-5678',
       },
       {
         title: 'SEDE SANTA FE',
-        address: 'XXXX',
-        phone: 'Tel.',
+        address: 'Bv. Gálvez 456, Santa Fe',
+        phone: '+54 342 234-5678',
       },
       {
         title: 'SEDE SANTIAGO DEL ESTERO',
-        address: 'XXXX',
-        phone: 'Tel.',
+        address: 'Salta 789, Santiago del Estero',
+        phone: '+54 385 345-6789',
+      },
+      {
+        title: 'SEDE EEUU',
+        address: 'xxx',
+        phone: 'xxx',
+      },
+      {
+        title: 'SEDE ESPAÑA',
+        address: 'xxx',
+        phone: 'xxx',
       },
     ],
     formFields: {
@@ -28,31 +37,40 @@ export const translations = {
       email: 'Correo electrónico*',
       phone: 'Teléfono*',
       message: '¿En qué te podemos ayudar?',
-      send: 'Contactarme',
+      send: 'Contactame',
     },
     emailSubject: 'Consulta desde la web',
     emailSentSuccess: '¡Email enviado correctamente!',
     emailSentError: 'Hubo un error al enviar.',
   },
   en: {
-    contact: 'Contact Us',
     contactInfo: 'WHERE TO FIND US?',
-    title: 'Get in Touch',
+    title: 'Contact Us',
     locations: [
       {
         title: 'CABA OFFICE',
-        address: 'XXXX',
-        phone: 'Phone.',
+        address: 'Av. Siempre Viva 123, CABA',
+        phone: '+54 11 1234-5678',
       },
       {
         title: 'SANTA FE OFFICE',
-        address: 'XXXX',
-        phone: 'Phone.',
+        address: 'Bv. Gálvez 456, Santa Fe',
+        phone: '+54 342 234-5678',
       },
       {
         title: 'SANTIAGO DEL ESTERO OFFICE',
-        address: 'XXXX',
-        phone: 'Phone.',
+        address: 'Salta 789, Santiago del Estero',
+        phone: '+54 385 345-6789',
+      },
+      {
+        title: 'USA OFFICE',
+        address: 'xxx',
+        phone: 'xxx',
+      },
+      {
+        title: 'SPAIN OFFICE',
+        address: 'xxx',
+        phone: 'xxx',
       },
     ],
     formFields: {

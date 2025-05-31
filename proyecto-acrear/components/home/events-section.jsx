@@ -26,7 +26,7 @@ export default function EventsSection({ events }) {
   };
 
   return (
-    <section className="w-full py-16 bg-[var(--color-secondary)] px-4">
+    <section className="w-full py-20 bg-[var(--color-secondary)] px-4">
 
       <div className="max-w-5xl mx-auto">
         <Slider {...settings}>

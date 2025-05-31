@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 @import "tailwindcss";
 @import 'slick-carousel/slick/slick.css';
 @import 'slick-carousel/slick/slick-theme.css';
-
 
 @font-face {
   font-family: 'Montserrat';
@@ -35,7 +35,6 @@
   font-display: swap;
 }
 
-
 :root {
   --color-primary: #132d3d;
   --color-secondary: #254e69;
@@ -44,7 +43,7 @@
 }
 
 html {
-  font-family: 'Montserrat', 'Open Sans', sans-serif;
+  font-family: 'Roboto', 'Montserrat', 'Open Sans', sans-serif;
   background-color: var(--color-background);
   color: var(--color-primary);
 }

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { TextField, Button, Box, Typography } from '@mui/material';
 
-const ContactForm = () => {
+const ContactForm = ({ contactData }) => {
   const [form, setForm] = useState({
     name: '',
     activity: '',
@@ -12,19 +12,18 @@ const ContactForm = () => {
   });
 
   const inputStyle = {
-  bgcolor: 'var(--color-background)',
-  borderRadius:1,
-  '& .MuiOutlinedInput-notchedOutline': {
-    borderColor: 'rgb(var(--color-primary))',
-  },
-  '&:hover .MuiOutlinedInput-notchedOutline': {
-    borderColor: 'rgb(var(--color-secondary))',
-  },
-  '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-    borderColor: 'rgb(var(--color-primary))',
-  },
-};
-
+    bgcolor: 'var(--color-background)',
+    borderRadius: 1,
+    '& .MuiOutlinedInput-notchedOutline': {
+      borderColor: 'rgb(var(--color-primary))',
+    },
+    '&:hover .MuiOutlinedInput-notchedOutline': {
+      borderColor: 'rgb(var(--color-secondary))',
+    },
+    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+      borderColor: 'rgb(var(--color-primary))',
+    },
+  };
 
   const [status, setStatus] = useState('');
 
@@ -36,7 +35,7 @@ const ContactForm = () => {
     e.preventDefault();
     // Simular envío
     console.log('Enviando formulario:', form);
-    setStatus('¡Mensaje enviado con éxito!');
+    setStatus(contactData.emailSentSuccess);
     setForm({
       name: '',
       activity: '',
@@ -63,34 +62,28 @@ const ContactForm = () => {
       }}
     >
       <TextField
-        label="Nombre"
+        label={contactData.formFields.fullName}
         name="name"
         value={form.name}
         onChange={handleChange}
         required
         fullWidth
-        sx={{bgcolor: 'var(--color-background)',
-        borderRadius: 1,
-        }}
+        sx={inputStyle}
       />
 
       <TextField
-        label="Actividad o empresa"
+        label={contactData.formFields.mainActivity}
         name="activity"
         value={form.activity}
         onChange={handleChange}
         required
         variant="outlined"
-        fullWidth       
-        sx={{
-          
-          bgcolor: 'var(--color-background)',
-        borderRadius:1,
-        }}
+        fullWidth
+        sx={inputStyle}
       />
 
       <TextField
-        label="Correo electrónico"
+        label={contactData.formFields.email}
         name="email"
         type="email"
         value={form.email}
@@ -98,27 +91,23 @@ const ContactForm = () => {
         required
         variant="outlined"
         fullWidth
-                sx={{bgcolor: 'var(--color-background)',
-                borderRadius:1,
-                }}
+        sx={inputStyle}
       />
 
       <TextField
-        label="Teléfono"
+        label={contactData.formFields.phone}
         name="phone"
         type="tel"
         value={form.phone}
         onChange={handleChange}
         required
         variant="outlined"
-        fullWidth     
-        sx={{bgcolor: 'var(--color-background)',
-        borderRadius:1,
-        }}
+        fullWidth
+        sx={inputStyle}
       />
 
       <TextField
-        label="Mensaje"
+        label={contactData.formFields.message}
         name="message"
         value={form.message}
         onChange={handleChange}
@@ -127,9 +116,7 @@ const ContactForm = () => {
         rows={4}
         variant="outlined"
         fullWidth
-        sx={{bgcolor: 'var(--color-background)' ,
-        borderRadius:1,
-        }}
+        sx={inputStyle}
       />
 
       <Button
@@ -144,7 +131,7 @@ const ContactForm = () => {
           },
         }}
       >
-        Enviar mensaje
+        {contactData.formFields.send}
       </Button>
 
       {status && (

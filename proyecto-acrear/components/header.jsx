@@ -15,7 +15,6 @@ export default function Header() {
   const { lang, toggleLang } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-
   const handleLangChange = (newLang) => {
     if ((lang==='es'&& newLang==='en')||(lang==='en'&& newLang==='es')) {
       toggleLang();
@@ -29,53 +28,100 @@ export default function Header() {
         position="fixed"
         sx={{
           top: 0, left: 0, width: '100%',
-          backgroundColor: 'var(--color-background)',
-          color: 'var(--color-primary)',
-          transform: 'translateZ(0)'
+          backgroundColor: 'white',
+          color: '#333',
+          transform: 'translateZ(0)',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+          zIndex: 1200
         }}
         elevation={0}
       >
-        <Toolbar className="justify-between">
-          {/* Logo */}
-          <Box className="flex items-center md:pl-18 md:py-2">
+        {/* Logo y navbar alineados horizontalmente */}
+        <Toolbar sx={{  display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: { xs: 2, md: 4 } }}>
+          {/* Logo a la izquierda */}
+          <Box className="flex items-center pl-2 p-1 md:pl-6 md:py-2">
             <Link href="/">
               <Image
                 src="/logos/logo-acrear.svg"
                 alt="Logo"
-                width={120} height={60} priority quality={100}
-                className="w-24 scale-125 md:w-20 md:scale-[3.2] md:h-20"
+                width={160} height={70} priority quality={100}
+                className="w-32 sm:w-36 scale-125 sm:scale-125 md:w-40 md:scale-[1.6] md:h-20"
               />
             </Link>
           </Box>
 
-          {/* Desktop nav */}
-          <Box className="hidden md:flex gap-6">
-            {navItems.map((item) => (
-              <Link key={item.key} href={item.href}>
-                <Button sx={{ color: 'var(--color-accent)', fontWeight: 600 }} disableRipple>
-                  {item.label[lang]}
-                </Button>
-              </Link>
-            ))}
-          </Box>
-
-          {/* Language buttons + mobile menu toggle */}
-          <Box className="flex items-center gap-3 z-55 ">
-            <Box className="hidden md:flex gap-3">
-              <IconButton onClick={()=>handleLangChange('en')}><SvgEn/></IconButton>
-              <IconButton onClick={()=>handleLangChange('es')}><SvgEs/></IconButton>
+          {/* Barra azul a la derecha */}
+          <Box
+            className="hidden md:flex"
+            sx={{
+              alignItems: 'center',
+              background: 'var(--color-primary)',
+              borderRadius: '2rem',
+              px: 4,
+              py: 1.5,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+              justifyContent: 'space-between',
+              gap: 3
+            }}
+          >
+            {/* NavItems */}
+            <Box sx={{ display: 'flex', gap: 4 }}>
+              {navItems.map((item) => (
+                <Link key={item.key} href={item.href}>
+                  <Button
+                    sx={{
+                      color: 'white',
+                      fontFamily: "'Roboto', sans-serif",
+                      fontSize: '1rem',
+                      fontWeight: 700,
+                      textTransform: 'none',
+                      background: 'transparent',
+                      whiteSpace: 'nowrap',
+                      '&:hover': {
+                        backgroundColor: 'rgba(255,255,255,0.08)',
+                        color: 'var(--color-accent)'
+                      }
+                    }}
+                    disableRipple
+                  >
+                    {item.label[lang]}
+                  </Button>
+                </Link>
+              ))}
             </Box>
-            <Box className="md:hidden">
-              <IconButton
-                onClick={toggleMobileMenu}
-                sx={{ color: 'var(--color-accent)' }}
+            {/* Banderas de idioma */}
+            <Box className="flex items-center gap-2">
+              <IconButton 
+                onClick={()=>handleLangChange('en')}
+                sx={{ color: 'white', '&:hover': { backgroundColor: 'rgba(255,255,255,0.08)' } }}
               >
-                {mobileOpen
-                  ? <CloseIcon sx={{ fontSize: 28 }} />
-                  : <MenuIcon  sx={{ fontSize: 28 }} />
-                }
+                <SvgEn/>
+              </IconButton>
+              <IconButton 
+                onClick={()=>handleLangChange('es')}
+                sx={{ color: 'white', '&:hover': { backgroundColor: 'rgba(255,255,255,0.08)' } }}
+              >
+                <SvgEs/>
               </IconButton>
             </Box>
+          </Box>
+
+          {/* Mobile menu (hamburguesa) */}
+          <Box className="flex md:hidden items-center justify-end px-4 z-55">
+            <IconButton
+              onClick={toggleMobileMenu}
+              sx={{ color: 'var(--color-accent)' ,
+                 background: 'transparent',
+                '&:hover': {
+                  backgroundColor: 'rgba(0,0,0,0.04)',
+                  color: 'var(--color-accent)'
+                }}}
+            >
+              {mobileOpen
+                ? <CloseIcon sx={{ fontSize: 28}} />
+                : <MenuIcon sx={{ fontSize: 28}} />
+              }
+            </IconButton>
           </Box>
         </Toolbar>
 
@@ -90,7 +136,7 @@ export default function Header() {
                 animate={{ opacity: 0.5 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="fixed inset-0 bg-black"
+                className="fixed inset-0 bg-black z-40"
                 onClick={toggleMobileMenu}
               />
 
@@ -101,26 +147,44 @@ export default function Header() {
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="fixed top-0 right-0 w-1/2 rounded-tl-2xl rounded-bl-2xl bg-[var(--color-secondary)] z-50 p-2 flex flex-col"
+                className="fixed top-0 right-0 bg-[var(--color-primary)] rounded-bl-2xl rounded-tl-2xl max-w-xs  w-2/3 z-50 p-4 flex flex-col"
               >
-
-
-                  {navItems.map((item) => (
-                    <Link key={item.key} href={item.href} onClick={toggleMobileMenu}>
-                      <Button
-                        fullWidth
-                        sx={{ justifyContent: 'flex-start', color:'var(--color-accent)', fontWeight:600 }}
-                      >
-                        {item.label[lang]}
-                      </Button>
-                    </Link>
-                  ))}
-
-
+                {navItems.map((item) => (
+                  <Link key={item.key} href={item.href} onClick={toggleMobileMenu}>
+                    <Button
+                      fullWidth
+                      sx={{
+                        justifyContent: 'flex-start',
+                        color: 'white',
+                        fontFamily: "'Roboto', sans-serif",
+                        fontSize: '1rem',
+                        fontWeight: 700,
+                        textTransform: 'none',
+                        background: 'transparent',
+                        '&:hover': {
+                          backgroundColor: 'rgba(0,0,0,0.04)',
+                          color: 'var(--color-accent)'
+                        }
+                      }}
+                    >
+                      {item.label[lang]}
+                    </Button>
+                  </Link>
+                ))}
                 {/* Language selectors */}
                 <Box className="flex gap-4 mt-auto">
-                  <IconButton onClick={()=>handleLangChange('en')}><SvgEn/></IconButton>
-                  <IconButton onClick={()=>handleLangChange('es')}><SvgEs/></IconButton>
+                  <IconButton 
+                    onClick={()=>handleLangChange('en')}
+                    sx={{ color: 'var(--color-primary)', '&:hover': { backgroundColor: 'rgba(0,0,0,0.04)' } }}
+                  >
+                    <SvgEn/>
+                  </IconButton>
+                  <IconButton 
+                    onClick={()=>handleLangChange('es')}
+                    sx={{ color: 'var(--color-primary)', '&:hover': { backgroundColor: 'rgba(0,0,0,0.04)' } }}
+                  >
+                    <SvgEs/>
+                  </IconButton>
                 </Box>
               </motion.div>
             </>
