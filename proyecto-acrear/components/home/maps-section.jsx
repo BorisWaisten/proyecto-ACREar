@@ -20,10 +20,10 @@ export default function MapSection({ regional, provincias }) {
         {regional.title}
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className=" grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Mapa interactivo */}
         <motion.div
-          className="w-full h-full rounded-xl overflow-hidden shadow-md"
+          className="w-full h-full rounded-xl overflow-hidden"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}

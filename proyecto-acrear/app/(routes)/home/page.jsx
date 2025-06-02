@@ -1,6 +1,7 @@
 'use client'
 import AboutSection from '@/components/home/about-section';
 import OurAllianceUS from '@/components/home/alliances-section';
+import CounterSection from '@/components/home/counter-section';
 import EventsSection from '@/components/home/events-section';
 import MapSection from '@/components/home/maps-section';
 import OfficesSection from '@/components/home/offices-section';
@@ -15,6 +16,7 @@ export default function HomePage() {
   return (
     <>
       <EventsSection events={home[lang].events}/>
+      <CounterSection counter={home[lang].counter} />
       <AboutSection about={home[lang].about} />
       <VideoSection video={home[lang].video}/>
       <MapSection regional={home[lang].regional} provincias={provincias[lang]}/>

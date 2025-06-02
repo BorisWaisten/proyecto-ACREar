@@ -4,7 +4,24 @@ export const home = {
             title:"ACREarg",
             text1:"ACREarg es la Cámara Argentina de Economías Regionales. Reunimos productores, exportadores y actores estratégicos para impulsar el desarrollo productivo y conectar a las economías regionales con el mundo.",
             text2:"Desde el territorio hacia los mercados globales, conectamos la producción regional con oportunidades concretas. Trabajamos junto a empresas, gobiernos locales y actores estratégicos de cada región para fortalecer exportaciones, brindar servicios técnicos y generar vínculos efectivos.",
-            text3:"“Desarrollo productivo y comercial con visión global”",
+            text3:"Desarrollo productivo y comercial con visión global",
+        },
+        counter: {
+            title: "La región en números",
+            stats: [
+                {
+                    number: "23",
+                    label: "Provincias"
+                },
+                {
+                    number: "50+",
+                    label: "Economías Regionales"
+                },
+                {
+                    number: "30+",
+                    label: "Empresas"
+                }
+            ]
         },
         alliances:{
             title:"Nuestra Comunidad",
@@ -44,23 +61,23 @@ export const home = {
             },
         },
         events:{
+                    acrearg:{
+                        title: 'CÁMARA ARGENTINA DE ECONOMÍAS REGIONALES',
+                        text: 'Promovemos el desarrollo de las economías regionales de la Argentina.',
+                        img: '/fotos/evento-4.jpg',
+                        link: '/trading',
+                    },
                     internacionale:{
                         title: 'INTERNACIONALIZÁ TU EMPRESA',
                         text: 'Te acompañamos en cada etapa de la exportación.',
                         img: '/fotos/evento-1.png', // reemplazar con tus imágenes reales
-                        link: '/',
-                    },
-                    acrearg:{
-                        title: 'ACREarg',
-                        text: 'Promovemos el desarrollo de las economías regionales de la Argentina.',
-                        img: '/fotos/evento-4.avif',
-                        link: '/',
+                        link: '/about',
                     },
                     asistencie:{
                         title: 'ASISTENCIA TÉCNICA A LAS EMPRESAS',
                         text: 'Fortalecé las capacidades de tu equipo.',
                         img: '/fotos/evento-5.avif',
-                        link: '/',
+                        link: '/contact',
                     },
                     button:"Ver Más"
                 },
@@ -119,7 +136,24 @@ export const home = {
             title:"ACREarg",
             text1:"We are the Argentine Chamber of Regional Economies, an entity created to accompany, represent and project Argentine production to the world.",
             text2:"From the Argentine territory to global markets, we connect regional production with concrete opportunities. Working together with companies, local governments and strategic actors in each region to strengthen exports, provide technical services and generate effective links.",
-            text3:"“Productive and commercial development with a global vision”",
+            text3:"Productive and commercial development with a global vision",
+        },
+        counter: {
+            title: "The Region in Numbers",
+            stats: [
+                {
+                    number: "23",
+                    label: "Provinces"
+                },
+                {
+                    number: "50+",
+                    label: "Regional Economies"
+                },
+                {
+                    number: "30+",
+                    label: "Companies"
+                }
+            ]
         },
         alliances:{
             title:"Our Community",
@@ -159,23 +193,23 @@ export const home = {
             },
         },
         events:{
+                    acrearg:{
+                        title: 'ARGENTINE CHAMBER OF REGIONAL ECONOMIES',
+                        text: "We promote the development of Argentina's regional economies.",
+                        img: '/fotos/evento-4.jpg',
+                        link: '/trading',
+                    },
                     internacionale:{
                         title: 'INTERNATIONALIZE YOUR COMPANY',
                         text: 'We accompany you in every step of the export process.',
                         img: '/fotos/evento-1.png', // reemplazar con tus imágenes reales
-                        link: '/',
-                    },
-                    acrearg:{
-                        title: 'ACREarg',
-                        text: "We promote the development of Argentina's regional economies.",
-                        img: '/fotos/evento-4.avif',
-                        link: '/',
+                        link: '/about',
                     },
                     asistencie:{
                         title: 'TECHNICAL ASSISTANCE TO COMPANIES',
                         text: 'Strengthen the skills of your team',
                         img: '/fotos/evento-5.avif',
-                        link: '/',
+                        link: '/contact',
                     },
                     button:"See More",
                 },

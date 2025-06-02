@@ -2,8 +2,8 @@
 
 export default function VideoSection({video}) {
   return (
-    <section className="w-full py-16 bg-[var(--color-secondary)] flex flex-col items-center justify-center px-4">
-      <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-accent)] mb-8 text-center">
+    <section className="w-full py-16 bg-[var(--color-accent)] flex flex-col items-center justify-center px-4">
+      <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-secondary)] mb-8 text-center">
         {video.title}
       </h2>
 

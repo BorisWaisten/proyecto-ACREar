@@ -4,8 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import clsx from 'clsx';
-import { tradingData } from '@/data/section/trading';
-import { useLanguage } from '@/context/language-context';
 const sliderSettings = {
   dots: true,
   infinite: true,
@@ -16,9 +14,8 @@ const sliderSettings = {
   centerMode: true,
 };
 
-export default function ProductCatalog() {
-  const { lang } = useLanguage();
-  const { products } = tradingData[lang];
+export default function ProductCatalog({trading}) {
+  const products  = [...trading.products]
   const [activeProduct, setActiveProduct] = useState(null);
 
   const handleSelect = (key) => {
@@ -28,7 +25,7 @@ export default function ProductCatalog() {
   return (
     <section className="bg-[var(--color-background)] py-16 px-4">
       <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-primary)] text-center mb-12">
-        CATÁLOGO DE PRODUCTOS
+        {trading.title}
       </h2>
 
       {/* Filtros */}
@@ -93,14 +90,14 @@ export default function ProductCatalog() {
       {/* Catálogo completo */}
       <div className="text-center mt-12">
         <p className="text-[var(--color-primary)] font-semibold text-lg mb-4">
-          Mirá nuestro catálogo completo aquí
+          {trading.cta.text}
         </p>
         <a
           href="/catalogo-acrearg.pdf"
           download
           className="inline-block px-6 py-3 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-secondary)] transition-colors"
         >
-          Descargar catálogo
+          {trading.cta.btn}
         </a>
       </div>
     </section>

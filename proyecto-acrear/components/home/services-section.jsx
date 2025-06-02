@@ -17,13 +17,13 @@ export default function ServicesSection({services}) {
   ];
   return (
     <motion.section
-      className="w-full py-16 px-4 bg-[var(--color-background)] text-center"
+      className="w-full py-16 px-4 bg-[var(--color-secondary)] text-center"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       viewport={{ once: true, amount: 0.2 }}
     >
-      <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-primary)] mb-12">
+      <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-accent)] mb-12">
         {services.title}
       </h2>
 
@@ -31,7 +31,7 @@ export default function ServicesSection({services}) {
         {servicesLocal.map((service, index) => (
           <motion.div
             key={index}
-            className="bg-[var(--color-secondary)] text-white rounded-xl p-6 flex flex-col items-center shadow-md transition hover:scale-[1.02]"
+            className="bg-[var(--color-accent)] text-white rounded-xl p-6 flex flex-col items-center shadow-md transition hover:scale-[1.02]"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
@@ -41,7 +41,7 @@ export default function ServicesSection({services}) {
             }}
             viewport={{ once: true }}
           >
-            <div className="mb-4 text-[var(--color-accent)]">
+            <div className="mb-4 text-[var(--color-secondary)]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -62,7 +62,7 @@ export default function ServicesSection({services}) {
             <p className="text-sm mb-6">{service.description}</p>
 
             <Link href={service.href}>
-              <button className="bg-[var(--color-accent)] hover:brightness-90 text-white font-semibold px-6 py-2 rounded-full transition-all">
+              <button className="bg-[var(--color-primary)] hover:brightness-90 text-white font-semibold px-6 py-2 rounded-full transition-all">
                 {services.button}
               </button>
             </Link>

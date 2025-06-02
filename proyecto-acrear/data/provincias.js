@@ -5,7 +5,7 @@ export const provincias ={
       id: "1",
       name: "Jujuy",
       icons: [
-        "/icons/azucar.png",
+        "/icons/caña-azucar.png",
         "/icons/tabaco.png",
         "/icons/platanos.png",
         "/icons/litio.png",
@@ -177,7 +177,7 @@ export const provincias ={
       icons: [
         "/icons/agricultura.png",
         "/icons/lacteos.png",
-        "/icons/harinas.png",
+        "/icons/cereal.png",
         "/icons/ganaderia.png",
         "/icons/agroindustria.png",
       ],
