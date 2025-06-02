@@ -30,7 +30,7 @@ export default function MissionSection({ about }) {
   ];
 
   return (
-    <section className="w-full px-6 py-24 bg-[var(--color-background)]">
+    <section className="w-full px-6 py-24 ">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col md:h-[65vh] md:flex-row gap-8 p-8 md:p-12 ">
 

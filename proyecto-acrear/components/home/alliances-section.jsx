@@ -28,34 +28,41 @@ export default function NuestraComunidad({ alliances }) {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20">
-      <h2 className="text-3xl md:text-4xl text-center font-bold mb-10 text-[var(--color-primary)]">
-        {alliances.title}
-      </h2>
+    <section className="w-full relative overflow-hidden py-20">
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <Slider {...settings}>
-          {allLogos.map((logo, i) => (
-            <div key={i} className="px-4">
-              <div className="lg:h-[8.5rem] flex items-center justify-center">
-                <Image
-                  src={logo}
-                  alt={`logo-${i}`}
-                  width={120}
-                  height={80}
-                  quality={100}
-                  className="object-contain lg:scale-125 max-h-full max-w-full"
-                />
+
+      {/* Contenido centrado y limitado */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <h2 className="text-3xl md:text-4xl text-center font-bold mb-10 text-[var(--color-primary)]">
+          {alliances.title}
+        </h2>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <Slider {...settings}>
+            {allLogos.map((logo, i) => (
+              <div key={i} className="px-4">
+                <div className="lg:h-[8.5rem] flex items-center justify-center">
+                  <Image
+                    src={logo}
+                    alt={`logo-${i}`}
+                    width={120}
+                    height={80}
+                    quality={100}
+                    className="object-contain lg:scale-125 max-h-full max-w-full"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
-        </Slider>
-      </motion.div>
+            ))}
+          </Slider>
+        </motion.div>
+      </div>
+
+
     </section>
   );
 }

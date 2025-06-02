@@ -7,18 +7,18 @@ export const home = {
             text3:"Desarrollo productivo y comercial con visión global",
         },
         counter: {
-            title: "La región en números",
+            title: "La Camara en la Region",
             stats: [
                 {
                     number: "23",
                     label: "Provincias"
                 },
                 {
-                    number: "50+",
+                    number: "+50",
                     label: "Economías Regionales"
                 },
                 {
-                    number: "30+",
+                    number: "+30",
                     label: "Empresas"
                 }
             ]
@@ -139,18 +139,18 @@ export const home = {
             text3:"Productive and commercial development with a global vision",
         },
         counter: {
-            title: "The Region in Numbers",
+            title: "The Camara in the Region",
             stats: [
                 {
                     number: "23",
                     label: "Provinces"
                 },
                 {
-                    number: "50+",
+                    number: "+50",
                     label: "Regional Economies"
                 },
                 {
-                    number: "30+",
+                    number: "+30",
                     label: "Companies"
                 }
             ]

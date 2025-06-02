@@ -2,7 +2,7 @@
 
 export const tradingData = {
   es: {
-    title: 'CATÁLOGO DE PRODUCTOS',
+    title: 'Catalogo de Productos',
     products: [
       { key: 'miel',        label: 'APICULTURA' },
       { key: 'legumbres',   label: 'LEGUMBRES' },
@@ -21,7 +21,7 @@ export const tradingData = {
     }
   },
   en: {
-    title: 'PRODUCT CATALOG',
+    title: 'Product Catalog',
     products: [
       { key: 'miel',        label: 'APICULTURE' },
       { key: 'legumbres',   label: 'LEGUMS' },

@@ -2,12 +2,8 @@
 
 export default function VideoSection({video}) {
   return (
-    <section className="w-full py-16 bg-[var(--color-accent)] flex flex-col items-center justify-center px-4">
-      <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-secondary)] mb-8 text-center">
-        {video.title}
-      </h2>
-
-      <div className="w-full max-w-5xl aspect-video rounded-xl overflow-hidden shadow-lg border-4 border-[var(--color-secondary)]">
+    <section className="w-full  sm:h-[70vh] md:h-screen sm:p-1 flex flex-col items-center justify-center">
+      <div className="w-full  aspect-video overflow-hidden ">
         <iframe
           className="w-full h-full"
           src="https://www.youtube.com/embed/6OOXn0rcBZI"
