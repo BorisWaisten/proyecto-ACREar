@@ -90,12 +90,12 @@ export const home = {
                             lng: -58.3816,
                         },
                         {
-                            name: 'Depósito Fiscal',
+                            name: 'Oficina de Santa Fe',
                             lat: -31.4201,
                             lng: -64.1888,
                         },
                         {
-                            name: 'Delegación Exterior',
+                            name: 'Oficina de Exterior',
                             lat: 40.7128,
                             lng: -74.0060,
                         },
@@ -222,12 +222,12 @@ export const home = {
                             lng: -58.3816,
                         },
                         {
-                            name: 'Depósito Fiscal',
+                            name: 'Office of Santa Fe',
                             lat: -31.4201,
                             lng: -64.1888,
                         },
                         {
-                            name: 'Delegación Exterior',
+                            name: 'Office of Exterior',
                             lat: 40.7128,
                             lng: -74.0060,
                         },

@@ -1,11 +1,15 @@
 'use client';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 
-
-const mapContainerStyle = {
-  width: '100%',
-  height: '300px',
-};
+// Fix default marker icon issue with Leaflet in React
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png',
+  iconUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-shadow.png',
+});
 
 export default function OfficesSection({ offices }) {
   const locationsLocal = [...offices.locations]
@@ -19,17 +23,24 @@ export default function OfficesSection({ offices }) {
             <h3 className="text-[var(--color-primary)] font-semibold text-lg py-2 bg-[var(--color-accent)]">
               {loc.name}
             </h3>
-            <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
-              <GoogleMap
-                mapContainerStyle={mapContainerStyle}
-                center={{ lat: loc.lat, lng: loc.lng }}
-                zoom={13}
-              >
-                <Marker position={{ lat: loc.lat, lng: loc.lng }} />
-              </GoogleMap>
-            </LoadScript>
+            <MapContainer
+              center={[loc.lat, loc.lng]}
+              zoom={13}
+              style={{ width: '100%', height: '300px' }}
+              scrollWheelZoom={false}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={[loc.lat, loc.lng]}>
+                <Popup>
+                  {loc.name}
+                </Popup>
+              </Marker>
+            </MapContainer>
             <h3 className='text-white'>
-              GOOGLE MAPS
+              OpenStreetMap
             </h3>
           </div>
         ))}
