@@ -40,7 +40,7 @@ export default function EventsSection({ events }) {
   };
 
   return (
-    <section className="w-full h-[50vh] md:h-screen bg-[var(--color-secondary)] relative">
+    <section className="w-full h-screen bg-[var(--color-secondary)] relative">
       <div>
         <Slider {...settings}>
           {eventsLocal.map((event, index) => (
