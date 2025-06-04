@@ -18,19 +18,19 @@ export const aboutData ={
             objectives:[
                 {
                     title:"Sector público",
-                    text:"Fortalecer capacidades empresariales y promocionar producción provincial mediante asesoramiento, articulación institucional, promoción comercial y financiamiento.",
+                    text:"Fortalecer las capacidades empresariales y promocionar la producción provincial a través del asesoramiento estratégico, la articulación institucional, la promoción comercial, la búsqueda de financiamiento y el acompañamiento durante la inserción en los mercados internacionales.",
                 },
                 {
                     title:"Sector privado",
-                    text:"Apoyar el posicionamiento internacional con promoción, financiamiento y representación.",
+                    text:"Asistir al sector privado en su proceso de posicionamiento internacional por medio de la promoción comercial, búsqueda de financiamiento y representación frente a mercados externos y al propio sector público regional.",
                 },
                 {
                     title:"Articulación",
-                    text:"Generar vínculo activo entre sector público y privado.",
+                    text:" Generar un espacio de vinculación entre el sector público y privado, y un espacio de representación  ante las políticas provinciales, regionales y nacionales.",
                 },
                 {
                     title:"Productos",
-                    text:"Promover productos argentinos con valor agregado en el exterior.",
+                    text:"Potenciar la inserción internacional de los productos argentinos mediante la vinculación de los productores con oportunidades de negocios en el exterior, promoviendo el agregado de valor y la identidad territorial.",
                 }     
             ]
         },
