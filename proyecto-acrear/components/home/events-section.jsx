@@ -40,18 +40,18 @@ export default function EventsSection({ events }) {
   };
 
   return (
-    <section className="w-full h-screen bg-[var(--color-secondary)] relative">
+    <section className="w-full h-[90vh] md:h-screen bg-[var(--color-secondary)] relative">
       <div>
         <Slider {...settings}>
           {eventsLocal.map((event, index) => (
             <div key={index}>
-              <div className="relative overflow-hidden shadow-lg">
+              <div className="relative overflow-hidden h-full md:h-screen shadow-lg">
                 <Image
                   src={event.img}
                   alt={event.title}
                   width={1200}
                   height={500}
-                  className="object-cover w-full h-[50vh] md:h-screen"
+                  className="object-cover w-full h-[90vh] md:h-screen"
                 />
                 <div className="absolute inset-0 bg-black/70 flex flex-col justify-center items-center text-white text-center p-4">
                   <h3 className="text-sm md:text-2xl font-bold mb-2">{event.title}</h3>
