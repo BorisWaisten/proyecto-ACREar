@@ -5,10 +5,22 @@ import { useLanguage } from '@/context/language-context';
 import { contactData } from '@/data/section/contact';
 import Image from 'next/image';
 import AnimatedBackground from '@/components/animations/AnimatedBackground';
+import { motion } from 'framer-motion';
 
 export default function ContactPage() {
   const { lang } = useLanguage();
   const t = contactData[lang];
+
+  const pageVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 }
+  };
+
+  const contentVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
 
   return (
     <AnimatedBackground>
@@ -27,14 +39,51 @@ export default function ContactPage() {
 
         {/* Content with relative positioning to appear above the background */}
         <div className="relative z-20 w-full">
-          <h2 className="text-[1.5rem] sm:text-[2rem] md:text-[3rem] font-bold text-white italic my-12 text-center">
+          <motion.h2 
+            className="text-[1.5rem] sm:text-[2rem] md:text-[3rem] font-bold text-white italic my-12 text-center"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
             {t.title}
-          </h2>
+          </motion.h2>
 
-          <div className="flex flex-col md:flex-row w-full max-w-7xl gap-8 mx-auto">
-            <ContactInfo className="flex-1" contactData={t}/>
-            <ContactForm className="flex-1" contactData={t}/>
-          </div>
+          <motion.div 
+            className="flex flex-col md:flex-row w-full max-w-7xl gap-8 mx-auto"
+            variants={{
+              initial: { opacity: 0, y: 20 },
+              animate: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delayChildren: 0.4,
+                  staggerChildren: 0.2
+                }
+              }
+            }}
+            initial="initial"
+            animate="animate"
+          >
+            <motion.div 
+              className="flex-1"
+              variants={{
+                initial: { opacity: 0, x: -20 },
+                animate: { opacity: 1, x: 0 }
+              }}
+            >
+              <ContactInfo contactData={t}/>
+            </motion.div>
+            
+            <motion.div 
+              className="flex-1"
+              variants={{
+                initial: { opacity: 0, x: 20 },
+                animate: { opacity: 1, x: 0 }
+              }}
+            >
+              <ContactForm contactData={t}/>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </AnimatedBackground>

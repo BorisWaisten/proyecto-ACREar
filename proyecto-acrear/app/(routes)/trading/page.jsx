@@ -4,21 +4,56 @@ import ProductCatalog from "@/components/trading/product-catalog";
 import { tradingData } from "@/data/section/trading";
 import { useLanguage } from "@/context/language-context";
 import AnimatedBackground from '@/components/animations/AnimatedBackground';
+import { motion } from 'framer-motion';
 
 export default function TradingPage() {
     const { lang } = useLanguage();
     
+    const pageVariants = {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        exit: { opacity: 0 }
+    };
+
+    const contentVariants = {
+        initial: { opacity: 0, y: 20 },
+        animate: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    };
+    
     return (
-        <section>
-            <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/fotos/trading.webp)', }}>
+        <motion.section
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={pageVariants}
+            transition={{ duration: 0.4 }}
+        >
+            <motion.div 
+                className="relative h-[50vh] md:h-screen bg-cover bg-center" 
+                style={{ backgroundImage: 'url(/fotos/trading.webp)', }}
+                variants={contentVariants}
+            >
                 <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent flex items-center justify-center">
-                    <h1 className="text-[1.5rem] sm:text-[2rem] md:text-[3rem] w-full text-center p-4 font-bold text-white">Trading</h1>
+                    <motion.h1 
+                        className="text-[1.5rem] sm:text-[2rem] md:text-[3rem] w-full text-center p-4 font-bold text-white"
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 0.6 }}
+                    >
+                        Trading
+                    </motion.h1>
                 </div>
-            </div>
+            </motion.div>
 
             <AnimatedBackground>
-                <ProductCatalog trading={tradingData[lang]}/>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.4, duration: 0.6 }}
+                >
+                    <ProductCatalog trading={tradingData[lang]}/>
+                </motion.div>
             </AnimatedBackground>
-        </section>
+        </motion.section>
     );
 }

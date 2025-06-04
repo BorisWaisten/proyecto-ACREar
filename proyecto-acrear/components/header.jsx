@@ -37,46 +37,70 @@ export default function Header() {
         elevation={0}
       >
         {/* Logo y navbar alineados horizontalmente */}
-        <Toolbar sx={{  display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: { xs: 2, md: 4 } }}>
+        <Toolbar 
+          sx={{  
+            display: 'flex', 
+            justifyContent: 'space-between', 
+            alignItems: 'center', 
+            px: { xs: 2, md: 2, lg: 4 },
+            minHeight: { md: '70px' },
+            gap: { md: 2, lg: 4 }
+          }}
+        >
           {/* Logo a la izquierda */}
-          <Box className="flex items-center pl-2 p-1 md:pl-6 md:py-2">
+          <Box 
+            className="flex items-center p-1 md:py-2"
+            sx={{ 
+              flexShrink: 0,
+              width: { md: '140px', lg: '180px' }
+            }}
+          >
             <Link href="/">
               <Image
                 src="/logos/logo-acrear.svg"
                 alt="Logo"
-                width={160} height={70} priority quality={100}
-                className="w-32 sm:w-36 scale-125 sm:scale-125 md:w-40 md:scale-[1.6] md:h-20"
+                width={160} height={70} 
+                priority quality={100}
+                className="w-32 pl-2  sm:w-36 scale-150 sm:scale-125 md:w-32 md:scale-110 lg:w-36 lg:scale-[1.6] lg:h-16"
               />
             </Link>
           </Box>
 
           {/* Barra azul a la derecha */}
           <Box
-            className="hidden md:flex"
+            className="hidden md:flex "
             sx={{
               alignItems: 'center',
               background: 'var(--color-primary)',
               borderRadius: '2rem',
-              px: 4,
-              py: 1.5,
+              px: { md: 2, lg: 3 },
+              py: { md: 1, lg: 1.5 },
               boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
               justifyContent: 'space-between',
-              gap: 3
+              gap: { md: 1, lg: 2 },
+              maxWidth: { md: 'calc(100% - 160px)', lg: 'none' },
+              flexGrow: { md: 0, lg: 0 }
             }}
           >
             {/* NavItems */}
-            <Box sx={{ display: 'flex', gap: 4 }}>
+            <Box sx={{ 
+              display: 'flex', 
+              gap: { md: 1, lg: 3 },
+              flexShrink: 1
+            }}>
               {navItems.map((item) => (
                 <Link key={item.key} href={item.href}>
                   <Button
                     sx={{
                       color: 'white',
                       fontFamily: "'Roboto', sans-serif",
-                      fontSize: '1rem',
+                      fontSize: { md: '0.85rem', lg: '1rem' },
                       fontWeight: 700,
                       textTransform: 'none',
                       background: 'transparent',
                       whiteSpace: 'nowrap',
+                      padding: { md: '4px 6px', lg: '6px 12px' },
+                      minWidth: { md: 'auto' },
                       '&:hover': {
                         backgroundColor: 'rgba(255,255,255,0.08)',
                         color: 'var(--color-accent)'
@@ -90,16 +114,24 @@ export default function Header() {
               ))}
             </Box>
             {/* Banderas de idioma */}
-            <Box className="flex items-center gap-2">
+            <Box className="flex items-center gap-0.5 lg:gap-2">
               <IconButton 
                 onClick={()=>handleLangChange('en')}
-                sx={{ color: 'white', '&:hover': { backgroundColor: 'rgba(255,255,255,0.08)' } }}
+                sx={{ 
+                  color: 'white', 
+                  padding: { md: '4px', lg: '8px' },
+                  '&:hover': { backgroundColor: 'rgba(255,255,255,0.08)' } 
+                }}
               >
                 <SvgEn/>
               </IconButton>
               <IconButton 
                 onClick={()=>handleLangChange('es')}
-                sx={{ color: 'white', '&:hover': { backgroundColor: 'rgba(255,255,255,0.08)' } }}
+                sx={{ 
+                  color: 'white', 
+                  padding: { md: '4px', lg: '8px' },
+                  '&:hover': { backgroundColor: 'rgba(255,255,255,0.08)' } 
+                }}
               >
                 <SvgEs/>
               </IconButton>
