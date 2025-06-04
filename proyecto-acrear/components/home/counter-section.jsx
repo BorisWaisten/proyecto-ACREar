@@ -80,7 +80,7 @@ export default function CounterSection({ counter }) {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
+          className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-12"
         >
           {counter.stats.map((stat, index) => (
             <motion.div 
@@ -92,14 +92,14 @@ export default function CounterSection({ counter }) {
               }}
               onHoverStart={() => setHoveredIndex(index)}
               onHoverEnd={() => setHoveredIndex(null)}
-              className="relative flex flex-col items-center justify-center p-8 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg transform transition-all duration-500"
+              className="relative flex flex-col items-center justify-center p-2 sm:p-4 md:p-8 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg transform transition-all duration-500"
             >
               {/* Efecto de brillo al hover */}
               <div className={`absolute inset-0 rounded-xl bg-gradient-to-r from-[var(--color-accent)]/10 to-[var(--color-primary)]/10 opacity-0 transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-100' : ''}`} />
               
               {/* Número con animación */}
               <motion.div 
-                className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2"
+                className="text-2xl sm:text-3xl md:text-5xl font-bold text-[var(--color-accent)] mb-2"
                 animate={hoveredIndex === index ? { scale: [1, 1.1, 1] } : {}}
                 transition={{ duration: 0.3 }}
               >
@@ -107,11 +107,11 @@ export default function CounterSection({ counter }) {
               </motion.div>
 
               {/* Línea decorativa */}
-              <div className="w-16 h-1 bg-[var(--color-accent)]/30 mb-4" />
+              <div className="w-10 sm:w-16 h-1 bg-[var(--color-accent)]/30 mb-2 sm:mb-4" />
 
               {/* Etiqueta con efecto de hover */}
               <motion.div 
-                className="text-lg md:text-xl text-[var(--color-primary)] text-center"
+                className="text-[0.6rem] sm:text-base md:text-xl text-[var(--color-primary)] text-center"
                 animate={hoveredIndex === index ? { y: -2 } : {}}
                 transition={{ duration: 0.2 }}
               >

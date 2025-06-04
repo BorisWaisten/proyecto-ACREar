@@ -10,7 +10,7 @@ export default function MapSection({ regional, provincias }) {
 
   return (
     <motion.section
-      className="w-full relative overflow-hidden py-10 sm:py-16"
+      className="w-full h-[50vh] md:h-screen relative overflow-hidden py-10 sm:py-16"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -23,10 +23,10 @@ export default function MapSection({ regional, provincias }) {
           {regional.title}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-8">
           {/* Mapa interactivo */}
           <motion.div
-            className="w-full h-full rounded-xl overflow-hidden"
+            className="w-full h-[30vh] md:h-full pl-2 scale-[2] sm:pl-0 sm:scale-100 rounded-xl overflow-hidden"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -44,7 +44,7 @@ export default function MapSection({ regional, provincias }) {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="flex flex-col w-[90%] sm:w-full text-[var(--color-primary)] justify-center mx-auto">
+              <div className="flex flex-col w-full  text-[var(--color-primary)] justify-center ">
                 <p className="text-lg md:pb-6 md:text-2xl font-bold text-center">
                   {provincia.name}
                 </p>
@@ -55,9 +55,9 @@ export default function MapSection({ regional, provincias }) {
                       alt={act}
                       width={60}
                       height={60}
-                      className="mb-2"
+                      className="mb-2 w-10 h-10"
                     />
-                    <p className="text-sm text-center">{act}</p>
+                    <p className="text-xs sm:text-sm text-balance">{act}</p>
                   </div>
                 ))}
               </div>

@@ -46,14 +46,14 @@ export default function NuestraComunidad({ alliances }) {
           <Slider {...settings}>
             {allLogos.map((logo, i) => (
               <div key={i} className="px-4">
-                <div className="lg:h-[8.5rem] flex items-center justify-center">
+                <div className="sm:h-[8.5rem] flex items-center justify-center">
                   <Image
                     src={logo}
                     alt={`logo-${i}`}
                     width={120}
                     height={80}
                     quality={100}
-                    className="object-contain lg:scale-125 max-h-full max-w-full"
+                    className="object-contain h-14 scale-150  sm:scale-125 max-h-full max-w-full"
                   />
                 </div>
               </div>
