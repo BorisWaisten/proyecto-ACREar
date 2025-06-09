@@ -49,7 +49,7 @@ export default function MissionSection({ about }) {
   return (
     <section className="w-full sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col md:h-[70vh] md:flex-row gap-8 p-8 md:p-12">
+        <div className="flex flex-col md:h-[70vh] md:flex-row md:items-center gap-8 p-8 md:p-12">
 
           {/* Sidebar */}
           <div className="flex flex-row justify-center md:flex-col gap-4 md:w-[280px]">
@@ -71,7 +71,7 @@ export default function MissionSection({ about }) {
           </div>
 
           {/* Contenido activo */}
-          <div className="flex flex-col gap-4 md:w-[80%] bg-white  md:p-10 rounded-xl border border-[var(--color-primary)] shadow-sm transition-all duration-500 animate-fade-in">
+          <div className="flex flex-col gap-4 lg:w-[50%] lg:h-[78%] md:mx-auto bg-white  md:p-2 rounded-xl border border-[var(--color-primary)] shadow-sm transition-all duration-500 animate-fade-in">
             <div className="flex items-center gap-4 p-4">
               <div className="p-2 flex rounded-full">
                 <svg width="32" height="32" className="md:w-12 md:h-12" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -85,9 +85,9 @@ export default function MissionSection({ about }) {
               </h3>
             </div>
             
-            <div className="md:h-[calc(70vh-12rem)] h-[calc(66vh-22rem)] w-[80%] mx-auto text-justify overflow-y-auto">
+            <div className=" w-[90%]  h-full mx-auto overflow-y-auto">
               <div className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-                <p className="text-sm md:text-lg text-[var(--color-primary)] whitespace-pre-line leading-relaxed">
+                <p className="text-sm md:text-[0.9rem] text-justify lg:text-[1.13rem] text-[var(--color-primary)] whitespace-pre-line leading-relaxed">
                   {currentContent}
                 </p>
               </div>
@@ -95,7 +95,7 @@ export default function MissionSection({ about }) {
             
             {/* Paginación */}
             {totalPages > 1 && (
-              <div className="h-12 flex items-center justify-center gap-2">
+              <div className="h-12 flex items-center  justify-center gap-2">
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}

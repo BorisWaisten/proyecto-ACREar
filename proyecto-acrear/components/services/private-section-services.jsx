@@ -65,15 +65,19 @@ export default function PrivateSectorServices({ privateServices , title}) {
           {privateServices.map((item, i) => (
             <div key={i} className="px-2">
               <motion.div
-                className="bg-[#214D64] h-[10rem] text-white p-6 rounded-xl border-2 border-[#CD8A53] "
+                className="bg-[#214D64] h-[12rem] text-white p-6 rounded-xl border-2 border-[#CD8A53] "
                 custom={i}
                 variants={fadeInUp}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                <h4 className="text-sm font-bold text-center mb-2">{item.title}</h4>
-                <p className="text-sm text-center leading-relaxed">{item.description}</p>
+                <h4 className="text-lg font-bold text-center text-balance mb-2">{item.title}</h4>
+                <p className="text-sm text-justify leading-relaxed"
+                  style={{ 
+                    textJustify: 'inter-word'
+                  }}
+                >{item.description}</p>
               </motion.div>
             </div>
           ))}
@@ -118,8 +122,14 @@ export default function PrivateSectorServices({ privateServices , title}) {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h4 className="text-md sm:text-lg font-bold text-center mb-2">{item.title}</h4>
-            <p className="text-sm text-center leading-relaxed">{item.description}</p>
+            <h4 className="text-md text-balance font-bold text-center mb-3">{item.title}</h4>
+            <p className="text-sm text-justify leading-relaxed hyphens-auto" 
+               style={{ 
+                 wordSpacing: '-0.13em',
+                 textJustify: 'inter-word'
+               }}>
+              {item.description}
+            </p>
           </motion.div>
         ))}
       </div>

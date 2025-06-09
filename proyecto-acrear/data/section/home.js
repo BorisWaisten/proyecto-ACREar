@@ -7,18 +7,18 @@ export const home = {
             text3:"Desarrollo productivo y comercial con visión global",
         },
         counter: {
-            title: "La Camara en la Region",
+            title: "La Cámara en la Región",
             stats: [
                 {
                     number: "23",
                     label: "Provincias"
                 },
                 {
-                    number: "+50",
+                    number: "+20",
                     label: "Economías Regionales"
                 },
                 {
-                    number: "+30",
+                    number: "+40",
                     label: "Empresas"
                 }
             ]
@@ -44,6 +44,13 @@ export const home = {
                 label: 'Empresas Vinculadas',
                 logos: [
                 '/empresas/empresa-1.png',
+                '/empresas/empresa-2.png',
+                '/empresas/empresa-3.png',
+                '/empresas/empresa-4.png',
+                '/empresas/empresa-5.png',
+                '/empresas/empresa-6.png',
+                '/empresas/empresa-7.png',
+                '/empresas/empresa-8.png',
                 ],
             },
             entities:{
@@ -85,7 +92,7 @@ export const home = {
             title:"Oficinas",
                     locations:[
                         {
-                            name: 'Oficina Central',
+                            name: 'Oficina CABA',
                             lat: -34.6037,
                             lng: -58.3816,
                         },
@@ -146,11 +153,11 @@ export const home = {
                     label: "Provinces"
                 },
                 {
-                    number: "+50",
+                    number: "+20",
                     label: "Regional Economies"
                 },
                 {
-                    number: "+30",
+                    number: "+40",
                     label: "Companies"
                 }
             ]
@@ -217,17 +224,17 @@ export const home = {
             title:"Our Offices",
                     locations:[
                         {
-                            name: 'Oficce Central',
+                            name: 'CABA Office',
                             lat: -34.6037,
                             lng: -58.3816,
                         },
                         {
-                            name: 'Office of Santa Fe',
+                            name: 'Santa Fe Office',
                             lat: -31.4201,
                             lng: -64.1888,
                         },
                         {
-                            name: 'Office of Exterior',
+                            name: 'Exterior Office',
                             lat: 40.7128,
                             lng: -74.0060,
                         },

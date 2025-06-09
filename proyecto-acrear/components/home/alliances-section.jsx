@@ -16,13 +16,14 @@ export default function NuestraComunidad({ alliances }) {
   const settings = {
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 1500,
-    slidesToShow: 7,
+    autoplaySpeed: 2000,
+    slidesToShow: 5,
     slidesToScroll: 1,
     responsive: [
-      { breakpoint: 640, settings: { slidesToShow: 4 } },
-      { breakpoint: 768, settings: { slidesToShow: 4 } },
-      { breakpoint: 1024, settings: { slidesToShow: 7 } },
+      { breakpoint: 640, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 3 } },
+      { breakpoint: 1024, settings: { slidesToShow: 4 } },
+      { breakpoint: 1280, settings: { slidesToShow: 5 } },
     ],
     arrows: false,
   };
@@ -46,14 +47,14 @@ export default function NuestraComunidad({ alliances }) {
           <Slider {...settings}>
             {allLogos.map((logo, i) => (
               <div key={i} className="px-4">
-                <div className="sm:h-[8.5rem] flex items-center justify-center">
+                <div className="h-28 sm:h-32 flex items-center justify-center p-4">
                   <Image
                     src={logo}
                     alt={`logo-${i}`}
-                    width={120}
-                    height={80}
+                    width={180}
+                    height={120}
                     quality={100}
-                    className="object-contain h-14 scale-150  sm:scale-125 max-h-full max-w-full"
+                    className="object-contain w-full h-full max-w-[180px] max-h-[120px]"
                   />
                 </div>
               </div>

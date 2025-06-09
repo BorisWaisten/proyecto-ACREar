@@ -103,7 +103,7 @@ export default function CounterSection({ counter }) {
                 animate={hoveredIndex === index ? { scale: [1, 1.1, 1] } : {}}
                 transition={{ duration: 0.3 }}
               >
-                {stat.number.includes('+') ? `${counts[index]}+` : counts[index]}
+                {stat.number.includes('+') ? `+${counts[index]}` : counts[index]}
               </motion.div>
 
               {/* Línea decorativa */}

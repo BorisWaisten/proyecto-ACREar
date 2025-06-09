@@ -11,7 +11,7 @@ export const aboutData ={
         },
         objectiveGeneral:{
             title:"OBJETIVO GENERAL",
-            text:"Fortalecer las capacidades institucionales y productivas del sector público y privado, impulsando la internacionalización de las economías regionales.",
+            text:"Mejorar las capacidades institucionales y productivas del sector público y privado, impulsando la internacionalización de las economías regionales.",
         },
         objectiveSpecifics:{
             title:"OBJETIVOS ESPECÍFICOS",
@@ -26,7 +26,7 @@ export const aboutData ={
                 },
                 {
                     title:"Articulación",
-                    text:" Generar un espacio de vinculación entre el sector público y privado, y un espacio de representación  ante las políticas provinciales, regionales y nacionales.",
+                    text:"Generar un espacio de vinculación entre el sector público y privado, y un espacio de representación  ante las políticas provinciales, regionales y nacionales.",
                 },
                 {
                     title:"Productos",
