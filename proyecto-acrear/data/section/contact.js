@@ -3,7 +3,7 @@
 export const contactData       = {
   es: {
     contactInfo: '¿DÓNDE NOS PODÉS ENCONTRAR?',
-    title: 'Contáctanos',
+    title: 'Contactanos',
     locations: [
       {
         title: 'SEDE CABA',

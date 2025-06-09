@@ -40,7 +40,7 @@ export default function ContactPage() {
         {/* Content with relative positioning to appear above the background */}
         <div className="relative z-20 w-full">
           <motion.h2 
-            className="text-[1.5rem] sm:text-[2rem] md:text-[3rem] font-bold text-white italic my-12 text-center"
+            className="text-[1.5rem] sm:text-[2rem] md:text-[3rem] font-bold text-white  my-12 text-center"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}

@@ -29,16 +29,21 @@ export default function PrivateSectorServices({ privateServices , title}) {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
+          fade: true,
         },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 2,
+          fade: false,
+          centerMode: false,
         },
       },
       {
-        breakpoint: 1024,
+        breakpoint: 768,
         settings: 'unslick',
       },
     ],
@@ -55,17 +60,17 @@ export default function PrivateSectorServices({ privateServices , title}) {
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <h2 className="text-center text-lg font-semibold text-[var(--color-secondary)]  mb-8 tracking-wide">
+      <h2 className="text-center text-lg sm:text-2xl uppercase font-semibold text-[var(--color-secondary)]  mb-8 tracking-wide">
         {title}
       </h2>
 
       {/* Mobile Carousel */}
-      <div className="block lg:hidden relative">
+      <div className="block md:hidden relative">
         <Slider {...settings}>
           {privateServices.map((item, i) => (
             <div key={i} className="px-2">
               <motion.div
-                className="bg-[#214D64] h-[12rem] text-white p-6 rounded-xl border-2 border-[#CD8A53] "
+                className="bg-[#214D64] h-[13rem] sm:h-[14rem] md:h-[15rem] text-white p-4 sm:p-5 md:p-6 mx-1 sm:mx-2 rounded-xl border-2 border-[#CD8A53] shadow-lg"
                 custom={i}
                 variants={fadeInUp}
                 initial="hidden"
@@ -111,7 +116,7 @@ export default function PrivateSectorServices({ privateServices , title}) {
       </div>
 
       {/* Desktop Grid */}
-      <div className="hidden lg:grid grid-cols-4 gap-6 justify-items-center">
+      <div className="hidden md:grid grid-cols-4 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
         {privateServices.map((item, i) => (
           <motion.div
             key={i}

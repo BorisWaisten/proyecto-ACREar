@@ -14,14 +14,16 @@ const ContactForm = ({ contactData }) => {
   const inputStyle = {
     bgcolor: 'var(--color-background)',
     borderRadius: 1,
-    '& .MuiOutlinedInput-notchedOutline': {
-      borderColor: 'rgb(var(--color-primary))',
-    },
-    '&:hover .MuiOutlinedInput-notchedOutline': {
-      borderColor: 'rgb(var(--color-secondary))',
-    },
-    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-      borderColor: 'rgb(var(--color-primary))',
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        border: 'none',
+      },
+      '&:hover fieldset': {
+        border: 'none',
+      },
+      '&.Mui-focused fieldset': {
+        border: 'none',
+      },
     },
   };
 
@@ -57,7 +59,7 @@ const ContactForm = ({ contactData }) => {
         display: 'flex',
         flexDirection: 'column',
         gap: 2,
-        width: { xs: '100%', md: '50%' },
+        width: { xs: '100%', md: '70%', xl: '70%' },
         mx: 'auto',
       }}
     >

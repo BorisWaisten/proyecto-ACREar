@@ -14,7 +14,7 @@ export default function PublicSectorServices({ publicServices, title }) {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    fade: true,
+    fade: false,
     cssEase: 'ease-in-out',
     customPaging: function(i) {
       return (
@@ -30,18 +30,24 @@ export default function PublicSectorServices({ publicServices, title }) {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
+          fade: true,
         },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 2,
+          fade: false,
+          centerMode: false,
         },
       },
       {
-        breakpoint: 1024,
+        breakpoint: 768,
         settings: 'unslick',
       },
+
     ],
   };
 
@@ -52,25 +58,26 @@ export default function PublicSectorServices({ publicServices, title }) {
 
   return (
     <section className=" py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <h2 className="text-center text-lg font-semibold text-[var(--color-secondary)]  mb-8 tracking-wide">
+      <h2 className="text-center text-lg sm:text-2xl uppercase font-semibold text-[var(--color-secondary)]  mb-8 tracking-wide">
         {title}
       </h2>
 
       {/* Mobile Carousel */}
-      <div className="block lg:hidden relative">
+      <div className="block md:hidden relative">
         <Slider {...settings}>
           {publicServices.map((item, i) => (
-            <div key={i} className="px-2">
+            <div key={i} className="px-1 sm:px-2">
               <motion.div
-                className="bg-[#214D64] h-[12rem] text-white p-6 rounded-xl border-2 border-[#CD8A53] "
+                className="bg-[#214D64] h-[13rem] sm:h-[14rem] md:h-[15rem] text-white p-4 sm:p-5 md:p-6 mx-1 sm:mx-2 rounded-xl border-2 border-[#CD8A53] shadow-lg"
                 variants={fadeInUp}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                <h4 className="text-lg font-bold text-center text-balance mb-2">{item.title}</h4>
-                <p className="text-sm text-justify leading-relaxed"
+                <h4 className="text-base sm:text-lg font-bold text-center text-balance mb-2 sm:mb-3">{item.title}</h4>
+                <p className="text-xs sm:text-sm text-justify leading-relaxed hyphens-auto"
                   style={{ 
+                    wordSpacing: '-0.08em',
                     textJustify: 'inter-word'
                   }}
                 >{item.description}</p>
@@ -103,11 +110,25 @@ export default function PublicSectorServices({ publicServices, title }) {
           .slick-dots li.slick-active button {
             opacity: 1;
           }
+          
+          /* Tablet optimizations */
+          @media (min-width: 640px) and (max-width: 1023px) {
+            .slick-track {
+              display: flex;
+              align-items: stretch;
+            }
+            .slick-slide {
+              height: auto;
+            }
+            .slick-slide > div {
+              height: 100%;
+            }
+          }
         `}</style>
       </div>
 
       {/* Desktop: pirámide inversa */}
-      <div className="hidden lg:flex flex-col items-center space-y-10">
+      <div className="hidden md:flex flex-col items-center space-y-10">
         {/* Fila superior (3) */}
         <div className="flex justify-center gap-6 lg:w-[75%] ">
           {publicServices.slice(0, 3).map((item, i) => (
@@ -133,7 +154,7 @@ export default function PublicSectorServices({ publicServices, title }) {
         </div>
 
         {/* Fila inferior centrada (2) */}
-        <div className="flex justify-center gap-6 lg:w-[49%] ">
+        <div className="flex justify-center gap-6 md:w-[65%] lg:w-[49%] ">
           {publicServices.slice(3).map((item, j) => (
             <motion.div
               key={j + 3}

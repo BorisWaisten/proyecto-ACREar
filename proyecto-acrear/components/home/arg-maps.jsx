@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './about.css';
 
 export default function ArgMaps({onSelect }) {
-    const [selected, setSelected] = useState(null);
+    const [selected, setSelected] = useState("1");
 
     const handleProvince = (id) => {
         setSelected(id);
@@ -11,7 +11,7 @@ export default function ArgMaps({onSelect }) {
     };
 
     return (
-        <svg  fill="#7a756f" className="w-full h-full md:w-[80vh] lg:w-[80vh] md:h-full lg:h-full" 
+        <svg  fill="#7a756f" className="w-full h-full sm:w-[55vh] md:w-[60vh] lg:w-[80vh] md:h-full lg:h-full" 
         height="850" 
         stroke="black" 
         strokeLinecap="round" 

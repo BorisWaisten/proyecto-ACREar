@@ -10,7 +10,7 @@ export default function MapSection({ regional, provincias }) {
 
   return (
     <motion.section
-      className="w-full h-[50vh] md:h-screen relative overflow-hidden py-10 sm:py-16"
+      className="w-full h-[50vh] sm:h-[70vh] md:h-[70vh] lg:h-screen relative overflow-hidden py-10 sm:py-16"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -26,7 +26,7 @@ export default function MapSection({ regional, provincias }) {
         <div className="grid grid-cols-2 md:grid-cols-2 gap-8">
           {/* Mapa interactivo */}
           <motion.div
-            className="w-full h-[30vh] md:h-full pl-2 scale-[2] sm:pl-0 sm:scale-100 rounded-xl overflow-hidden"
+            className="w-full h-[30vh] sm:h-full md:h-full pl-2 scale-[2] sm:pl-0 sm:scale-100 rounded-xl overflow-hidden"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}

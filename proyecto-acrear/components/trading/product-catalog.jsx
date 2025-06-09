@@ -16,7 +16,7 @@ const sliderSettings = {
 
 export default function ProductCatalog({trading}) {
   const products  = [...trading.products]
-  const [activeProduct, setActiveProduct] = useState(null);
+  const [activeProduct, setActiveProduct] = useState(products[0].key);
 
   const handleSelect = (key) => {
     setActiveProduct((prev) => (prev === key ? null : key));
