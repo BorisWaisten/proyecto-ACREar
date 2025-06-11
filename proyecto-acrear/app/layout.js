@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className='overflow-x-hidden '>
+      <body className='overflow-x-hidden scroll-smooth sm:scroll-auto'>
         <LanguageProvider>
           <Layout>
             {children}
