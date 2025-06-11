@@ -6,8 +6,9 @@ import Layout from '../components/layout';
 
 
 export const metadata = {
-  title: 'ACREar',
+  title: 'ACREarg',
   description: 'Cámara Argentina de Economías Regionales',
+  
 };
 
 export default function RootLayout({ children }) {
