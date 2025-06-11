@@ -64,7 +64,7 @@ export default function AboutSection({ about }) {
   return (
     <section 
       ref={containerRef}
-      className="relative h-[250vh] md:h-[400vh] overflow-hidden"
+      className="relative h-[250vh] md:h-[400vh] overflow-hidden scroll-smooth"
     >
        
        <motion.div 
@@ -73,7 +73,7 @@ export default function AboutSection({ about }) {
            opacity: containerVisibility,
            x: isMobile ? slideX : 0, // Aplica slide solo en móvil
            pointerEvents: scrollYProgress.get() > 0 && scrollYProgress.get() < 1 ? 'auto' : 'none',
-           zIndex: scrollYProgress.get() > 0 && scrollYProgress.get() < 1 ? 50 : -1
+           zIndex: scrollYProgress.get() > 0 && scrollYProgress.get() < 1 ? 5 : -1
          }}
        >
          
