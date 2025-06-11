@@ -75,7 +75,7 @@ export default function EventsSection({ events }) {
 
   return (
     <motion.section 
-      className="w-full h-[90vh] md:h-screen bg-[var(--color-secondary)] relative"
+      className="w-full min-h-[600px] md:h-screen bg-[var(--color-secondary)] relative"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -100,7 +100,7 @@ export default function EventsSection({ events }) {
                     alt={event.title}
                     width={1200}
                     height={500}
-                    className="object-cover w-full h-[90vh] md:h-screen"
+                    className="object-cover w-full min-h-[600px] md:h-screen"
                   />
                 </motion.div>
                 <motion.div 

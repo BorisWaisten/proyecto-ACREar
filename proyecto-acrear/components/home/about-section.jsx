@@ -64,7 +64,7 @@ export default function AboutSection({ about }) {
   return (
     <section 
       ref={containerRef}
-      className="relative h-[250vh] md:h-[400vh] overflow-hidden scroll-smooth"
+      className="relative h-[2000px] md:h-[3000px] overflow-hidden scroll-smooth"
     >
        
        <motion.div 

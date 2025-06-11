@@ -42,7 +42,7 @@ export default function VideoSection({video}) {
   return (
     <motion.section 
       ref={containerRef}
-      className="relative w-full h-auto md:h-[70vh] lg:h-screen p-2 md:p-1 flex flex-col items-center justify-center overflow-hidden"
+      className="relative w-full h-auto md:min-h-[500px] lg:h-screen p-2 md:p-1 flex flex-col items-center justify-center overflow-hidden"
       style={{
         opacity: sectionOpacity,
         scale: sectionScale,
