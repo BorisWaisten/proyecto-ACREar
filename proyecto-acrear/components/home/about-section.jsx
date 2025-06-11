@@ -24,24 +24,24 @@ export default function AboutSection({ about }) {
     offset: ["start start", "end start"]
   });
 
-  // Logo background transformations - más suave
-  const logoScale = useTransform(scrollYProgress, [0, 0.4, 0.7, 1], [1.2, 1.05, 0.95, 0.85]);
+  // Logo background transformations - más suave y sin escala en móvil
+  const logoScale = useTransform(scrollYProgress, [0, 0.4, 0.7, 1], isMobile ? [1, 1, 1, 1] : [1.2, 1.05, 0.95, 0.85]);
   const logoOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.4]);
   
   // Dark overlay más gradual
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.3, 0.6, 0.9], [0, 0.3, 0.6, 0.75]);
   
-  // Content animations - transiciones más suaves y graduales
+  // Content animations - sin escala en móvil para evitar zoom
   const titleOpacity = useTransform(scrollYProgress, [0.15, 0.35, 0.6], [0, 1, 1]);
-  const titleScale = useTransform(scrollYProgress, [0.15, 0.35], [1.2, 1]);
+  const titleScale = useTransform(scrollYProgress, [0.15, 0.35], isMobile ? [1, 1] : [1.2, 1]);
   const titleY = useTransform(scrollYProgress, [0.15, 0.35], [30, 0]);
   
   const contentOpacity = useTransform(scrollYProgress, [0.25, 0.5, 0.8], [0, 1, 1]);
-  const contentScale = useTransform(scrollYProgress, [0.25, 0.5], [1.15, 1]);
+  const contentScale = useTransform(scrollYProgress, [0.25, 0.5], isMobile ? [1, 1] : [1.15, 1]);
   const contentY = useTransform(scrollYProgress, [0.25, 0.5], [25, 0]);
   
   const finalTextOpacity = useTransform(scrollYProgress, [0.2, 0.25, 0.9], [0, 1, 1]);
-  const finalTextScale = useTransform(scrollYProgress, [0.2, 0.25], [1.1, 1]);
+  const finalTextScale = useTransform(scrollYProgress, [0.2, 0.25], isMobile ? [1, 1] : [1.1, 1]);
   const finalTextY = useTransform(scrollYProgress, [0.2, 0.25], [20, 0]);
 
   // Control de visibilidad del container fijo - con slide lateral para móvil
@@ -73,7 +73,9 @@ export default function AboutSection({ about }) {
            opacity: containerVisibility,
            x: isMobile ? slideX : 0, // Aplica slide solo en móvil
            pointerEvents: scrollYProgress.get() > 0 && scrollYProgress.get() < 1 ? 'auto' : 'none',
-           zIndex: scrollYProgress.get() > 0 && scrollYProgress.get() < 1 ? 5 : -1
+           zIndex: scrollYProgress.get() > 0 && scrollYProgress.get() < 1 ? 5 : -1,
+           transform: isMobile ? 'translate3d(0,0,0)' : undefined, // Hardware acceleration para móvil
+           willChange: isMobile ? 'transform, opacity' : undefined
          }}
        >
          

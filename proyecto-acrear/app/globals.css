@@ -51,6 +51,8 @@ html {
 body {
   margin: 0;
   padding: 0;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling en iOS */
+  overscroll-behavior: none; /* Evita bounce en móvil */
 }
 
 @layer utilities {
