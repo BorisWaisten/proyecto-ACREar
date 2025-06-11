@@ -1,9 +1,21 @@
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 export default function VideoSection({video}) {
   const containerRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detectar si es móvil
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   // Hook para detectar el scroll en esta sección
   const { scrollYProgress } = useScroll({
@@ -17,8 +29,8 @@ export default function VideoSection({video}) {
   const videoOpacity = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], [0, 1, 1, 0.95]);
   const videoScale = useTransform(scrollYProgress, [0, 0.15], [1.02, 1]); // Escala más sutil
   
-  // Slide lateral para móvil - entra desde la derecha
-  const mobileSlideX = useTransform(
+  // Slide lateral - siempre se calcula, se aplica condicionalmente
+  const slideX = useTransform(
     scrollYProgress, 
     [0, 0.15, 0.85, 1], 
     [100, 0, 0, 0] // Entra desde la derecha
@@ -34,7 +46,7 @@ export default function VideoSection({video}) {
       style={{
         opacity: sectionOpacity,
         scale: sectionScale,
-        x: useTransform(scrollYProgress, [0, 0.15], [100, 0]) // Slide desde derecha en móvil
+        x: isMobile ? slideX : 0 // Aplica slide solo en móvil
       }}
     >
 

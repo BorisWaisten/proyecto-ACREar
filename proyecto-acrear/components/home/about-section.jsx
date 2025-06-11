@@ -1,10 +1,22 @@
 'use client';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 export default function AboutSection({ about }) {
   const containerRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detectar si es móvil
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   // Hook para detectar el scroll dentro de la sección
   const { scrollYProgress } = useScroll({
@@ -28,19 +40,19 @@ export default function AboutSection({ about }) {
   const contentScale = useTransform(scrollYProgress, [0.25, 0.5], [1.15, 1]);
   const contentY = useTransform(scrollYProgress, [0.25, 0.5], [25, 0]);
   
-  const finalTextOpacity = useTransform(scrollYProgress, [0.4, 0.65, 0.9], [0, 1, 1]);
-  const finalTextScale = useTransform(scrollYProgress, [0.4, 0.65], [1.1, 1]);
-  const finalTextY = useTransform(scrollYProgress, [0.4, 0.65], [20, 0]);
+  const finalTextOpacity = useTransform(scrollYProgress, [0.2, 0.25, 0.9], [0, 1, 1]);
+  const finalTextScale = useTransform(scrollYProgress, [0.2, 0.25], [1.1, 1]);
+  const finalTextY = useTransform(scrollYProgress, [0.2, 0.25], [20, 0]);
 
   // Control de visibilidad del container fijo - con slide lateral para móvil
   const containerVisibility = useTransform(
     scrollYProgress, 
-    [0, 0.02, 0.98, 1], 
+    [0, 0.05, 0.5, 0.9], 
     [0, 1, 1, 0]
   );
 
-  // Animación slide lateral para móvil
-  const mobileSlideX = useTransform(
+  // Animación slide lateral - siempre se calcula, se aplica condicionalmente
+  const slideX = useTransform(
     scrollYProgress, 
     [0.85, 1], 
     [0, -100] // Sale hacia la izquierda
@@ -59,7 +71,7 @@ export default function AboutSection({ about }) {
          className="fixed top-6 left-0 w-full h-[60vh] md:h-screen"
          style={{ 
            opacity: containerVisibility,
-           x: useTransform(scrollYProgress, [0.85, 1], [0, -100]), // Slide móvil
+           x: isMobile ? slideX : 0, // Aplica slide solo en móvil
            pointerEvents: scrollYProgress.get() > 0 && scrollYProgress.get() < 1 ? 'auto' : 'none',
            zIndex: scrollYProgress.get() > 0 && scrollYProgress.get() < 1 ? 50 : -1
          }}
@@ -72,7 +84,7 @@ export default function AboutSection({ about }) {
             scale: logoScale,
             opacity: useTransform(
               scrollYProgress, 
-              [0, 0.08, 0.8, 1], 
+              [0.02, 0.08, 0.8, 1], 
               [0, 1, 0.4, 0.4]
             )
           }}
@@ -85,13 +97,14 @@ export default function AboutSection({ about }) {
               height={400}
               className="drop-shadow-2xl w-60 h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[400px] xl:h-[400px]"
               priority
+
             />
           </div>
         </motion.div>
 
         {/* Dark overlay that increases on scroll */}
         <motion.div
-          className="absolute inset-0 bg-black"
+          className="absolute inset-0 h-screen bg-black"
           style={{ opacity: overlayOpacity }}
         />
 
@@ -192,23 +205,7 @@ export default function AboutSection({ about }) {
               </motion.div>
             </motion.div>
 
-            {/* Call to action button that appears at the end */}
-            <motion.div
-              style={{ opacity: finalTextOpacity }}
-              className="pt-4 md:pt-8"
-            >
-              <motion.button
-                className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] text-gray-900 text-sm md:text-base font-semibold rounded-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[var(--color-primary)]/30"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="relative z-10">Descubre más</span>
-                <motion.div
-                  className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20"
-                  layoutId="button-bg"
-                />
-              </motion.button>
-            </motion.div>
+
           </div>
         </div>
 
