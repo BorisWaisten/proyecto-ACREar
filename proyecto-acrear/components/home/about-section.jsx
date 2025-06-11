@@ -47,7 +47,7 @@ export default function AboutSection({ about }) {
   // Control de visibilidad del container fijo - con slide lateral para móvil
   const containerVisibility = useTransform(
     scrollYProgress, 
-    [0, 0.05, 0.5, 0.9], 
+    [0, 0.05,0.5, 0.8], 
     [0, 1, 1, 0]
   );
 
@@ -66,9 +66,9 @@ export default function AboutSection({ about }) {
       ref={containerRef}
       className="relative h-[250vh] md:h-[400vh] overflow-hidden"
     >
-             {/* Fixed container - con animaciones responsive */}
+       
        <motion.div 
-         className="fixed top-6 left-0 w-full h-[60vh] md:h-screen"
+         className="fixed top-0 left-0 w-full h-screen md:h-screen"
          style={{ 
            opacity: containerVisibility,
            x: isMobile ? slideX : 0, // Aplica slide solo en móvil
@@ -103,8 +103,8 @@ export default function AboutSection({ about }) {
         </motion.div>
 
         {/* Dark overlay that increases on scroll */}
-        <motion.div
-          className="absolute inset-0 h-screen bg-black"
+       <motion.div
+          className="absolute  inset-0 h-screen bg-black"
           style={{ opacity: overlayOpacity }}
         />
 
@@ -238,34 +238,10 @@ export default function AboutSection({ about }) {
           </motion.div>
         </motion.div>
 
-        {/* Floating particles for atmosphere */}
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-[var(--color-primary)] rounded-full opacity-30"
-            style={{
-              left: `${20 + i * 15}%`,
-              top: `${30 + i * 10}%`
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.3, 0.8, 0.3],
-              scale: [1, 1.2, 1]
-            }}
-            transition={{
-              duration: 3 + i * 0.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.3
-            }}
-          />
-        ))}
+
       </motion.div>
 
-      {/* Spacer divs to enable scroll */}
-      <div className="h-screen" />
-      <div className="h-screen" />
-      <div className="h-screen" />
+
     </section>
   );
 }
