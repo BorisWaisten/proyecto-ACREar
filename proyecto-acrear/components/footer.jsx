@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
           {/* Logo */}
-          <div className="flex flex-col items-start pl-8 sm:pl-0 sm:items-center  md:items-start animate-fade-in transition-all duration-500">
+          <div className="flex flex-col items-start pl-8 sm:pl-0 md:items-center  animate-fade-in transition-all duration-500">
             <Image className='cursor-pointer scale-[1.7] sm:w-40 sm:h-30 sm:scale-[1.6]' src="/logos/logo-acrearg-blanco2.svg" alt="Logo ACREarg" width={120} height={60} onClick={() => router.push('/')} />
           </div>
 
@@ -57,7 +57,7 @@ export default function Footer() {
           {/* Redes Sociales */}
           <div className="flex flex-col  animate-fade-in transition-all duration-500">
             <h4 className="font-bold mb-3 text-start  text-base md:text-lg  transition-all duration-300">{footer[lang].social.title}</h4>
-            <div className='flex flex-col items-center justify-center'>
+            <div className='flex flex-col items-start md:items-center justify-center'>
               <SocialIcons />
             </div>
           </div>
