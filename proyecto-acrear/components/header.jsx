@@ -61,7 +61,7 @@ export default function Header() {
                 alt="Logo"
                 width={160} height={70} 
                 priority quality={100}
-                className="w-32 pl-2 sm:w-36 md:w-32 lg:w-40 lg:pl-6 lg:h-16"
+                className="w-32 scale-125 sm:scale-125  md:scale-[1.2] lg:scale-[1.8] pl-2 sm:w-32 md:w-32 lg:w-40 lg:pl-6 lg:h-16"
               />
             </Link>
           </Box>
