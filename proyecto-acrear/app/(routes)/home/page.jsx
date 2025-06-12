@@ -16,8 +16,8 @@ export default function HomePage() {
   const { lang, toggleLang } = useLanguage();
   return (
     <>
-      <EventsSection events={home[lang].events}/>
       <AnimatedBackground>
+        <EventsSection events={home[lang].events}/>
         <CounterSection counter={home[lang].counter} />
         <AboutSection about={home[lang].about}/>
         <VideoSection video={home[lang].video}/>

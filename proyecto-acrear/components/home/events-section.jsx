@@ -22,7 +22,7 @@ export default function EventsSection({ events }) {
   const settings = {
     dots: true,
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -75,7 +75,7 @@ export default function EventsSection({ events }) {
 
   return (
     <motion.section 
-      className="w-full min-h-[600px] md:h-screen bg-[var(--color-secondary)] relative"
+      className="w-full h-[600px] md:h-screen bg-[var(--color-secondary)] relative"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -86,7 +86,7 @@ export default function EventsSection({ events }) {
           {eventsLocal.map((event, index) => (
             <div key={index}>
               <motion.div 
-                className="relative overflow-hidden h-full md:h-screen shadow-lg"
+                className="relative overflow-hidden h-[600px] md:h-screen "
                 variants={slideVariants}
               >
                 <motion.div
