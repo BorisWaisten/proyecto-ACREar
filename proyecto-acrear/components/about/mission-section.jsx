@@ -85,8 +85,8 @@ export default function MissionSection({ about }) {
               </h3>
             </div>
             
-            <div className=" w-[90%]  h-full mx-auto overflow-y-auto">
-              <div className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+            <div className=" w-[90%]  h-full mb-12 lg:mb-0 mx-auto overflow-y-auto">
+              <div className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0 ' : 'opacity-100 '}`}>
                 <p className="text-sm md:text-[0.9rem] text-justify lg:text-[1.13rem] text-[var(--color-primary)] whitespace-pre-line leading-relaxed">
                   {currentContent}
                 </p>

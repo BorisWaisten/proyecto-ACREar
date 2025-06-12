@@ -35,18 +35,18 @@ export const aboutData ={
             ]
         },
         authorities: [
-            { name: 'Pablo Rico', role: 'Presidente', avatar: '/fotos/ejecutivo.png' },
-            { name: 'Samira Manzur', role: 'Vicepresidenta', avatar: '/fotos/ejecutivo.png' },
-            { name: 'Eugenia Neder', role: 'Secretaria', avatar: '/fotos/ejecutivo.png' },
-            { name: 'Esteban Cordiviola', role: 'Tesorero', avatar: '/fotos/ejecutivo.png' },
-            { name: 'Laila Abbas', role: 'Primera Vocal', avatar: '/fotos/ejecutivo.png' },
-            { name: 'Aracelis Tarasio', role: 'Segunda Vocal', avatar: '/fotos/ejecutivo.png' },
-            { name: 'Diego Lopez Achem', role: 'Vocal Suplente', avatar: '/fotos/ejecutivo.png' },
+            { name: 'Pablo Rico', role: 'Presidente', avatar: '/autoridades/pablo-rico.png' },
+            { name: 'Eugenia Neder', role: 'Secretaria', avatar: '/autoridades/eugenia-neder.png' },
+            { name: 'Esteban Cordiviola', role: 'Tesorero', avatar: '/autoridades/esteban-cordiviola.png' },
+            { name: 'Laila Abbas', role: 'Primera Vocal', avatar: '/autoridades/laila-abbas.png' },
+            { name: 'Aracelis Tarasio', role: 'Segunda Vocal', avatar: '/autoridades/aracelis-tarasio.png' },
+            { name: 'Samira Manzur', role: 'Vocal Suplente', avatar: '/autoridades/samira-manzur.jpeg' },
+            { name: 'Diego Lopez Achem', role: 'Vocal Suplente', avatar: '/autoridades/diego-lopez-achem.png' },
 
         ],
         team: [
-            { name: 'Laila Abbas', role: 'Directora Ejecutiva', avatar: '/fotos/ejecutivo.png' },
-            { name: 'Julia Domínguez', role: 'Asistente Internacionalización de Empresas', avatar: '/fotos/ejecutivo.png' }
+            { name: 'Laila Abbas', role: 'Directora Ejecutiva', avatar: '/autoridades/laila-abbas.png' },
+            { name: 'Julia Domínguez', role: 'Asistente Internacionalización de Empresas', avatar: '/autoridades/julia-dominguez.png' }
        
         ],
         authoritiesTitle:"AUTORIDADES",

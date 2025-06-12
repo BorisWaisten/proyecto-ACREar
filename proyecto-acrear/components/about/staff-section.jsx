@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 function Card({ name, role, avatar }) {
   return (
@@ -9,7 +10,7 @@ function Card({ name, role, avatar }) {
         alt={name}
         width={80}
         height={80}
-        className="rounded-full bg-[var(--color-primary)] p-1 mb-4"
+        className="rounded-xl w-[200px] h-[200px] lg:w-[150px] lg:h-[150px] xl:w-[200px] xl:h-[200px] bg-[var(--color-primary)] p-1 mb-4"
       />
       <h4 className="font-semibold text-lg text-center">{name}</h4>
       <p className="text-sm text-center text-[var(--color-primary)] mt-1">{role}</p>
@@ -18,8 +19,45 @@ function Card({ name, role, avatar }) {
 }
 
 export default function StaffSection({ about }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Función para reorganizar autoridades para desktop
+  const getAuthoritiesOrder = () => {
+    if (isMobile) {
+      // En móvil mantenemos el orden original
+      return about.authorities;
+    }
+
+    // En desktop y tablet reorganizamos para poner al presidente en la segunda posición
+    const president = about.authorities.find(person => 
+      person.role.toLowerCase().includes('president') || person.role.toLowerCase().includes('presidente')
+    );
+    
+    const others = about.authorities.filter(person => 
+      !person.role.toLowerCase().includes('president') && !person.role.toLowerCase().includes('presidente')
+    );
+
+    // Insertamos al presidente en la segunda posición (índice 1)
+    // Desktop (4 cols): [autoridad 1] [PABLO RICO] [autoridad 3] [autoridad 4]
+    // Tablet (3 cols):  [autoridad 1] [PABLO RICO] [autoridad 3]
+    const result = [...others];
+    result.splice(1, 0, president); // Inserta el presidente en la posición 2 (índice 1)
+
+    return result.filter(Boolean);
+  };
+
   return (
-    <section className="bg-[var(--color-secondary)] py-16     space-y-12">
+    <section className="bg-[var(--color-secondary)] py-16 space-y-12">
       
       {/* Autoridades */}
       <div>
@@ -27,8 +65,8 @@ export default function StaffSection({ about }) {
           {about.authoritiesTitle}
         </h3>
         <div className="grid grid-cols-1 justify-items-center sm:grid-cols-2 px-2 sm:px-4 md:px-8 lg:px-8 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {about.authorities.map((person, i) => (
-            <Card key={i} {...person} />
+          {getAuthoritiesOrder().map((person, i) => (
+            <Card key={`${person.name}-${i}`} {...person} />
           ))}
         </div>
       </div>
