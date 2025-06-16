@@ -11,6 +11,9 @@ const ContactForm = ({ contactData }) => {
     message: '',
   });
 
+  const [status, setStatus] = useState('');
+  const [loading, setLoading] = useState(false);
+
   const inputStyle = {
     bgcolor: 'var(--color-background)',
     borderRadius: 1,
@@ -27,24 +30,44 @@ const ContactForm = ({ contactData }) => {
     },
   };
 
-  const [status, setStatus] = useState('');
-
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simular envío
-    console.log('Enviando formulario:', form);
-    setStatus(contactData.emailSentSuccess);
-    setForm({
-      name: '',
-      activity: '',
-      email: '',
-      phone: '',
-      message: '',
-    });
+    setLoading(true);
+    setStatus('');
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus(contactData.emailSentSuccess);
+        setForm({
+          name: '',
+          activity: '',
+          email: '',
+          phone: '',
+          message: '',
+        });
+      } else {
+        throw new Error(data.error || 'Error al enviar el mensaje');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setStatus(contactData.emailSentError);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -124,6 +147,7 @@ const ContactForm = ({ contactData }) => {
       <Button
         type="submit"
         variant="contained"
+        disabled={loading}
         sx={{
           mt: 2,
           bgcolor: 'var(--color-primary)',
@@ -133,7 +157,7 @@ const ContactForm = ({ contactData }) => {
           },
         }}
       >
-        {contactData.formFields.send}
+        {loading ? 'Enviando...' : contactData.formFields.send}
       </Button>
 
       {status && (
