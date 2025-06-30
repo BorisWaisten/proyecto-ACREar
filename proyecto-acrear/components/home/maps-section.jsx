@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import ArgMaps from '@/components/home/arg-maps';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -10,13 +10,21 @@ export default function MapSection({ regional, provincias }) {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const ITEMS_PER_VIEW = 3;
   const totalItems = provincia.activities.length;
-  // Para desktop: mostrar 2 columnas x 4 filas si hay más de 4 actividades, sino 1 columna
-  // Para mobile: mostrar 4 columnas x 2 filas si hay más de 4 actividades, sino 1 fila
+
+  // Solución hydration: detectar desktop solo en cliente
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    const checkDesktop = () => setIsDesktop(window.innerWidth >= 768);
+    checkDesktop();
+    window.addEventListener('resize', checkDesktop);
+    return () => window.removeEventListener('resize', checkDesktop);
+  }, []);
+
   let visibleActivities = provincia.activities;
   let visibleIcons = provincia.icons;
   let gridClass = '';
-  if (typeof window !== 'undefined' && window.innerWidth >= 768) {
-    // Desktop
+
+  if (isDesktop) {
     if (provincia.activities.length > 4) {
       visibleActivities = provincia.activities.slice(0, 8);
       visibleIcons = provincia.icons.slice(0, 8);
@@ -25,7 +33,6 @@ export default function MapSection({ regional, provincias }) {
       gridClass = 'grid grid-cols-1';
     }
   } else {
-    // Mobile
     if (provincia.activities.length > 4) {
       visibleActivities = provincia.activities.slice(0, 8);
       visibleIcons = provincia.icons.slice(0, 8);
@@ -46,7 +53,7 @@ export default function MapSection({ regional, provincias }) {
 
       {/* Contenido centrado y limitado */}
       <div className="relative z-10 max-w-7xl mx-auto sm:px-6 space-y-10">
-        <h2 className="w-full text-2xl sm:text-2xl md:text-3xl font-bold text-center text-[var(--color-primary)]">
+        <h2 className="w-full text-xl md:text-2xl font-bold text-center text-[var(--color-primary)]">
           {regional.title}
         </h2>
 
@@ -70,7 +77,7 @@ export default function MapSection({ regional, provincias }) {
               transition={{ duration: 0.3 }}
             >
               <div className="flex flex-col w-3/4 h-full mx-auto text-[var(--color-primary)] justify-center ">
-                <p className="text-lg md:pb-6 md:text-2xl my-2 sm:mt-0 font-bold text-center">
+                <p className="text-base md:text-lg font-bold text-center">
                   {provincia.name}
                 </p>
                 <div className="relative flex flex-col items-center">
@@ -86,7 +93,7 @@ export default function MapSection({ regional, provincias }) {
                             height={36}
                             className="mb-1 w-7 h-7 sm:w-8 sm:h-8 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12"
                           />
-                          <p className="text-[0.65rem] sm:text-xs md:text-xs lg:text-sm xl:text-base w-full text-center text-balance">{act}</p>
+                          <p className="text-sm md:text-md w-full text-center text-balance">{act}</p>
                         </div>
                       ))}
                     </div>

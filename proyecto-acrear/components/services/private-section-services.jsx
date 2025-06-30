@@ -60,7 +60,7 @@ export default function PrivateSectorServices({ privateServices , title}) {
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <h2 className="text-center text-lg sm:text-2xl uppercase font-semibold text-[var(--color-secondary)]  mb-8 tracking-wide">
+      <h2 className="text-center text-lg sm:text-xl uppercase font-semibold text-[var(--color-secondary)]  mb-8 tracking-wide">
         {title}
       </h2>
 
@@ -77,8 +77,8 @@ export default function PrivateSectorServices({ privateServices , title}) {
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                <h4 className="text-lg font-bold text-center text-balance mb-2">{item.title}</h4>
-                <p className="text-sm text-justify leading-relaxed"
+                <h4 className="text-base md:text-lg font-bold text-center text-balance mb-2">{item.title}</h4>
+                <p className="text-xs md:text-sm text-justify leading-relaxed"
                   style={{ 
                     textJustify: 'inter-word'
                   }}

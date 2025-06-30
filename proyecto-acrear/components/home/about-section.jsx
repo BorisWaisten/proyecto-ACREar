@@ -95,8 +95,8 @@ export default function AboutSection({ about }) {
               y: titleY
             }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-white via-[var(--color-primary)] to-[var(--color-accent)] bg-clip-text text-transparent">
-              {about?.title || "ACREar"}
+            <h2 className="text-xl md:text-4xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-white via-[var(--color-primary)] to-[var(--color-accent)] bg-clip-text text-transparent">
+              {about?.title || "ACREarg"}
             </h2>
             {/* Decorative line */}
             <motion.div 
@@ -118,10 +118,10 @@ export default function AboutSection({ about }) {
             }}
           >
             <div className="space-y-4 md:space-y-6">
-              <p className="text-base md:text-lg lg:text-xl leading-relaxed font-medium text-gray-100">
+              <p className="text-base md:text-lg leading-relaxed font-medium text-gray-100">
                 {about?.text1 || "Descubre la innovación que está transformando el futuro"}
               </p>
-              <p className="text-sm md:text-base lg:text-lg leading-relaxed text-gray-300">
+              <p className="text-base md:text-lg leading-relaxed text-gray-300">
                 {about?.text2 || "Con tecnología de vanguardia y un diseño excepcional"}
               </p>
             </div>
@@ -137,7 +137,7 @@ export default function AboutSection({ about }) {
             }}
           >
             <motion.p 
-              className="text-xl md:text-2xl lg:text-4xl font-bold italic relative"
+              className="text-xl md:text-2xl  font-bold italic relative"
               style={{
                 background: `linear-gradient(45deg, var(--color-primary), var(--color-accent), white)`,
                 backgroundSize: '300% 300%',

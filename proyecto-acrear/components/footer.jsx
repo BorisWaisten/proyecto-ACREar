@@ -24,8 +24,8 @@ export default function Footer() {
 
           {/* Compañía */}
           <div className="animate-fade-in transition-all duration-500">
-            <h4 className="font-bold mb-3 text-base md:text-lg  transition-colors duration-300">{footer[lang].company.title}</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="font-bold mb-3 text-lg md:text-xl transition-colors duration-300">{footer[lang].company.title}</h4>
+            <ul className="space-y-2 text-base md:text-lg">
               {footer[lang].company.links.map((link, index) => (
                 <li key={index}>
                   <Link href={link.href} className="hover:text-[var(--color-primary)] transition-all">{link.name}</Link>
@@ -36,8 +36,8 @@ export default function Footer() {
 
           {/* Contacto */}
           <div className="animate-fade-in transition-all duration-500">
-            <h4 className="font-bold mb-3 text-base md:text-lg  transition-colors duration-300">{footer[lang].contact.title}</h4>
-            <ul className="text-sm space-y-2">
+            <h4 className="font-bold mb-3 text-lg md:text-xl transition-colors duration-300">{footer[lang].contact.title}</h4>
+            <ul className="text-base md:text-lg space-y-2">
               <li className="hover:text-[var(--color-primary)] transition-all flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Redes Sociales */}
           <div className="flex flex-col  animate-fade-in transition-all duration-500">
-            <h4 className="font-bold mb-3 text-start  text-base md:text-lg  transition-all duration-300">{footer[lang].social.title}</h4>
+            <h4 className="font-bold mb-3 text-start  text-lg md:text-xl  transition-all duration-300">{footer[lang].social.title}</h4>
             <div className='flex flex-col items-start md:items-center justify-center'>
               <SocialIcons />
             </div>

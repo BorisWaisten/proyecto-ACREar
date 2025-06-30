@@ -27,7 +27,7 @@ export default function MissionSection({ about }) {
       key: 'objetivos-especificos',
       label: about.objectiveSpecifics.title,
       content: about.objectiveSpecifics.objectives
-        .map(obj => `• ${obj.title}: ${obj.text}`)
+        .map(obj => `${obj.title}: ${obj.text}`)
         .join('\n'),
     },
   ];
@@ -72,22 +72,16 @@ export default function MissionSection({ about }) {
 
           {/* Contenido activo */}
           <div className="flex flex-col gap-4 lg:w-[50%] lg:h-[78%] md:mx-auto bg-white  md:p-2 rounded-xl border border-[var(--color-primary)] shadow-sm transition-all duration-500 animate-fade-in">
-            <div className="flex items-center gap-4 p-4">
-              <div className="p-2 flex rounded-full">
-                <svg width="32" height="32" className="md:w-12 md:h-12" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="18" cy="18" r="16" fill="#cd8a53" stroke="#183146" strokeWidth="2" />
-                  <path d="M14 12L18 18L14 24" stroke="#183146" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M20 12L24 18L20 24" stroke="#183146" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <h3 className="text-lg md:text-2xl font-bold text-[var(--color-primary)]">
+            <div className="flex items-center gap-4 p-2">
+
+              <h3 className="text-lg md:text-xl font-bold text-[var(--color-primary)]">
                 {items[activeIndex].label}
               </h3>
             </div>
             
             <div className=" w-[90%]  h-full mb-12 lg:mb-0 mx-auto overflow-y-auto">
               <div className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0 ' : 'opacity-100 '}`}>
-                <p className="text-sm md:text-[0.9rem] text-justify lg:text-[1.13rem] text-[var(--color-primary)] whitespace-pre-line leading-relaxed">
+                <p className="text-sm md:text-[0.9rem] text-justify lg:text-lg text-[var(--color-primary)] whitespace-pre-line leading-relaxed">
                   {currentContent}
                 </p>
               </div>

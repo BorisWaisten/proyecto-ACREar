@@ -29,13 +29,13 @@ export default function ServiciosPage() {
       transition={{ duration: 0.4 }}
     >
       <motion.div 
-        className="relative h-[50vh] md:h-screen bg-cover bg-center" 
+        className="relative h-[50vh] md:h-[60vh] bg-cover bg-center" 
         style={{ backgroundImage: 'url(/fotos/evento-2.jpg)'}}
         variants={contentVariants}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent flex items-center justify-center">
           <motion.h1 
-            className="text-[1.5rem] sm:text-[2rem] md:text-[3rem] w-full text-center p-4 font-bold text-white"
+            className="text-[1.5rem] sm:text-3xl w-full text-center p-4 font-bold text-white"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}

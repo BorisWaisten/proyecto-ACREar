@@ -23,7 +23,7 @@ export default function ServicesSection({services}) {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       viewport={{ once: true, amount: 0.2 }}
     >
-      <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-accent)] mb-12">
+      <h2 className="text-xl md:text-2xl font-bold text-[var(--color-accent)] mb-12">
         {services.title}
       </h2>
 
@@ -58,8 +58,8 @@ export default function ServicesSection({services}) {
               </svg>
             </div>
 
-            <h3 className="font-bold text-lg mb-4">{service.title}</h3>
-            <p className="text-sm mb-6">{service.description}</p>
+            <h3 className="font-bold text-base md:text-lg mb-4">{service.title}</h3>
+            <p className="text-sm md:text-base mb-6">{service.description}</p>
 
             <Link href={service.href}>
               <button className="bg-[var(--color-primary)] hover:brightness-90 text-white font-semibold px-6 py-2 rounded-full transition-all">

@@ -12,8 +12,8 @@ function Card({ name, role, avatar }) {
         height={80}
         className="rounded-xl w-[200px] h-[200px] lg:w-[150px] lg:h-[150px] xl:w-[200px] xl:h-[200px] bg-[var(--color-primary)] p-1 mb-4"
       />
-      <h4 className="font-semibold text-lg text-center">{name}</h4>
-      <p className="text-sm w-full h-[30px] text-center text-[var(--color-primary)]  mt-1">{role}</p>
+      <h4 className="font-semibold text-base md:text-lg text-center">{name}</h4>
+      <p className=" text-xs md:text-sm w-full h-[30px] text-center text-[var(--color-primary)]  mt-1">{role}</p>
     </div>
   );
 }
@@ -74,7 +74,7 @@ export default function StaffSection({ about }) {
       
       {/* Autoridades */}
       <div>
-        <h3 className="text-2xl font-bold text-[var(--color-accent)] text-center mb-8">
+        <h3 className="text-base md:text-xl font-bold text-[var(--color-accent)] text-center mb-8">
           {about.authoritiesTitle}
         </h3>
         <div className="grid grid-cols-1 justify-items-center sm:grid-cols-2 px-2 sm:px-4 md:px-8 lg:px-8 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -111,7 +111,7 @@ export default function StaffSection({ about }) {
 
       {/* Equipo Técnico */}
       <div>
-        <h3 className="text-2xl font-bold text-[var(--color-accent)] text-center mb-8">
+        <h3 className=" text-base md:text-xl font-bold text-[var(--color-accent)] text-center mb-8">
           {about.teamTitle}
         </h3>
         <div className="flex flex-col items-center gap-8 w-full h-[300px] lg:flex-row lg:justify-center lg:gap-8 lg:w-[460px] xl:w-[600px] mx-auto">

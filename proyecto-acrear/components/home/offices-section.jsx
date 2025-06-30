@@ -7,7 +7,7 @@ export default function OfficesSection({ offices }) {
   const locationsLocal = [...offices.locations]
   return (
     <section className="w-full py-16 px-4 bg-[var(--color-secondary)] text-center">
-      <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-accent)] mb-12">{offices.title}</h2>
+      <h2 className="text-xl md:text-2xl font-bold text-[var(--color-accent)] mb-12">{offices.title}</h2>
 
       <div className="grid grid-cols-1 bg-[var(--color-secondary)] md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {locationsLocal.map((loc, index) => (
