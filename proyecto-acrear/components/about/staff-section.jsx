@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 function Card({ name, role, avatar }) {
   return (
-    <div className="bg-[var(--color-accent)] rounded-2xl flex flex-col items-center text-white p-6 max-w-xs w-full shadow-md hover:scale-105 transition-transform duration-300">
+    <div className="bg-[var(--color-accent)] rounded-2xl flex flex-col items-center text-white h-full p-6 max-w-xs w-full shadow-md hover:scale-105 transition-transform duration-300">
       <Image
         src={avatar}
         alt={name}
@@ -13,7 +13,7 @@ function Card({ name, role, avatar }) {
         className="rounded-xl w-[200px] h-[200px] lg:w-[150px] lg:h-[150px] xl:w-[200px] xl:h-[200px] bg-[var(--color-primary)] p-1 mb-4"
       />
       <h4 className="font-semibold text-lg text-center">{name}</h4>
-      <p className="text-sm text-center text-[var(--color-primary)] mt-1">{role}</p>
+      <p className="text-sm w-full h-[30px] text-center text-[var(--color-primary)]  mt-1">{role}</p>
     </div>
   );
 }
@@ -56,6 +56,19 @@ export default function StaffSection({ about }) {
     return result.filter(Boolean);
   };
 
+  // Divide un array en chunks de tamaño n
+  function chunkArray(array, size) {
+    const result = [];
+    for (let i = 0; i < array.length; i += size) {
+      result.push(array.slice(i, i + size));
+    }
+    return result;
+  }
+
+  const authoritiesOrdered = getAuthoritiesOrder();
+  const authoritiesRows = chunkArray(authoritiesOrdered, 4);
+  const teamRows = chunkArray(about.team, 4);
+
   return (
     <section className="bg-[var(--color-secondary)] py-16 space-y-12">
       
@@ -65,8 +78,33 @@ export default function StaffSection({ about }) {
           {about.authoritiesTitle}
         </h3>
         <div className="grid grid-cols-1 justify-items-center sm:grid-cols-2 px-2 sm:px-4 md:px-8 lg:px-8 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {getAuthoritiesOrder().map((person, i) => (
-            <Card key={`${person.name}-${i}`} {...person} />
+          {/* Primera fila */}
+          {authoritiesRows[0] && authoritiesRows[0].map((person, i) => (
+            <Card key={`${person.name}-row1-${i}`} {...person} />
+          ))}
+          {/* Segunda fila centrada si hay menos de 4 en desktop */}
+          {authoritiesRows[1] && authoritiesRows[1].length < 4 ? (
+            <>
+              {/* Mobile/tablet: render directo, Desktop: centrado */}
+              <div className="hidden lg:flex lg:col-span-4 lg:justify-center lg:gap-8 lg:w-[460px] xl:w-[600px]" style={{gridColumn: '1 / -1'}}>
+                {authoritiesRows[1].map((person, i) => (
+                  <Card key={`${person.name}-row2-lg-${i}`} {...person} />
+                ))}
+              </div>
+              {authoritiesRows[1].map((person, i) => (
+                <div key={`${person.name}-row2-sm-${i}`} className="lg:hidden w-full flex justify-center">
+                  <Card {...person} />
+                </div>
+              ))}
+            </>
+          ) : (
+            authoritiesRows[1] && authoritiesRows[1].map((person, i) => (
+              <Card key={`${person.name}-row2-${i}`} {...person} />
+            ))
+          )}
+          {/* Si hay más filas, renderizarlas normalmente */}
+          {authoritiesRows.slice(2).flat().map((person, i) => (
+            <Card key={`${person.name}-rowX-${i}`} {...person} />
           ))}
         </div>
       </div>
@@ -76,9 +114,9 @@ export default function StaffSection({ about }) {
         <h3 className="text-2xl font-bold text-[var(--color-accent)] text-center mb-8">
           {about.teamTitle}
         </h3>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 md:gap-0 md:w-[50%] justify-items-center md:mx-auto">
+        <div className="flex flex-col items-center gap-8 w-full h-[300px] lg:flex-row lg:justify-center lg:gap-8 lg:w-[460px] xl:w-[600px] mx-auto">
           {about.team.map((person, i) => (
-            <Card key={i} {...person} />
+            <Card key={`team-${person.name}-${i}`} {...person} />
           ))}
         </div>
       </div>

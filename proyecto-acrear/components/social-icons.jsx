@@ -12,7 +12,7 @@ const icons = [
   { icon: faWhatsapp, bg: '#25D366', href: 'https://wa.me/5493853100841'},
   {icon:faInstagram, bg: '#E4405F', href: 'https://www.instagram.com/acre_arg' },
   { icon: faXTwitter, bg: '#000000', href: 'https://x.com/ACREarg' },
-  { icon: faEnvelope, bg: '#333', href: 'mailto:argentineregionalchamber@gmail.com' },
+  { icon: faEnvelope, bg: '#333', href: 'mailto:info@acrearg.com' },
   { icon: faLinkedinIn, bg: '#0077b5', href: 'https://www.linkedin.com/in/c%C3%A1mara-argentina-de-econom%C3%ADas-regionales-554041366/' },
 ];
 

@@ -37,6 +37,10 @@ export const home = {
                 '/socios/socio-6.png',
                 '/socios/socio-7.png',
                 '/socios/socio-8.png',
+                '/socios/socio-9.png',
+                '/socios/socio-10.png',
+                '/socios/socio-11.png',
+                '/socios/socio-12.png'
                 ],
             },
             companies:{
@@ -44,7 +48,6 @@ export const home = {
                 label: 'Empresas Vinculadas',
                 logos: [
                 '/empresas/empresa-1.png',
-                '/empresas/empresa-2.png',
                 '/empresas/empresa-3.png',
                 '/empresas/empresa-4.png',
                 '/empresas/empresa-5.png',
@@ -59,7 +62,6 @@ export const home = {
                 logos: [
                 '/entidades/entidad-1.png',
                 '/entidades/entidad-2.png',
-                '/entidades/entidad-3.png',
                 '/entidades/entidad-4.png',
                 '/entidades/entidad-5.png',
                 '/entidades/entidad-6.png',

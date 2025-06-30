@@ -11,7 +11,7 @@ export default function ArgMaps({onSelect }) {
     };
 
     return (
-        <svg  fill="#7a756f" className="w-full h-full sm:w-[400px] md:w-[500px] lg:w-[600px] md:h-full lg:h-full" 
+        <svg  fill="#7a756f" className="w-full h-full sm:w-[400px] md:w-[500px] lg:w-[400px] md:pr-34 md:scale-[1.3] lg:scale-[1.5] lg:h-[500px] lg:pr-12 " 
         height="850" 
         stroke="black" 
         strokeLinecap="round" 

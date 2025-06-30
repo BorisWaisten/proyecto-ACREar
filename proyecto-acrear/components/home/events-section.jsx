@@ -75,7 +75,7 @@ export default function EventsSection({ events }) {
 
   return (
     <motion.section 
-      className="w-full h-[600px] md:h-screen bg-[var(--color-secondary)] relative"
+      className="w-full h-[600px] md:h-[70vh] bg-[var(--color-secondary)] relative"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -86,7 +86,7 @@ export default function EventsSection({ events }) {
           {eventsLocal.map((event, index) => (
             <div key={index}>
               <motion.div 
-                className="relative overflow-hidden h-[600px] md:h-screen "
+                className="relative overflow-hidden h-[600px] md:h-full"
                 variants={slideVariants}
               >
                 <motion.div
@@ -100,7 +100,7 @@ export default function EventsSection({ events }) {
                     alt={event.title}
                     width={1200}
                     height={500}
-                    className="object-cover w-full min-h-[600px] md:h-screen"
+                    className="object-cover w-full min-h-[600px] md:h-[50vh]"
                   />
                 </motion.div>
                 <motion.div 

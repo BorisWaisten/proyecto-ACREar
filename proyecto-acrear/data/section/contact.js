@@ -7,28 +7,23 @@ export const contactData       = {
     locations: [
       {
         title: 'SEDE CABA',
-        address: 'Av. Siempre Viva 123, CABA',
-        phone: '+54 11 1234-5678',
+        address: 'Comodoro Pedro Zanni 351, Cdad. Autónoma de Buenos Aires',
       },
       {
         title: 'SEDE SANTA FE',
         address: 'Bv. Gálvez 456, Santa Fe',
-        phone: '+54 342 234-5678',
       },
       {
         title: 'SEDE SANTIAGO DEL ESTERO',
-        address: 'Salta 789, Santiago del Estero',
-        phone: '+54 385 345-6789',
+        address: 'Mitre 328, Santiago del estero, Provincia de Santiago del Estero',
       },
       {
         title: 'SEDE EEUU',
         address: 'xxx',
-        phone: 'xxx',
       },
       {
         title: 'SEDE ESPAÑA',
         address: 'xxx',
-        phone: 'xxx',
       },
     ],
     formFields: {
@@ -37,7 +32,7 @@ export const contactData       = {
       email: 'Correo electrónico*',
       phone: 'Teléfono*',
       message: '¿En qué te podemos ayudar?',
-      send: 'Contactame',
+      send: 'Contactar',
     },
     emailSubject: 'Consulta desde la web',
     emailSentSuccess: '¡Email enviado correctamente!',
@@ -49,28 +44,23 @@ export const contactData       = {
     locations: [
       {
         title: 'CABA OFFICE',
-        address: 'Av. Siempre Viva 123, CABA',
-        phone: '+54 11 1234-5678',
+        address: 'Comodoro Pedro Zanni 351, Cdad. Autónoma de Buenos Aires',
       },
       {
         title: 'SANTA FE OFFICE',
         address: 'Bv. Gálvez 456, Santa Fe',
-        phone: '+54 342 234-5678',
       },
       {
         title: 'SANTIAGO DEL ESTERO OFFICE',
-        address: 'Salta 789, Santiago del Estero',
-        phone: '+54 385 345-6789',
+        address: 'Mitre 328, Santiago del estero, Provincia de Santiago del Estero',
       },
       {
         title: 'USA OFFICE',
         address: 'xxx',
-        phone: 'xxx',
       },
       {
         title: 'SPAIN OFFICE',
         address: 'xxx',
-        phone: 'xxx',
       },
     ],
     formFields: {
@@ -79,7 +69,7 @@ export const contactData       = {
       email: 'Email*',
       phone: 'Phone*',
       message: 'How can we help you?',
-      send: 'Contact me',
+      send: 'Contact',
     },
     emailSubject: 'Web Inquiry',
     emailSentSuccess: 'Email sent successfully!',

@@ -29,220 +29,156 @@ export default function AboutSection({ about }) {
   const logoOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.4]);
   
   // Dark overlay más gradual
-  const overlayOpacity = useTransform(scrollYProgress, [0, 0.3, 0.6, 0.9], [0, 0.3, 0.6, 0.75]);
+  const overlayOpacity = useTransform(scrollYProgress, [0, 0.03, 0.06, 0.09], [0, 0.3, 0.6, 0.75]);
   
   // Content animations - sin escala en móvil para evitar zoom
-  const titleOpacity = useTransform(scrollYProgress, [0.15, 0.35, 0.6], [0, 1, 1]);
-  const titleScale = useTransform(scrollYProgress, [0.15, 0.35], isMobile ? [1, 1] : [1.2, 1]);
-  const titleY = useTransform(scrollYProgress, [0.15, 0.35], [30, 0]);
+  const titleOpacity = useTransform(scrollYProgress, isMobile ? [0, 0.01, 0.02] : [0.01, 0.02, 0.06], isMobile ? [0.2,.5, 1] : [0, 1, 1]);
+  const titleScale = useTransform(scrollYProgress, [0.01, 0.02], isMobile ? [1, 1] : [1.2, 1]);
+  const titleY = useTransform(scrollYProgress, [0.01, 0.02], [30, 0]);
   
-  const contentOpacity = useTransform(scrollYProgress, [0.25, 0.5, 0.8], [0, 1, 1]);
-  const contentScale = useTransform(scrollYProgress, [0.25, 0.5], isMobile ? [1, 1] : [1.15, 1]);
-  const contentY = useTransform(scrollYProgress, [0.25, 0.5], [25, 0]);
+  const contentOpacity = useTransform(scrollYProgress, isMobile ? [0.05, 0.07, 0.8] : [0.05, 0.07, 0.8], isMobile ? [0.2, 1, 1] : [0, 1, 1]);
+  const contentScale = useTransform(scrollYProgress, [0.05, 0.06], isMobile ? [1, 1] : [1.15, 1]);
+  const contentY = useTransform(scrollYProgress, [0.05, 0.06], [25, 0]);
   
-  const finalTextOpacity = useTransform(scrollYProgress, [0.2, 0.25, 0.9], [0, 1, 1]);
-  const finalTextScale = useTransform(scrollYProgress, [0.2, 0.25], isMobile ? [1, 1] : [1.1, 1]);
-  const finalTextY = useTransform(scrollYProgress, [0.2, 0.25], [20, 0]);
+  const finalTextOpacity = useTransform(scrollYProgress, [0.05, 0.07, 0.9], [0, 1, 1]);
+  const finalTextScale = useTransform(scrollYProgress, [0.05, 0.07], isMobile ? [1, 1] : [1.1, 1]);
+  const finalTextY = useTransform(scrollYProgress, [0.05, 0.07], [20, 0]);
 
-  // Control de visibilidad del container fijo - con slide lateral para móvil
-  const containerVisibility = useTransform(
-    scrollYProgress, 
-    [0, 0.05,0.5, 0.8], 
-    [0, 1, 1, 0]
-  );
 
-  // Animación slide lateral - siempre se calcula, se aplica condicionalmente
   const slideX = useTransform(
     scrollYProgress, 
     [0.85, 1], 
-    [0, -100] // Sale hacia la izquierda
+    [0, -100] 
   );
 
-  // Opacidad inicial del logo - visible desde el principio
-  const logoInitialOpacity = useTransform(scrollYProgress, [0, 0.02], [0, 1]);
+  const logoInitialOpacity = useTransform(scrollYProgress, [0, 0.02], [1, 1]);
 
   return (
     <section 
       ref={containerRef}
-      className="relative h-[2000px] md:h-[3000px]  "
+      className="relative h-[700px] md:h-[120vh]"
     >
-       
-       <motion.div 
-         className="fixed top-0 left-0 w-full h-screen md:h-screen"
-         style={{ 
-           opacity: containerVisibility,
-           x: isMobile ? slideX : 0, // Aplica slide solo en móvil
-           pointerEvents: scrollYProgress.get() > 0 && scrollYProgress.get() < 1 ? 'auto' : 'none',
-           zIndex: scrollYProgress.get() > 0 && scrollYProgress.get() < 1 ? 5 : -1,
-           transform: isMobile ? 'translate3d(0,0,0)' : undefined, // Hardware acceleration para móvil
-           willChange: isMobile ? 'transform, opacity' : undefined
-         }}
-       >
-         
-         {/* Logo background layer */}
-        <motion.div
-          className="absolute inset-0 flex  items-center justify-center"
-          style={{
-            scale: logoScale,
-            opacity: useTransform(
-              scrollYProgress, 
-              [0.02, 0.08, 0.8, 1], 
-              [0, 1, 0.4, 0.4]
-            )
-          }}
-        >
-          <div className="relative">
-            <Image
-              src="/logos/logo-acrear2.png"
-              alt="Logo ACREarg"
-              width={400}
-              height={400}
-              className="drop-shadow-2xl w-60 h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[400px] xl:h-[400px]"
-              priority
-
-            />
-          </div>
-        </motion.div>
-
-        {/* Dark overlay that increases on scroll */}
-       <motion.div
-          className="absolute  inset-0 h-screen bg-black"
-          style={{ opacity: overlayOpacity }}
-        />
-
-        {/* Content layer - appears on top like Wonder Woman */}
-        <div className="absolute inset-0 flex items-center justify-center text-white">
-          <div className="max-w-4xl mx-auto text-center px-4 md:px-6 space-y-4 md:space-y-8 lg:space-y-12">
-            
-            {/* Title with cinematic reveal */}
-            <motion.div
-              style={{
-                opacity: titleOpacity,
-                scale: titleScale,
-                y: titleY
-              }}
-            >
-              <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-white via-[var(--color-primary)] to-[var(--color-accent)] bg-clip-text text-transparent">
-                {about?.title || "ACREar"}
-              </h2>
-              
-              {/* Decorative line */}
-              <motion.div 
-                className="w-24 md:w-32 h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] mx-auto rounded-full"
-                initial={{ width: 0 }}
-                style={{ opacity: titleOpacity }}
-                animate={{ width: scrollYProgress.get() > 0.3 ? "8rem" : 0 }}
-                transition={{ duration: 0.8 }}
-              />
-            </motion.div>
-
-            {/* Main content with glass morphism */}
-            <motion.div
-              className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl md:rounded-3xl p-4 md:p-8 lg:p-12"
-              style={{
-                opacity: contentOpacity,
-                scale: contentScale,
-                y: contentY
-              }}
-            >
-              <div className="space-y-4 md:space-y-6">
-                <p className="text-base md:text-lg lg:text-xl leading-relaxed font-medium text-gray-100">
-                  {about?.text1 || "Descubre la innovación que está transformando el futuro"}
-                </p>
-                <p className="text-sm md:text-base lg:text-lg leading-relaxed text-gray-300">
-                  {about?.text2 || "Con tecnología de vanguardia y un diseño excepcional"}
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Final text with special effect */}
-            <motion.div
-              className="relative"
-              style={{
-                opacity: finalTextOpacity,
-                scale: finalTextScale,
-                y: finalTextY
-              }}
-            >
-              <motion.p 
-                className="text-xl md:text-2xl lg:text-4xl font-bold italic relative"
-                style={{
-                  background: `linear-gradient(45deg, var(--color-primary), var(--color-accent), white)`,
-                  backgroundSize: '300% 300%',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
-                }}
-                animate={{ 
-                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] 
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
-                  ease: "easeInOut" 
-                }}
-              >
-                {about?.text3 || "El futuro comienza aquí"}
-              </motion.p>
-              
-              {/* Glowing effect */}
-              <motion.div
-                className="absolute inset-0 blur-lg opacity-50"
-                style={{
-                  background: `linear-gradient(45deg, var(--color-primary), var(--color-accent))`,
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
-                }}
-                animate={{ 
-                  opacity: [0.3, 0.7, 0.3] 
-                }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity,
-                  ease: "easeInOut" 
-                }}
-              >
-                {about?.text3 || "El futuro comienza aquí"}
-              </motion.div>
-            </motion.div>
-
-
-          </div>
+      {/* Logo background layer (centrado, animado, relativo a la sección) */}
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center"
+        style={{
+          scale: logoScale,
+          opacity: logoInitialOpacity
+        }}
+      >
+        <div className="relative">
+          <Image
+            src="/logos/logo-acrear2.png"
+            alt="Logo ACREarg"
+            width={400}
+            height={400}
+            className="drop-shadow-2xl w-60 h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[400px] xl:h-[400px]"
+            priority
+          />
         </div>
-
-        {/* Scroll indicator (only visible at start) */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          style={{ opacity: useTransform(scrollYProgress, [0, 0.2], [1, 0]) }}
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ 
-              duration: 2, 
-              repeat: Infinity,
-              ease: "easeInOut" 
-            }}
-            className="flex flex-col items-center text-white/70"
-          >
-            <span className="text-sm mb-2">Scroll para explorar</span>
-            <motion.div
-              className="w-6 h-10 border-2 border-white/30 rounded-full p-1"
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <motion.div
-                className="w-1 h-3 bg-white/60 rounded-full mx-auto"
-                animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              />
-            </motion.div>
-          </motion.div>
-        </motion.div>
-
-
       </motion.div>
 
+      {/* Dark overlay (relativo a la sección) */}
+      <motion.div
+        className="absolute inset-0 h-full bg-black"
+        style={{ opacity: overlayOpacity }}
+      />
+
+      {/* Content layer (centrado, animado, relativo a la sección) */}
+      <div className="absolute inset-0 flex items-center justify-center text-white">
+        <div className="max-w-4xl mx-auto text-center px-4 md:px-6 space-y-4 md:space-y-8 lg:space-y-12">
+          {/* Title with cinematic reveal */}
+          <motion.div
+            style={{
+              opacity: titleOpacity,
+              scale: titleScale,
+              y: titleY
+            }}
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-white via-[var(--color-primary)] to-[var(--color-accent)] bg-clip-text text-transparent">
+              {about?.title || "ACREar"}
+            </h2>
+            {/* Decorative line */}
+            <motion.div 
+              className="w-24 md:w-32 h-1 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)] mx-auto rounded-full"
+              initial={{ width: 0 }}
+              style={{ opacity: titleOpacity }}
+              animate={{ width: scrollYProgress.get() > 0.3 ? "8rem" : 0 }}
+              transition={{ duration: 0.8 }}
+            />
+          </motion.div>
+
+          {/* Main content with glass morphism */}
+          <motion.div
+            className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl md:rounded-3xl p-4 md:p-8 lg:p-12"
+            style={{
+              opacity: contentOpacity,
+              scale: contentScale,
+              y: contentY
+            }}
+          >
+            <div className="space-y-4 md:space-y-6">
+              <p className="text-base md:text-lg lg:text-xl leading-relaxed font-medium text-gray-100">
+                {about?.text1 || "Descubre la innovación que está transformando el futuro"}
+              </p>
+              <p className="text-sm md:text-base lg:text-lg leading-relaxed text-gray-300">
+                {about?.text2 || "Con tecnología de vanguardia y un diseño excepcional"}
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Final text with special effect */}
+          <motion.div
+            className="relative"
+            style={{
+              opacity: finalTextOpacity,
+              scale: finalTextScale,
+              y: finalTextY
+            }}
+          >
+            <motion.p 
+              className="text-xl md:text-2xl lg:text-4xl font-bold italic relative"
+              style={{
+                background: `linear-gradient(45deg, var(--color-primary), var(--color-accent), white)`,
+                backgroundSize: '300% 300%',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}
+              animate={{ 
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] 
+              }}
+              transition={{ 
+                duration: 3, 
+                repeat: Infinity,
+                ease: "easeInOut" 
+              }}
+            >
+              {about?.text3 || "El futuro comienza aquí"}
+            </motion.p>
+            {/* Glowing effect */}
+            <motion.div
+              className="absolute inset-0 blur-lg opacity-50"
+              style={{
+                background: `linear-gradient(45deg, var(--color-primary), var(--color-accent))`,
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}
+              animate={{ 
+                opacity: [0.3, 0.7, 0.3] 
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity,
+                ease: "easeInOut" 
+              }}
+            >
+              {about?.text3 || "El futuro comienza aquí"}
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
 
     </section>
   );

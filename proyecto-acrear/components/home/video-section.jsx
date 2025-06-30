@@ -42,7 +42,7 @@ export default function VideoSection({video}) {
   return (
     <motion.section 
       ref={containerRef}
-      className="relative w-full h-auto md:min-h-[500px] lg:h-screen p-2 md:p-1 flex flex-col items-center justify-center "
+      className="relative w-full h-auto md:h-[70vh] mb-10 flex flex-col items-center justify-center "
       style={{
         opacity: sectionOpacity,
         scale: sectionScale,
@@ -53,7 +53,7 @@ export default function VideoSection({video}) {
       
       {/* Container del video con animaciones responsive */}
       <motion.div 
-        className="relative w-full aspect-video overflow-hidden rounded-md md:rounded-lg lg:rounded-xl shadow-lg md:shadow-2xl mx-2 md:mx-0"
+        className="relative w-full aspect-video overflow-hidden "
         style={{
           scale: videoScale,
         }}
@@ -95,13 +95,7 @@ export default function VideoSection({video}) {
           }}
         />
         
-        {/* Border decorativo responsive */}
-        <motion.div
-          className="absolute inset-0 border border-[var(--color-primary)]/15 md:border-2 md:border-[var(--color-primary)]/20 rounded-md md:rounded-lg lg:rounded-xl"
-          style={{
-            opacity: useTransform(scrollYProgress, [0, 0.2, 0.8], [0, 1, 1])
-          }}
-        />
+        
       </motion.div>
 
  

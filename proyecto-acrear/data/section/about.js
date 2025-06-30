@@ -38,7 +38,6 @@ export const aboutData ={
             { name: 'Pablo Rico', role: 'Presidente', avatar: '/autoridades/pablo-rico.png' },
             { name: 'Eugenia Neder', role: 'Secretaria', avatar: '/autoridades/eugenia-neder.png' },
             { name: 'Esteban Cordiviola', role: 'Tesorero', avatar: '/autoridades/esteban-cordiviola.png' },
-            { name: 'Laila Abbas', role: 'Primera Vocal', avatar: '/autoridades/laila-abbas.png' },
             { name: 'Aracelis Tarasio', role: 'Segunda Vocal', avatar: '/autoridades/aracelis-tarasio.png' },
             { name: 'Samira Manzur', role: 'Vocal Suplente', avatar: '/autoridades/samira-manzur.jpeg' },
             { name: 'Diego Lopez Achem', role: 'Vocal Suplente', avatar: '/autoridades/diego-lopez-achem.png' },
