@@ -94,7 +94,7 @@ export default function Header() {
                     sx={{
                       color: 'white',
                       fontFamily: "'Roboto', sans-serif",
-                      fontSize: { md: '0.85rem', lg: '1rem' },
+                      fontSize: { md: '0.75rem'},
                       fontWeight: 700,
                       textTransform: 'none',
                       background: 'transparent',
@@ -189,7 +189,7 @@ export default function Header() {
                         justifyContent: 'flex-start',
                         color: 'white',
                         fontFamily: "'Roboto', sans-serif",
-                        fontSize: '1rem',
+                        fontSize: '.7rem',
                         fontWeight: 700,
                         textTransform: 'none',
                         background: 'transparent',

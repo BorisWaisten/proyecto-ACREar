@@ -70,7 +70,7 @@ export default function CounterSection({ counter }) {
           initial={{ opacity: 0, y: -20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-2xl md:text-3xl font-bold text-center text-[var(--color-primary)] mb-12"
+          className="text-xl md:text-2xl font-bold text-center text-[var(--color-primary)] mb-12"
         >
           {counter.title}
         </motion.h2>
@@ -111,7 +111,7 @@ export default function CounterSection({ counter }) {
 
               {/* Etiqueta con efecto de hover */}
               <motion.div 
-                className="text-[0.6rem] sm:text-base md:text-xl text-[var(--color-primary)] text-center"
+                className="text-sm md:text-lg text-[var(--color-primary)] text-center"
                 animate={hoveredIndex === index ? { y: -2 } : {}}
                 transition={{ duration: 0.2 }}
               >

@@ -48,7 +48,7 @@ export default function NuestraComunidad({ alliances }) {
     <section className="w-full relative overflow-hidden py-20">
       {/* Contenido centrado y limitado */}
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <h2 className="text-2xl md:text-3xl text-center font-bold mb-10 text-[var(--color-primary)]">
+        <h2 className="text-xl md:text-2xl text-center font-bold mb-10 text-[var(--color-primary)]">
           {alliances.title}
         </h2>
 

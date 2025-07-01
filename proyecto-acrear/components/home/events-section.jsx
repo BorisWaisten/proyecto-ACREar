@@ -108,7 +108,7 @@ export default function EventsSection({ events }) {
                   variants={contentVariants}
                 >
                   <motion.h2 
-                    className="text-2xl md:text-3xl font-bold mb-2"
+                    className="text-xl md:text-2xl font-bold mb-2"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
@@ -116,7 +116,7 @@ export default function EventsSection({ events }) {
                     {event.title}
                   </motion.h2>
                   <motion.p 
-                    className="text-lg md:text-xl text-center mb-4"
+                    className="text-base md:text-lg text-center mb-4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
@@ -129,7 +129,7 @@ export default function EventsSection({ events }) {
                     transition={{ duration: 0.6, delay: 0.8 }}
                   >
                     <Link href={event.link}>
-                      <button className="text-sm sm:text-base bg-[var(--color-accent)] hover:brightness-90 text-white font-semibold px-6 py-2 rounded-full transition-all">
+                      <button className="text-sm sm:text-base bg-[var(--color-accent)] hover:brightness-90 text-white font-semibold px-6 py-2 rounded-full cursor-pointer transition-all">
                         {events.button}
                       </button>
                     </Link>
