@@ -31,14 +31,14 @@ export default function NuestraComunidad({ alliances }) {
 
   const settings = {
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 1500,
     slidesToShow: 4,
     slidesToScroll: 1,
     responsive: [
       { breakpoint: 640, settings: { slidesToShow: 2 } },
       { breakpoint: 768, settings: { slidesToShow: 3 } },
-      { breakpoint: 1024, settings: { slidesToShow: 3 } },
+      { breakpoint: 1024, settings: { slidesToShow: 4 } },
       { breakpoint: 1280, settings: { slidesToShow: 4 } },
     ],
     arrows: false,
@@ -47,7 +47,7 @@ export default function NuestraComunidad({ alliances }) {
   return (
     <section className="w-full relative overflow-hidden py-20">
       {/* Contenido centrado y limitado */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-4xl mx-auto px-6">
         <h2 className="text-xl md:text-2xl text-center font-bold mb-10 text-[var(--color-primary)]">
           {alliances.title}
         </h2>
@@ -60,11 +60,11 @@ export default function NuestraComunidad({ alliances }) {
         >
           <Slider {...settings}>
             {allLogos.map((logo, i) => (
-              <div key={i} className="px-4">
+              <div key={i} className="">
                 <div className={`h-28 sm:h-44 sm:w-32 flex items-center justify-center mx-auto p-4 ${
                   isSmallLogo(logo) 
-                    ? 'scale-[1.6] sm:scale-[1.6] md:scale-[2.2] lg:scale-[2.6]' // Scale aumentado para logos chicos
-                    : 'scale-125 sm:scale-125 md:scale-[1.5] lg:scale-[1.8]'   // Scale normal para logos regulares
+                    ? 'scale-125  sm:scale-[1.6] md:scale-[2.2] lg:scale-[2]' // Scale aumentado para logos chicos
+                    : ' sm:scale-125 md:scale-[1.5] lg:scale-[1.2]'   // Scale normal para logos regulares
                 }`}>
                   <Image
                     src={logo}

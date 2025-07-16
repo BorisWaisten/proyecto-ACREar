@@ -72,15 +72,15 @@ export default function AboutSection({ about }) {
             alt="Logo ACREarg"
             width={400}
             height={400}
-            className="drop-shadow-2xl w-60 h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[400px] xl:h-[400px]"
+            className="drop-shadow-2xl w-50 h-50 md:w-70 md:h-70 lg:w-80 lg:h-80 xl:w-[300px] xl:h-[300px]"
             priority
           />
         </div>
       </motion.div>
 
-      {/* Dark overlay (relativo a la sección) */}
+      {/* Dark overlay with gradient (relativo a la sección) */}
       <motion.div
-        className="absolute inset-0 h-full bg-black"
+        className="absolute inset-0 h-full bg-gradient-to-b from-black via-black/80 to-transparent"
         style={{ opacity: overlayOpacity }}
       />
 
@@ -117,66 +117,16 @@ export default function AboutSection({ about }) {
               y: contentY
             }}
           >
-            <div className="space-y-4 md:space-y-6">
+            <div className="space-y-4 md:space-y-6 w-[95%] mx-auto text-justify">
               <p className="text-base md:text-lg leading-relaxed font-medium text-gray-100">
                 {about?.text1 || "Descubre la innovación que está transformando el futuro"}
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-gray-300">
+              <p className="text-base md:text-lg font-bold leading-relaxed text-gray-300">
                 {about?.text2 || "Con tecnología de vanguardia y un diseño excepcional"}
               </p>
             </div>
           </motion.div>
 
-          {/* Final text with special effect */}
-          <motion.div
-            className="relative"
-            style={{
-              opacity: finalTextOpacity,
-              scale: finalTextScale,
-              y: finalTextY
-            }}
-          >
-            <motion.p 
-              className="text-xl md:text-2xl  font-bold italic relative"
-              style={{
-                background: `linear-gradient(45deg, var(--color-primary), var(--color-accent), white)`,
-                backgroundSize: '300% 300%',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}
-              animate={{ 
-                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] 
-              }}
-              transition={{ 
-                duration: 3, 
-                repeat: Infinity,
-                ease: "easeInOut" 
-              }}
-            >
-              {about?.text3 || "El futuro comienza aquí"}
-            </motion.p>
-            {/* Glowing effect */}
-            <motion.div
-              className="absolute inset-0 blur-lg opacity-50"
-              style={{
-                background: `linear-gradient(45deg, var(--color-primary), var(--color-accent))`,
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}
-              animate={{ 
-                opacity: [0.3, 0.7, 0.3] 
-              }}
-              transition={{ 
-                duration: 2, 
-                repeat: Infinity,
-                ease: "easeInOut" 
-              }}
-            >
-              {about?.text3 || "El futuro comienza aquí"}
-            </motion.div>
-          </motion.div>
         </div>
       </div>
 

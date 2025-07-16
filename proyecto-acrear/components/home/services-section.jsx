@@ -23,15 +23,15 @@ export default function ServicesSection({services}) {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       viewport={{ once: true, amount: 0.2 }}
     >
-      <h2 className="text-xl md:text-2xl font-bold text-[var(--color-accent)] mb-12">
+      <h2 className="text-xl md:text-2xl font-bold text-[var(--color-accent)] mb-12 ">
         {services.title}
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-[280px] md:w-auto md:max-w-4xl mx-auto">
         {servicesLocal.map((service, index) => (
           <motion.div
             key={index}
-            className="bg-[var(--color-accent)] text-white rounded-xl p-6 flex flex-col items-center shadow-md transition hover:scale-[1.02]"
+            className="bg-[var(--color-accent)] text-white rounded-xl p-4 md:p-5 flex flex-col items-center shadow-md transition hover:scale-[1.02]"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
@@ -41,14 +41,14 @@ export default function ServicesSection({services}) {
             }}
             viewport={{ once: true }}
           >
-            <div className="mb-4 text-[var(--color-secondary)]">
+            <div className="mb-3 md:mb-4 text-[var(--color-secondary)]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-8 h-8"
+                className="w-6 h-6 md:w-8 md:h-8"
               >
                 <path
                   strokeLinecap="round"
@@ -58,8 +58,8 @@ export default function ServicesSection({services}) {
               </svg>
             </div>
 
-            <h3 className="font-bold text-base md:text-lg mb-4">{service.title}</h3>
-            <p className="text-sm md:text-base mb-6">{service.description}</p>
+            <h3 className="font-bold text-center text-base md:text-lg mb-3 md:mb-4 leading-tight tracking-tight">{service.title}</h3>
+            <p className="text-sm md:text-base mb-4 md:mb-5 text-center md:w-[250px] leading-tight tracking-tight">{service.description}</p>
 
             <Link href={service.href}>
               <button className="bg-[var(--color-primary)] hover:brightness-90 text-white font-semibold px-6 py-2 rounded-full transition-all">

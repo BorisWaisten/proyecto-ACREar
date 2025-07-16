@@ -115,6 +115,16 @@ export default function Header() {
             </Box>
             {/* Banderas de idioma */}
             <Box className="flex items-center gap-0.5 lg:gap-2">
+                <IconButton 
+                  onClick={()=>handleLangChange('es')}
+                  sx={{ 
+                    color: 'white', 
+                    padding: { md: '4px', lg: '8px' },
+                    '&:hover': { backgroundColor: 'rgba(255,255,255,0.08)' } 
+                  }}
+                >
+                  <SvgEs/>
+                </IconButton>
               <IconButton 
                 onClick={()=>handleLangChange('en')}
                 sx={{ 
@@ -124,16 +134,6 @@ export default function Header() {
                 }}
               >
                 <SvgEn/>
-              </IconButton>
-              <IconButton 
-                onClick={()=>handleLangChange('es')}
-                sx={{ 
-                  color: 'white', 
-                  padding: { md: '4px', lg: '8px' },
-                  '&:hover': { backgroundColor: 'rgba(255,255,255,0.08)' } 
-                }}
-              >
-                <SvgEs/>
               </IconButton>
             </Box>
           </Box>
@@ -206,16 +206,16 @@ export default function Header() {
                 {/* Language selectors */}
                 <Box className="flex gap-4 mt-auto">
                   <IconButton 
-                    onClick={()=>handleLangChange('en')}
-                    sx={{ color: 'var(--color-primary)', '&:hover': { backgroundColor: 'rgba(0,0,0,0.04)' } }}
-                  >
-                    <SvgEn/>
-                  </IconButton>
-                  <IconButton 
                     onClick={()=>handleLangChange('es')}
                     sx={{ color: 'var(--color-primary)', '&:hover': { backgroundColor: 'rgba(0,0,0,0.04)' } }}
                   >
                     <SvgEs/>
+                  </IconButton>
+                  <IconButton 
+                    onClick={()=>handleLangChange('en')}
+                    sx={{ color: 'var(--color-primary)', '&:hover': { backgroundColor: 'rgba(0,0,0,0.04)' } }}
+                  >
+                    <SvgEn/>
                   </IconButton>
                 </Box>
               </motion.div>

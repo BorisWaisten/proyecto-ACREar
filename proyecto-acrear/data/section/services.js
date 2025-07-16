@@ -15,7 +15,7 @@ export const services ={
     {
       title: 'MISIONES INSTITUCIONALES Y COMERCIALES',
       description:
-        'Conectamos instituciones con contrapartes internacionales mediante agendas comerciales, institucionales y visitas técnicas.',
+        'Conectamos el sector público municipal, provincial y nacional con contrapartes internacionales mediante agendas comerciales, institucionales y visitas técnicas.',
     },
     {
       title: 'CAPACITACIONES',

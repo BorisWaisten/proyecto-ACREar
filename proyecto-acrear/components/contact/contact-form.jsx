@@ -75,8 +75,6 @@ const ContactForm = ({ contactData }) => {
       component="form"
       onSubmit={handleSubmit}
       sx={{
-        bgcolor: 'var(--color-accent)',
-        p: 4,
         borderRadius: 5,
         boxShadow: 3,
         display: 'flex',

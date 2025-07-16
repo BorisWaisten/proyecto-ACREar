@@ -2,23 +2,22 @@ export const home = {
     es:{
         about:{
             title:"ACREarg",
-            text1:"ACREarg es la Cámara Argentina de Economías Regionales. Reunimos productores, exportadores y actores estratégicos para impulsar el desarrollo productivo y conectar a las economías regionales con el mundo.",
-            text2:"Desde el territorio hacia los mercados globales, conectamos la producción regional con oportunidades concretas. Trabajamos junto a empresas, gobiernos locales y actores estratégicos de cada región para fortalecer exportaciones, brindar servicios técnicos y generar vínculos efectivos.",
-            text3:"Desarrollo productivo y comercial con visión global",
+            text1:"La Cámara Argentina de Economías Regionales (ACREarg), reúne los actores involucrados en cada proceso exportador, vinculando las cadenas de valores regionales con los mercados internacionales e impulsando el desarrollo productivo y social local en las 24 provincias Argentinas.",
+            text2:"Buscamos conectar la producción regional con oportunidades internacionales concretas, trabajando junto a las empresas, gobiernos municipales, provinciales y nacionales, asimismo actores estratégicos de cada región, brindando asesoramiento y acompañamiento técnico en cada etapa del proceso exportador.",
         },
         counter: {
-            title: "La Cámara en la Región",
+            title: "La Cámara en Números",
             stats: [
                 {
-                    number: "23",
+                    number: "24",
                     label: "Provincias"
                 },
                 {
-                    number: "+20",
+                    number: "+30",
                     label: "Economías Regionales"
                 },
                 {
-                    number: "+40",
+                    number: "+100",
                     label: "Empresas"
                 }
             ]
@@ -72,41 +71,56 @@ export const home = {
         events:{
                     acrearg:{
                         title: 'CÁMARA ARGENTINA DE ECONOMÍAS REGIONALES',
-                        text: 'Promovemos el desarrollo de las economías regionales de la Argentina.',
+                        text: 'Promovemos el desarrollo de las economías regionales de la República Argentina.',
                         img: '/fotos/evento-4.jpg',
-                        link: '/trading',
+                        link: '/about',
                     },
                     internacionale:{
                         title: 'INTERNACIONALIZÁ TU EMPRESA',
-                        text: 'Te acompañamos en cada etapa de la exportación.',
+                        text: 'Te acompañamos en cada etapa del proceso exportador.',
                         img: '/fotos/evento-1.png', // reemplazar con tus imágenes reales
-                        link: '/about',
+                        link: '/services',
                     },
                     asistencie:{
-                        title: 'ASISTENCIA TÉCNICA A LAS EMPRESAS',
-                        text: 'Fortalecé las capacidades de tu equipo.',
+                        title: 'ASISTENCIA TÉCNICA A LAS EMPRESAS ARGENTINAS',
+                        text: 'Acompañamos a fortalecer las capacidades de las economías regionales.',
                         img: '/fotos/evento-5.avif',
-                        link: '/contact',
+                        link: '/services',
                     },
                     button:"Ver Más"
                 },
         offices:{
-            title:"Oficinas",
+            title:"Nuestras Oficinas",
                     locations:[
                         {
                             name: 'Oficina CABA',
                             lat: -34.6037,
                             lng: -58.3816,
+                            address: 'Comodoro Pedro Zanni 351, Cdad. Autónoma de Buenos Aires'
                         },
                         {
-                            name: 'Oficina de Santa Fe',
-                            lat: -31.4201,
-                            lng: -64.1888,
+                            name: 'Oficina Sgo del Estero',
+                            lat: -27.7951,
+                            lng: -64.2615,
+                            address: 'Mitre 328, Santiago del Estero, Provincia de Santiago del Estero'
                         },
                         {
-                            name: 'Oficina de Exterior',
-                            lat: 40.7128,
-                            lng: -74.0060,
+                            name: 'Oficina Rosario',
+                            lat: -32.9468,
+                            lng: -60.6393,
+                            address: 'Avenida madres de plaza 25 de mayo 3020 piso 3, Rosario, Santa Fe, Argentina'
+                        },
+                        {
+                            name: 'Oficina Miami',
+                            lat: 25.7617,
+                            lng: -80.1918,
+                            address: ''
+                        },
+                        {
+                            name: 'Oficina Madrid',
+                            lat: 40.4262,
+                            lng: -3.6866,
+                            address: 'Velázquez 27 planta 1, Madrid, España'
                         },
                     ],
         },

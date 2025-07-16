@@ -24,7 +24,7 @@ export default function ContactPage() {
 
   return (
     <AnimatedBackground>
-      <div className="min-h-screen relative flex flex-col items-center py-16 px-4 sm:px-6 lg:px-8">
+      <div className=" relative flex flex-col items-center py-16 px-4 sm:px-6 lg:px-8">
         {/* Background image with overlay */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/70 z-10" /> {/* Dark overlay */}
@@ -40,7 +40,7 @@ export default function ContactPage() {
         {/* Content with relative positioning to appear above the background */}
         <div className="relative z-20 w-full">
           <motion.h2 
-            className="text-[1.5rem] sm:text-[2rem] md:text-[3rem] font-bold text-white  my-12 text-center"
+            className="text-[1.5rem] sm:text-[2rem] md:text-[3rem] font-bold text-white  mt-12 mb-4 text-center"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
@@ -49,7 +49,7 @@ export default function ContactPage() {
           </motion.h2>
 
           <motion.div 
-            className="flex flex-col md:flex-row w-full max-w-7xl gap-8 mx-auto"
+            className="flex flex-col md:flex-row w-full max-h-[50vh] max-w-2xl mx-auto"
             variants={{
               initial: { opacity: 0, y: 20 },
               animate: {
@@ -63,19 +63,9 @@ export default function ContactPage() {
             }}
             initial="initial"
             animate="animate"
-          >
+          >      
             <motion.div 
-              className="flex-1"
-              variants={{
-                initial: { opacity: 0, x: -20 },
-                animate: { opacity: 1, x: 0 }
-              }}
-            >
-              <ContactInfo contactData={t}/>
-            </motion.div>
-            
-            <motion.div 
-              className="flex-1"
+              className="flex-1 "
               variants={{
                 initial: { opacity: 0, x: 20 },
                 animate: { opacity: 1, x: 0 }

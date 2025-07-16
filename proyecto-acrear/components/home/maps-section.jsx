@@ -44,7 +44,7 @@ export default function MapSection({ regional, provincias }) {
 
   return (
     <motion.section
-      className="w-full min-h-[400px] sm:min-h-[600px] md:h-[70vh] relative overflow-hidden py-10 sm:py-0 "
+      className="w-full min-h-[400px] sm:min-h-[600px] md:h-[75vh] relative overflow-hidden py-10 sm:py-0 "
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -59,7 +59,7 @@ export default function MapSection({ regional, provincias }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <motion.div
-            className="w-full scale-[1.2]  max-w-[300px] mx-auto min-h-[250px] md:w-[250px] md:pr-10 md:scale-100 md:min-h-[250px] md:h-full md:pl-2 rounded-xl overflow-hidden"
+            className="w-full scale-[1.2]  max-w-[300px] mx-auto min-h-[250px] md:w-[250px] md:pr-20 md:scale-110 md:min-h-[400px] md:h-full md:pl-2 rounded-xl overflow-hidden"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -77,7 +77,7 @@ export default function MapSection({ regional, provincias }) {
               transition={{ duration: 0.3 }}
             >
               <div className="flex flex-col w-3/4 h-full mx-auto text-[var(--color-primary)] justify-center ">
-                <p className="text-base md:text-lg font-bold text-center">
+                <p className="text-lg md:text-2xl font-bold text-center">
                   {provincia.name}
                 </p>
                 <div className="relative flex flex-col items-center">
@@ -85,7 +85,7 @@ export default function MapSection({ regional, provincias }) {
                   <div className="w-full">
                     <div className={`${gridClass} gap-2 md:gap-2 lg:gap-3 xl:gap-4 justify-center items-center`}>
                       {visibleActivities.map((act, idx) => (
-                        <div key={idx} className="flex flex-col items-center mx-auto w-[80px] sm:w-[80px] md:w-[70px] lg:w-[80px] xl:w-[90px]">
+                        <div key={idx} className="flex flex-row items-center mx-auto w-[80px] sm:w-[80px] md:w-[70px] lg:w-[80px] xl:w-[90px]">
                           <Image
                             src={visibleIcons[idx]}
                             alt={act}

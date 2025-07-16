@@ -147,7 +147,7 @@ export default function EventsSection({ events }) {
           z-index: 50;
           display: flex !important;
           justify-content: center;
-          gap: 0.5rem;
+          gap: 1rem;
         }
         .slick-dots li {
           margin: 0;

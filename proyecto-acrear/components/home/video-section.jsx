@@ -42,7 +42,7 @@ export default function VideoSection({video}) {
   return (
     <motion.section 
       ref={containerRef}
-      className="relative w-full h-auto md:h-[70vh] mb-10 flex flex-col items-center justify-center "
+      className="relative w-full lg:w-[95%] h-auto md:h-[50vh] lg:h-[60vh] mb-10 flex flex-col items-center justify-center "
       style={{
         opacity: sectionOpacity,
         scale: sectionScale,
@@ -53,14 +53,14 @@ export default function VideoSection({video}) {
       
       {/* Container del video con animaciones responsive */}
       <motion.div 
-        className="relative w-full aspect-video overflow-hidden "
+        className="relative w-full aspect-video overflow-hidden flex justify-center items-center"
         style={{
           scale: videoScale,
         }}
       >
         {/* Video principal con efectos */}
         <motion.video
-          className="w-full h-full object-cover"
+          className="w-full  lg:h-full lg:w-auto lg:rounded-2xl object-cover  md:object-cover"
           src="/video-section.mp4"
           autoPlay
           muted

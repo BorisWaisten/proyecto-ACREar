@@ -15,17 +15,17 @@ export default function Footer() {
       {/* Elemento decorativo */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
+      <div className="max-w-4xl mx-auto py-8 md:py-10">
+        <div className="grid grid-cols-1 md:grid-cols-4">
           {/* Logo */}
           <div className="flex flex-col items-start pl-8 sm:pl-0 md:items-center  animate-fade-in transition-all duration-500">
             <Image className='cursor-pointer scale-[1.7] sm:w-40 sm:h-30 sm:scale-[1.6]' src="/logos/logo-acrearg-blanco2.svg" alt="Logo ACREarg" width={120} height={60} onClick={() => router.push('/')} />
           </div>
 
           {/* Compañía */}
-          <div className="animate-fade-in transition-all duration-500">
+          <div className="animate-fade-in transition-all duration-500 mx-auto">
             <h4 className="font-bold mb-3 text-base md:text-lg transition-colors duration-300">{footer[lang].company.title}</h4>
-            <ul className="space-y-2 text-md md:text-base">
+            <ul className="space-y-2 text-md md:text-base sm:text-center">
               {footer[lang].company.links.map((link, index) => (
                 <li key={index}>
                   <Link href={link.href} className="hover:text-[var(--color-primary)] transition-all">{link.name}</Link>
@@ -35,8 +35,8 @@ export default function Footer() {
           </div>
 
           {/* Contacto */}
-          <div className="animate-fade-in transition-all duration-500">
-            <h4 className="font-bold mb-3 text-base md:text-lg transition-colors duration-300">{footer[lang].contact.title}</h4>
+          <div className="animate-fade-in transition-all duration-500 mx-auto">
+            <h4 className="font-bold mb-3 text-base text-center md:text-lg transition-colors duration-300">{footer[lang].contact.title}</h4>
             <ul className="text-md md:text-base space-y-2">
               <li className="hover:text-[var(--color-primary)] transition-all flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -55,8 +55,8 @@ export default function Footer() {
           </div>
 
           {/* Redes Sociales */}
-          <div className="flex flex-col  animate-fade-in transition-all duration-500">
-              <h4 className="font-bold mb-3 text-start  text-base md:text-lg  transition-all duration-300">{footer[lang].social.title}</h4>
+          <div className="flex flex-col  animate-fade-in transition-all duration-500 ">
+              <h4 className="font-bold mb-3 text-start sm:text-center text-base md:text-lg  transition-all duration-300">{footer[lang].social.title}</h4>
             <div className='flex flex-col items-start md:items-center justify-center'>
               <SocialIcons />
             </div>
