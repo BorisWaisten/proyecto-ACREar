@@ -17,13 +17,13 @@ export default function ServicesSection({services}) {
   ];
   return (
     <motion.section
-      className="w-full py-16 px-4 bg-[var(--color-secondary)] text-center"
+      className="w-full px-4 bg-[var(--color-secondary)] text-center pt-4 sm:pt-8"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       viewport={{ once: true, amount: 0.2 }}
     >
-      <h2 className="text-xl md:text-2xl font-bold text-[var(--color-accent)] mb-12 ">
+      <h2 className="text-xl md:text-2xl font-bold text-[var(--color-accent)] mb-4 sm:mb-6">
         {services.title}
       </h2>
 
@@ -58,8 +58,8 @@ export default function ServicesSection({services}) {
               </svg>
             </div>
 
-            <h3 className="font-bold text-center text-base md:text-lg mb-3 md:mb-4 leading-tight tracking-tight">{service.title}</h3>
-            <p className="text-sm md:text-base mb-4 md:mb-5 text-center md:w-[250px] leading-tight tracking-tight">{service.description}</p>
+            <h3 className="font-bold text-balance text-base md:text-lg mb-3 md:mb-4 leading-tight tracking-tight">{service.title}</h3>
+            <p className="text-sm  lg:text-base mb-4 md:mb-5 text-left  md:w-[200px] lg:w-[250px] leading-tight tracking-tight">{service.description}</p>
 
             <Link href={service.href}>
               <button className="bg-[var(--color-primary)] hover:brightness-90 text-white font-semibold px-6 py-2 rounded-full transition-all">

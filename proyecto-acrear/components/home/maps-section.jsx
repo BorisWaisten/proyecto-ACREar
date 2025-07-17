@@ -20,31 +20,29 @@ export default function MapSection({ regional, provincias }) {
     return () => window.removeEventListener('resize', checkDesktop);
   }, []);
 
-  let visibleActivities = provincia.activities;
-  let visibleIcons = provincia.icons;
+  // Grid flexible según cantidad de items
+  const itemCount = provincia.activities.length;
   let gridClass = '';
-
   if (isDesktop) {
-    if (provincia.activities.length > 4) {
-      visibleActivities = provincia.activities.slice(0, 8);
-      visibleIcons = provincia.icons.slice(0, 8);
-      gridClass = 'grid grid-cols-2 grid-rows-4';
-    } else {
-      gridClass = 'grid grid-cols-1';
-    }
+    if (itemCount <= 4) gridClass = 'grid grid-cols-2 grid-rows-2';
+    else if (itemCount <= 6) gridClass = 'grid grid-cols-3 grid-rows-2';
+    else if (itemCount <= 8) gridClass = 'grid grid-cols-4 grid-rows-2';
+    else if (itemCount <= 12) gridClass = 'grid grid-cols-4 grid-rows-3';
+    else if (itemCount <= 16) gridClass = 'grid grid-cols-4 grid-rows-4';
+    else gridClass = 'grid grid-cols-5 grid-rows-4';
   } else {
-    if (provincia.activities.length > 4) {
-      visibleActivities = provincia.activities.slice(0, 8);
-      visibleIcons = provincia.icons.slice(0, 8);
-      gridClass = 'grid grid-cols-4 grid-rows-2';
-    } else {
-      gridClass = 'flex justify-center items-center ';
-    }
+    if (itemCount <= 4) gridClass = 'grid grid-cols-2 grid-rows-2';
+    else if (itemCount <= 6) gridClass = 'grid grid-cols-3 grid-rows-2';
+    else if (itemCount <= 8) gridClass = 'grid grid-cols-4 grid-rows-2';
+    else if (itemCount <= 12) gridClass = 'grid grid-cols-4 grid-rows-3';
+    else gridClass = 'grid grid-cols-4 grid-rows-4';
   }
+  const visibleActivities = provincia.activities;
+  const visibleIcons = provincia.icons;
 
   return (
     <motion.section
-      className="w-full min-h-[400px] sm:min-h-[600px] md:h-[75vh] relative overflow-hidden py-10 sm:py-0 "
+      className="w-full min-h-[400px] sm:min-h-[500px] md:h-[60vh] lg:h-[70vh] relative overflow-hidden mt-4 sm:mt-8"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -59,7 +57,7 @@ export default function MapSection({ regional, provincias }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <motion.div
-            className="w-full scale-[1.2]  max-w-[300px] mx-auto min-h-[250px] md:w-[250px] md:pr-20 md:scale-110 md:min-h-[400px] md:h-full md:pl-2 rounded-xl overflow-hidden"
+            className="w-full scale-[1.4] py-4 sm:py-0  max-w-[300px] mx-auto min-h-[250px] md:w-[250px] md:pr-20 md:scale-110 md:min-h-[400px] md:h-full md:pl-2 rounded-xl overflow-hidden"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -76,16 +74,16 @@ export default function MapSection({ regional, provincias }) {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="flex flex-col w-3/4 h-full mx-auto text-[var(--color-primary)] justify-center ">
-                <p className="text-lg md:text-2xl font-bold text-center">
+              <p className="text-lg md:text-2xl font-bold text-center">
                   {provincia.name}
-                </p>
+              </p>
+              <div className="flex flex-col w-3/4 h-full mx-auto text-[var(--color-primary)] justify-center ">
                 <div className="relative flex flex-col items-center">
                   {/* Desktop: grilla 2x4 o 1xN según cantidad, Mobile: fila/columna */}
                   <div className="w-full">
-                    <div className={`${gridClass} gap-2 md:gap-2 lg:gap-3 xl:gap-4 justify-center items-center`}>
+                    <div className={`${gridClass} gap-2 md:gap-2 lg:gap-3 xl:gap-4 justify-center items-center mt-2 sm:mt-0 mb-4 sm:mb-0`}>
                       {visibleActivities.map((act, idx) => (
-                        <div key={idx} className="flex flex-row items-center mx-auto w-[80px] sm:w-[80px] md:w-[70px] lg:w-[80px] xl:w-[90px]">
+                        <div key={idx} className="flex flex-col items-center mx-auto w-[80px] sm:w-[80px] md:w-[70px] lg:w-[80px] xl:w-[90px]">
                           <Image
                             src={visibleIcons[idx]}
                             alt={act}
@@ -93,7 +91,7 @@ export default function MapSection({ regional, provincias }) {
                             height={36}
                             className="mb-1 w-7 h-7 sm:w-8 sm:h-8 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12"
                           />
-                          <p className="text-sm md:text-md w-full text-center text-balance">{act}</p>
+                          <p className="text-[0.6rem] md:text-base w-full text-center text-balance">{act}</p>
                         </div>
                       ))}
                     </div>

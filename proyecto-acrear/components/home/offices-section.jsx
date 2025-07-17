@@ -6,8 +6,8 @@ const OfficeMap = dynamic(() => import('./OfficeMap'), { ssr: false });
 export default function OfficesSection({ offices }) {
   const locationsLocal = [...offices.locations]
   return (
-    <section className="w-full  py-8 md:py-16 px-4 bg-[var(--color-secondary)] text-center">
-      <h2 className="text-xl md:text-xl lg:text-2xl font-bold text-[var(--color-accent)] mb-8 md:mb-12">{offices.title}</h2>
+    <section className="w-full py-4 sm:py-10 px-4 bg-[var(--color-secondary)] text-center">
+      <h2 className="text-xl md:text-2xl lg:text-2xl font-bold text-[var(--color-accent)] mb-4 sm:mb-8">{offices.title}</h2>
 
       <div className="w-full max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row justify-center items-center md:items-stretch gap-4 md:gap-6">

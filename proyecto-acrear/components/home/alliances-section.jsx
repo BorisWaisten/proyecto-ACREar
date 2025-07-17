@@ -45,10 +45,10 @@ export default function NuestraComunidad({ alliances }) {
   };
 
   return (
-    <section className="w-full relative overflow-hidden py-20">
+    <section className="w-full relative overflow-hidden pt-4 sm:pt-8">
       {/* Contenido centrado y limitado */}
       <div className="relative z-10 max-w-4xl mx-auto px-6">
-        <h2 className="text-xl md:text-2xl text-center font-bold mb-10 text-[var(--color-primary)]">
+        <h2 className="text-xl md:text-2xl text-center font-bold  text-[var(--color-primary)]">
           {alliances.title}
         </h2>
 
@@ -61,10 +61,10 @@ export default function NuestraComunidad({ alliances }) {
           <Slider {...settings}>
             {allLogos.map((logo, i) => (
               <div key={i} className="">
-                <div className={`h-28 sm:h-44 sm:w-32 flex items-center justify-center mx-auto p-4 ${
+                <div className={`h-28 sm:h-34 sm:w-32 flex items-center justify-center mx-auto  ${
                   isSmallLogo(logo) 
-                    ? 'scale-125  sm:scale-[1.6] md:scale-[2.2] lg:scale-[2]' // Scale aumentado para logos chicos
-                    : ' sm:scale-125 md:scale-[1.5] lg:scale-[1.2]'   // Scale normal para logos regulares
+                    ? 'scale-125  sm:scale-[1.6] md:scale-[2.8] lg:scale-[2.8]' // Scale aumentado para logos chicos
+                    : ' sm:scale-125 md:scale-[1.8] lg:scale-[1.8]'   // Scale normal para logos regulares
                 }`}>
                   <Image
                     src={logo}
@@ -72,17 +72,13 @@ export default function NuestraComunidad({ alliances }) {
                     width={180}
                     height={120}
                     quality={100}
-                    className="object-contain w-full h-full max-w-[180px] max-h-[120px]"
+                    className="object-contain w-full max-w-[70px] "
                   />
                 </div>
               </div>
             ))}
           </Slider>
         </motion.div>
-
-        <p className="text-lg md:text-xl text-center mt-4">
-          {alliances.description}
-        </p>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import "tailwindcss";
 @import 'slick-carousel/slick/slick.css';
 @import 'slick-carousel/slick/slick-theme.css';
@@ -43,7 +43,7 @@
 }
 
 html {
-  font-family: 'Roboto', 'Montserrat', 'Open Sans', sans-serif;
+  font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   background-color: var(--color-background);
   color: var(--color-primary);
 }
@@ -67,6 +67,36 @@ body {
   
   .scrollbar-hide::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
+  }
+
+  /* Roboto font utilities */
+  .font-roboto {
+    font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
+  }
+  
+  .font-roboto-light {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+  }
+  
+  .font-roboto-regular {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+  
+  .font-roboto-medium {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+  }
+  
+  .font-roboto-bold {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+  }
+  
+  .font-roboto-black {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
   }
 
   @keyframes fadeIn {

@@ -64,13 +64,13 @@ export default function CounterSection({ counter }) {
   };
 
   return (
-    <section className="max-w-4xl mx-auto md:h-[40vh] pt-6  sm:py-20">
+    <section className="max-w-4xl mx-auto md:h-[30vh] pt-6  lg:pt-10">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-xl md:text-2xl font-bold text-center text-[var(--color-primary)] mb-12"
+          className="text-xl md:text-2xl font-bold text-center text-[var(--color-primary)] sm:mb-6 mb-3"
         >
           {counter.title}
         </motion.h2>
