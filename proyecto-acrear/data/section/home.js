@@ -93,31 +93,31 @@ export const home = {
             title:"Nuestras Oficinas",
                     locations:[
                         {
-                            name: 'Oficina CABA',
+                            name: 'CABA',
                             lat: -34.6037,
                             lng: -58.3816,
                             address: 'Comodoro Pedro Zanni 351, Cdad. Autónoma de Buenos Aires'
                         },
                         {
-                            name: 'Oficina Sgo del Estero',
+                            name: 'Santiago del Estero',
                             lat: -27.7951,
                             lng: -64.2615,
                             address: 'Mitre 328, Santiago del Estero, Provincia de Santiago del Estero'
                         },
                         {
-                            name: 'Oficina Rosario',
+                            name: 'Rosario',
                             lat: -32.9468,
                             lng: -60.6393,
                             address: 'Avenida madres de plaza 25 de mayo 3020 piso 3, Rosario, Santa Fe, Argentina'
                         },
                         {
-                            name: 'Oficina Miami',
-                            lat: 25.7617,
-                            lng: -80.1918,
-                            address: ''
+                            name: 'Miami',
+                            lat: 25.7912769,
+                            lng: -80.1959607,
+                            address: '1600 NE 1st depto. 1210 Miami fl 33132'
                         },
                         {
-                            name: 'Oficina Madrid',
+                            name: 'Madrid',
                             lat: 40.4262,
                             lng: -3.6866,
                             address: 'Velázquez 27 planta 1, Madrid, España'

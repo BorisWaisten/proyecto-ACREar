@@ -25,26 +25,26 @@ export default function MapSection({ regional, provincias }) {
   let gridClass = '';
   
   if (isDesktop) {
-    // Desktop: Grid más inteligente basado en la cantidad de items
+    // Desktop: Grid equilibrado con filas y columnas
     if (itemCount <= 3) {
-      gridClass = 'grid grid-cols-3 ';
+      gridClass = 'grid grid-cols-3 gap-4';
     } else if (itemCount <= 4) {
-      gridClass = 'grid grid-cols-2 gap-2';
+      gridClass = 'grid grid-cols-2 gap-4';
     } else if (itemCount <= 6) {
       gridClass = 'grid grid-cols-3 gap-3';
     } else if (itemCount <= 8) {
       gridClass = 'grid grid-cols-4 gap-3';
     } else if (itemCount <= 10) {
-      gridClass = 'grid grid-cols-5 gap-6';
+      gridClass = 'grid grid-cols-5 gap-2';
     } else if (itemCount <= 12) {
-      gridClass = 'grid grid-cols-4 gap-6';
+      gridClass = 'grid grid-cols-4 gap-2';
     } else if (itemCount <= 15) {
-      gridClass = 'grid grid-cols-5 gap-8';
+      gridClass = 'grid grid-cols-5 gap-2';
     } else {
       gridClass = 'grid grid-cols-6 gap-2';
     }
   } else {
-    // Mobile: Grid más compacto
+    // Mobile: Grid compacto
     if (itemCount <= 3) {
       gridClass = 'grid grid-cols-3 gap-2';
     } else if (itemCount <= 4) {
@@ -65,7 +65,7 @@ export default function MapSection({ regional, provincias }) {
 
   return (
     <motion.section
-      className="w-[70%] mx-auto min-h-[400px] sm:min-h-[500px] md:h-[60vh] lg:h-[70vh] relative overflow-hidden mt-4 sm:mt-8"
+      className="w-[70%] mx-auto min-h-[400px] sm:min-h-[500px] md:h-[600px] lg:h-[600px] relative overflow-hidden mt-4 sm:mt-8"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}

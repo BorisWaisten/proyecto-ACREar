@@ -22,7 +22,7 @@ export default function OfficesSection({ offices }) {
                 rel="noopener noreferrer"
                 className="block w-full max-w-[280px] md:w-[180px] lg:w-[180px] xl:w-[180px] rounded-2xl overflow-hidden border-2 border-[var(--color-accent)] transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] bg-[var(--color-secondary)] shadow-md"
               >
-                <h3 className="text-[var(--color-primary)] font-semibold text-sm md:text-md py-2 bg-[var(--color-accent)] text-center">
+                <h3 className="text-white font-semibold text-sm md:text-md py-2 bg-[var(--color-accent)] text-center">
                   {loc.name}
                 </h3>
                 <OfficeMap lat={loc.lat} lng={loc.lng} name={loc.name} address={loc.address} />

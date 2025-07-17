@@ -32,8 +32,8 @@ export default function MissionSection({ about }) {
   ];
 
   return (
-    <section className="w-[90%] mx-auto sm:w-full  sm:px-6 md:h-[70vh] sm:min-h-[45vh]">
-              <div className={`mx-auto w-[90%] lg:w-[80%] h-full ${activeIndex === 3 ? '' : 'max-w-4xl'}`}>
+    <section className="w-[90%] mx-auto sm:w-full  sm:px-6 md:h-[600px] sm:min-h-[300px]">
+        <div className={`mx-auto w-[90%] lg:w-[80%] h-full ${activeIndex === 3 ? '' : 'max-w-4xl'}`}>
           <div className="flex flex-col  md:h-full md:flex-row md:items-center gap-8 h-full">
 
             {/* Sidebar - siempre mantiene su tamaño */}
@@ -54,18 +54,18 @@ export default function MissionSection({ about }) {
 
           {/* Contenido activo */}
                       {items[activeIndex].type === 'cards' ? (
-              // Cards para objetivos específicos - sin contenedor de fondo
-              <div className="w-full flex-1">
+              // Cards para objetivos específicos - centrado vertical
+              <div className="w-full flex-1 flex items-center justify-center">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 mb-4 sm:mb-0">
                 {items[activeIndex].objectives.map((objective, index) => (
                   <div 
                     key={index}
-                    className="bg-white sm:h-[280px] xl:h-[250px] border-2 border-[var(--color-primary)] text-[var(--color-primary)] p-2 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                    className="bg-white sm:h-[250px]  border-2 border-[var(--color-primary)] text-[var(--color-primary)] p-2 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                   >
                     <h3 className="text-md font-bold mb-1 text-center border-b-2 border-[var(--color-accent)] ">
                       {objective.title}
                     </h3>
-                    <p className=" text-sm sm:text-xs xl:text-base leading-relaxed text-left tracking-tight">
+                    <p className=" text-sm sm:text-[.75rem] xl:text-base leading-relaxed text-left tracking-wide">
                       {objective.text}
                     </p>
                   </div>
@@ -76,7 +76,7 @@ export default function MissionSection({ about }) {
             // Texto normal para otros items
             <div className="flex justify-center items-center mx-auto w-[90%] lg:w-[50%] h-auto mb-4 md:mb-0 sm:min-h-[20vh] sm:max-h-[65vh] bg-white md:p-2 rounded-xl border border-[var(--color-primary)] shadow-sm transition-all duration-500 animate-fade-in">            
               <div className="w-[90%] h-full m-4 lg:mb-2 mx-auto scrollbar-hide">
-                <p className="text-sm md:text-base text-balance lg:text-base text-[var(--color-primary)] whitespace-pre-line leading-none tracking-tight">
+                <p className="text-sm md:text-base text-balance lg:text-base text-[var(--color-primary)] whitespace-pre-line leading-none tracking-wide">
                   {items[activeIndex].content}
                 </p>
               </div>

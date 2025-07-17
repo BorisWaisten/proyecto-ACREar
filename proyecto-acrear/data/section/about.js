@@ -38,7 +38,7 @@ export const aboutData ={
             { name: 'Pablo Rico', role: 'Presidente', avatar: '/autoridades/pablo-rico.png' },
             { name: 'Eugenia Neder', role: 'Secretaria', avatar: '/autoridades/eugenia-neder.png' },
             { name: 'Esteban Cordiviola', role: 'Tesorero', avatar: '/autoridades/esteban-cordiviola.png' },
-            { name: 'Laila Abbas', role: 'Vocal Primera', avatar: '/autoridades/laila-abbas.png'},
+            { name: 'Laila Abbas', role: 'Vocal Primera y Directora Ejecutiva', avatar: '/autoridades/laila-abbas.png'},
             { name: 'Samira Manzur', role: 'Vocal Suplente', avatar: '/autoridades/samira-manzur.jpeg' },
         ],
         authoritiesTitle:"AUTORIDADES",
@@ -79,11 +79,11 @@ export const aboutData ={
             ]
         },
         authorities: [
-            { name: 'Pablo Rico', role: 'Presidente', avatar: '/autoridades/pablo-rico.png' },
-            { name: 'Eugenia Neder', role: 'Secretaria', avatar: '/autoridades/eugenia-neder.png' },
-            { name: 'Esteban Cordiviola', role: 'Tesorero', avatar: '/autoridades/esteban-cordiviola.png' },
-            { name: 'Laila Abbas', role: 'Vocal Primera', avatar: '/autoridades/laila-abbas.png'},
-            { name: 'Samira Manzur', role: 'Vocal Suplente', avatar: '/autoridades/samira-manzur.jpeg' },
+            { name: 'Pablo Rico', role: 'President', avatar: '/autoridades/pablo-rico.png' },
+            { name: 'Eugenia Neder', role: 'Secretary', avatar: '/autoridades/eugenia-neder.png' },
+            { name: 'Esteban Cordiviola', role: 'Treasurer', avatar: '/autoridades/esteban-cordiviola.jpeg' },
+            { name: 'Laila Abbas', role: 'First Member and Executive Director', avatar: '/autoridades/laila-abbas.png'},
+            { name: 'Samira Manzur', role: 'Second Member', avatar: '/autoridades/samira-manzur.jpeg' },
         ],
         authoritiesTitle:"AUTHORITIES",
     }

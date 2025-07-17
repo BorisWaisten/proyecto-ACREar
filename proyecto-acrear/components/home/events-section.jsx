@@ -75,7 +75,7 @@ export default function EventsSection({ events }) {
 
   return (
     <motion.section 
-      className="w-full h-[600px] lg:h-[70vh] bg-[var(--color-secondary)] relative"
+      className="w-full h-[600px] lg:h-[600px] bg-[var(--color-secondary)] relative"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}

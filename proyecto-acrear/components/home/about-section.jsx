@@ -1,11 +1,13 @@
 'use client';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 
 export default function AboutSection({ about }) {
   const containerRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState(1);
+  const [contentWidth, setContentWidth] = useState('max-w-4xl');
 
   // Detectar si es móvil
   useEffect(() => {
@@ -17,7 +19,55 @@ export default function AboutSection({ about }) {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
-  
+
+  // Detectar zoom del navegador - optimizado para evitar re-renders
+  const checkZoom = useCallback(() => {
+    let zoom = 1;
+    
+    // Método 1: visualViewport (más moderno)
+    if (window.visualViewport && window.visualViewport.scale) {
+      zoom = window.visualViewport.scale;
+    }
+    // Método 2: Comparar dimensiones (fallback)
+    else {
+      const ratio = window.outerWidth / window.innerWidth;
+      zoom = ratio;
+    }
+    
+    // Solo actualizar si el zoom cambió significativamente
+    if (Math.abs(zoom - zoomLevel) > 0.1) {
+      setZoomLevel(zoom);
+      
+      // Calcular el ancho del contenido basado en el zoom
+      let newWidth = 'max-w-4xl';
+      if (zoom > 1.25) {
+        newWidth = 'max-w-2xl';
+      }
+      
+      setContentWidth(newWidth);
+      console.log('Zoom level:', zoom, 'Content width:', newWidth);
+    }
+  }, [zoomLevel]);
+
+  useEffect(() => {
+    checkZoom();
+    
+    // Escuchar cambios en el viewport
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', checkZoom);
+    }
+    
+    // También escuchar resize del window como fallback
+    window.addEventListener('resize', checkZoom);
+    
+    return () => {
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', checkZoom);
+      }
+      window.removeEventListener('resize', checkZoom);
+    };
+  }, [checkZoom]);
+
   // Hook para detectar el scroll dentro de la sección
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -71,7 +121,7 @@ export default function AboutSection({ about }) {
   return (
     <section 
       ref={containerRef}
-      className={`relative ${isMobile ? 'min-h-[500px]' : 'h-[700px] md:h-[100vh]'}`}
+      className={`relative  ${isMobile ? 'min-h-[500px]' : 'h-[700px] md:h-[800px]'}`}
     >
       {/* Logo background layer (centrado, animado, relativo a la sección) */}
       <motion.div
@@ -101,7 +151,7 @@ export default function AboutSection({ about }) {
 
       {/* Content layer (centrado, animado, relativo a la sección) */}
       <div className="absolute inset-0 flex items-center justify-center text-white">
-        <div className={`mx-auto text-center px-4 md:px-6 ${isMobile ? 'space-y-3 max-w-sm' : 'max-w-4xl space-y-4 md:space-y-8 lg:space-y-12'}`}>
+        <div className={`mx-auto text-center px-4 md:px-6 ${isMobile ? 'space-y-3 max-w-sm' : `${contentWidth} space-y-4 md:space-y-8 lg:space-y-12`}`}>
           {/* Title with cinematic reveal */}
           <motion.div
             style={{
@@ -132,11 +182,11 @@ export default function AboutSection({ about }) {
               y: contentY
             }}
           >
-            <div className={`${isMobile ? 'space-y-2' : 'space-y-4 md:space-y-6'} w-full mx-auto text-justify`}>
-              <p className={`${isMobile ? 'text-sm leading-tight' : 'text-base md:text-lg leading-relaxed'} font-medium text-gray-100`}>
+            <div className={`${isMobile ? 'space-y-2' : 'space-y-4 md:space-y-6'} w-full mx-auto text-left`}>
+              <p className={`${isMobile ? 'text-sm leading-tight' : 'text-base md:text-lg leading-tight'} font-medium text-gray-100`}>
                 {about?.text1 || "Descubre la innovación que está transformando el futuro"}
               </p>
-              <p className={`${isMobile ? 'text-sm leading-tight' : 'text-base md:text-lg leading-relaxed'} font-bold text-gray-300`}>
+              <p className={`${isMobile ? 'text-sm leading-tight' : 'text-base md:text-lg leading-tight'} font-bold text-gray-300`}>
                 {about?.text2 || "Con tecnología de vanguardia y un diseño excepcional"}
               </p>
             </div>

@@ -64,7 +64,7 @@ export default function CounterSection({ counter }) {
   };
 
   return (
-    <section className="max-w-4xl mx-auto md:h-[30vh] pt-6  lg:pt-10">
+    <section className="max-w-4xl mx-auto md:h-[300px] pt-6  lg:pt-20">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}

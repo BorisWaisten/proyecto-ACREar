@@ -9,7 +9,7 @@ function Card({ name, role, avatar }) {
         alt={name}
         width={80}
         height={80}
-        className="rounded-xl w-[150px] h-[150px] lg:w-[180px] lg:h-[180px] xl:w-[200px] xl:h-[200px] bg-[var(--color-primary)] p-1 mb-4"
+        className="rounded-xl object-contain w-[150px] h-[150px] lg:w-[180px] lg:h-[180px] xl:w-[200px] xl:h-[200px] bg-[var(--color-primary)] p-1 mb-4"
       />
       <h4 className="font-semibold text-base md:text-lg text-center">{name}</h4>
       <p className="text-xs md:text-sm w-full h-[30px] text-center text-[var(--color-primary)] mt-1">{role}</p>
