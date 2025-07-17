@@ -20,29 +20,52 @@ export default function MapSection({ regional, provincias }) {
     return () => window.removeEventListener('resize', checkDesktop);
   }, []);
 
-  // Grid flexible según cantidad de items
+  // Grid flexible mejorado según cantidad de items
   const itemCount = provincia.activities.length;
   let gridClass = '';
+  
   if (isDesktop) {
-    if (itemCount <= 4) gridClass = 'grid grid-cols-2 grid-rows-2';
-    else if (itemCount <= 6) gridClass = 'grid grid-cols-3 grid-rows-2';
-    else if (itemCount <= 8) gridClass = 'grid grid-cols-4 grid-rows-2';
-    else if (itemCount <= 12) gridClass = 'grid grid-cols-4 grid-rows-3';
-    else if (itemCount <= 16) gridClass = 'grid grid-cols-4 grid-rows-4';
-    else gridClass = 'grid grid-cols-5 grid-rows-4';
+    // Desktop: Grid más inteligente basado en la cantidad de items
+    if (itemCount <= 3) {
+      gridClass = 'grid grid-cols-3 ';
+    } else if (itemCount <= 4) {
+      gridClass = 'grid grid-cols-2 gap-2';
+    } else if (itemCount <= 6) {
+      gridClass = 'grid grid-cols-3 gap-3';
+    } else if (itemCount <= 8) {
+      gridClass = 'grid grid-cols-4 gap-3';
+    } else if (itemCount <= 10) {
+      gridClass = 'grid grid-cols-5 gap-6';
+    } else if (itemCount <= 12) {
+      gridClass = 'grid grid-cols-4 gap-6';
+    } else if (itemCount <= 15) {
+      gridClass = 'grid grid-cols-5 gap-8';
+    } else {
+      gridClass = 'grid grid-cols-6 gap-2';
+    }
   } else {
-    if (itemCount <= 4) gridClass = 'grid grid-cols-2 grid-rows-2';
-    else if (itemCount <= 6) gridClass = 'grid grid-cols-3 grid-rows-2';
-    else if (itemCount <= 8) gridClass = 'grid grid-cols-4 grid-rows-2';
-    else if (itemCount <= 12) gridClass = 'grid grid-cols-4 grid-rows-3';
-    else gridClass = 'grid grid-cols-4 grid-rows-4';
+    // Mobile: Grid más compacto
+    if (itemCount <= 3) {
+      gridClass = 'grid grid-cols-3 gap-2';
+    } else if (itemCount <= 4) {
+      gridClass = 'grid grid-cols-2 gap-3';
+    } else if (itemCount <= 6) {
+      gridClass = 'grid grid-cols-3 gap-2';
+    } else if (itemCount <= 8) {
+      gridClass = 'grid grid-cols-4 gap-2';
+    } else if (itemCount <= 12) {
+      gridClass = 'grid grid-cols-4 gap-2';
+    } else {
+      gridClass = 'grid grid-cols-5 gap-1';
+    }
   }
+  
   const visibleActivities = provincia.activities;
   const visibleIcons = provincia.icons;
 
   return (
     <motion.section
-      className="w-full min-h-[400px] sm:min-h-[500px] md:h-[60vh] lg:h-[70vh] relative overflow-hidden mt-4 sm:mt-8"
+      className="w-[70%] mx-auto min-h-[400px] sm:min-h-[500px] md:h-[60vh] lg:h-[70vh] relative overflow-hidden mt-4 sm:mt-8"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -74,24 +97,24 @@ export default function MapSection({ regional, provincias }) {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <p className="text-lg md:text-2xl font-bold text-center">
+              <p className="text-lg md:text-2xl font-bold text-center mb-2 mt-2 sm:mt-0 sm:mb-6">
                   {provincia.name}
               </p>
-              <div className="flex flex-col w-3/4 h-full mx-auto text-[var(--color-primary)] justify-center ">
+              <div className="flex flex-col w-full h-full text-[var(--color-primary)]  justify-start">
                 <div className="relative flex flex-col items-center">
-                  {/* Desktop: grilla 2x4 o 1xN según cantidad, Mobile: fila/columna */}
+                  {/* Grid mejorado que se adapta a la cantidad de actividades */}
                   <div className="w-full">
-                    <div className={`${gridClass} gap-2 md:gap-2 lg:gap-3 xl:gap-4 justify-center items-center mt-2 sm:mt-0 mb-4 sm:mb-0`}>
+                    <div className={`${gridClass} justify-items-center items-start mt-1 mb-4 sm:mb-0`}>
                       {visibleActivities.map((act, idx) => (
-                        <div key={idx} className="flex flex-col items-center mx-auto w-[80px] sm:w-[80px] md:w-[70px] lg:w-[80px] xl:w-[90px]">
+                        <div key={idx} className="flex flex-col items-center justify-start w-full max-w-[80px] sm:max-w-[90px] md:max-w-[80px] lg:max-w-[70px] xl:max-w-[85px]">
                           <Image
                             src={visibleIcons[idx]}
                             alt={act}
                             width={36}
                             height={36}
-                            className="mb-1 w-7 h-7 sm:w-8 sm:h-8 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12"
+                            className="mb-1 w-5 h-5 sm:w-8 sm:h-8 md:w-8 md:h-8 lg:w-8 lg:h-8 xl:w-10 xl:h-10"
                           />
-                          <p className="text-[0.6rem] md:text-base w-full text-center text-balance">{act}</p>
+                          <p className="text-[0.5rem] md:text-[0.65rem] lg:text-[0.7rem] w-full text-center text-balance leading-tight">{act}</p>
                         </div>
                       ))}
                     </div>
