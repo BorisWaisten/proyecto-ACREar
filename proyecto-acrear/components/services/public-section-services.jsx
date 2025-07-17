@@ -57,7 +57,7 @@ export default function PublicSectorServices({ publicServices, title }) {
   };
 
   return (
-    <section className=" py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section className=" pt-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <h2 className="text-center text-lg sm:text-xl uppercase font-semibold text-[var(--color-secondary)]  mb-8 tracking-wide">
         {title}
       </h2>
@@ -74,7 +74,7 @@ export default function PublicSectorServices({ publicServices, title }) {
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                <h4 className="text-base sm:text-lg font-bold text-center text-balance mb-2 sm:mb-3">{item.title}</h4>
+                <h4 className="text-sm font-bold text-center text-balance mb-2 sm:mb-3">{item.title}</h4>
                 <p className="text-xs sm:text-sm  leading-relaxed hyphens-auto"
                   style={{ 
                     wordSpacing: '-0.08em',
@@ -141,8 +141,8 @@ export default function PublicSectorServices({ publicServices, title }) {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <h4 className="text-base md:text-lg text-balance font-bold text-center mb-3">{item.title}</h4>
-              <p className="text-xs md:text-sm text-center leading-relaxed hyphens-auto" 
+              <h4 className="text-sm text-balance font-bold text-center mb-3">{item.title}</h4>
+              <p className="text-sm text-center leading-relaxed hyphens-auto" 
                style={{ 
                  wordSpacing: '-0.13em',
                  textJustify: 'inter-word'
