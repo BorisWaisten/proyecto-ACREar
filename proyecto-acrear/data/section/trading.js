@@ -45,7 +45,6 @@ export const tradingData = {
       { key: 'vitivinicultura', label: 'VITIVINICULTURA' },
       { key: 'tabaco', label: 'TABACO' },
       { key: 'yerba', label: 'YERBA MATE y TÉ' },
-      { key: 'te', label: 'TÉ' },
       { key: 'azucar', label: 'CAÑA DE AZÚCAR' },
       
       // CONSERVAS Y DULCES

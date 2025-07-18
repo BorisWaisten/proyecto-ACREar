@@ -23,7 +23,7 @@ export default function ProductCatalog({trading}) {
   };
 
   return (
-    <section className="bg-[var(--color-background)] py-16 px-4">
+    <section className=" py-16 px-4">
       <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-primary)] text-center mb-12">
         {trading.title}
       </h2>

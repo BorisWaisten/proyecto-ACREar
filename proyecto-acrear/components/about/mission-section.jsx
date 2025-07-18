@@ -65,7 +65,7 @@ export default function MissionSection({ about }) {
                     <h3 className="text-md font-bold mb-1 text-center border-b-2 border-[var(--color-accent)] ">
                       {objective.title}
                     </h3>
-                    <p className=" text-sm sm:text-[.75rem] xl:text-base leading-relaxed text-left tracking-wide">
+                    <p className=" text-sm sm:text-[.76rem] xl:text-base leading-relaxed text-left tracking-wide">
                       {objective.text}
                     </p>
                   </div>
