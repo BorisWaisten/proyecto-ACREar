@@ -82,6 +82,8 @@ const ContactForm = ({ contactData }) => {
         gap: 2,
         width: { xs: '100%', md: '70%', xl: '70%' },
         mx: 'auto',
+        pb: 4,
+        minHeight: 'fit-content',
       }}
     >
       <TextField

@@ -24,7 +24,7 @@ export default function ContactPage() {
 
   return (
     <AnimatedBackground>
-      <div className=" relative flex flex-col items-center py-16 px-4 sm:px-6 lg:px-8">
+      <div className="relative flex flex-col items-center pt-10 sm:py-16 px-4 sm:px-6 sm:pb-20 lg:px-8 sm:min-h-screen">
         {/* Background image with overlay */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/70 z-10" /> {/* Dark overlay */}
@@ -49,7 +49,7 @@ export default function ContactPage() {
           </motion.h2>
 
           <motion.div 
-            className="flex flex-col md:flex-row w-full max-h-[50vh] max-w-2xl mx-auto"
+            className="flex flex-col md:flex-row w-full max-w-2xl mx-auto"
             variants={{
               initial: { opacity: 0, y: 20 },
               animate: {

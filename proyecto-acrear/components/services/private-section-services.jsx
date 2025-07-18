@@ -59,7 +59,7 @@ export default function PrivateSectorServices({ privateServices , title}) {
   };
 
   return (
-    <section className="py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section className="py-6 px-4 sm:px-6 lg:px-2 max-w-7xl mx-auto">
       <h2 className="text-center text-lg sm:text-xl uppercase font-semibold text-[var(--color-secondary)]  mb-8 tracking-wide">
         {title}
       </h2>
@@ -120,15 +120,15 @@ export default function PrivateSectorServices({ privateServices , title}) {
         {privateServices.map((item, i) => (
           <motion.div
             key={i}
-            className="bg-[#214D64] text-white p-6 rounded-xl border-2 border-[#CD8A53] w-full max-w-sm shadow-lg hover:scale-105 transition-transform duration-300"
+            className="bg-[#214D64] text-white px-2 py-4 rounded-xl border-2 border-[#CD8A53] w-full max-w-sm shadow-lg hover:scale-105 transition-transform duration-300"
             custom={i}
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h4 className="text-sm h-8 font-bold text-left mb-3">{item.title}</h4>
-            <p className="text-[.7rem] text-left leading-relaxed hyphens-auto" 
+            <h4 className="text-base  font-bold text-balance text-center mb-3">{item.title}</h4>
+            <p className="text-sm text-center text-balance leading-relaxed hyphens-auto" 
                style={{ 
                  wordSpacing: '-0.13em',
                  textJustify: 'inter-word'

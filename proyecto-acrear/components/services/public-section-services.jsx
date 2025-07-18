@@ -134,15 +134,15 @@ export default function PublicSectorServices({ publicServices, title }) {
           {publicServices.slice(0, 3).map((item, i) => (
             <motion.div
               key={i}
-              className="bg-[#214D64] text-white p-6 rounded-xl border-2 border-[#CD8A53] w-full max-w-sm shadow-lg hover:scale-105 transition-transform duration-300"
+              className="bg-[#214D64] text-white px-2 py-4 rounded-xl border-2 border-[#CD8A53] w-full max-w-sm shadow-lg hover:scale-105 transition-transform duration-300"
               custom={i}
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <h4 className="text-sm text-left h-8 font-bold mb-3">{item.title}</h4>
-              <p className="text-sm text-left leading-relaxed hyphens-auto" 
+              <h4 className="text-base text-center text-balance font-bold mb-3">{item.title}</h4>
+              <p className="text-sm text-center text-balance leading-relaxed hyphens-auto" 
                style={{ 
                  wordSpacing: '-0.13em',
                  textJustify: 'inter-word'
@@ -158,15 +158,15 @@ export default function PublicSectorServices({ publicServices, title }) {
           {publicServices.slice(3).map((item, j) => (
             <motion.div
               key={j + 3}
-              className="bg-[#214D64] text-white p-6 rounded-xl border-2 border-[#CD8A53] w-full max-w-sm shadow-lg hover:scale-105 transition-transform duration-300"
+              className="bg-[#214D64] text-white px-2 py-4 rounded-xl border-2 border-[#CD8A53] w-full max-w-sm shadow-lg hover:scale-105 transition-transform duration-300"
               custom={j + 3}
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <h4 className="text-sm text-left h-8 font-bold  mb-3">{item.title}</h4>
-              <p className="text-sm text-left leading-relaxed hyphens-auto" 
+              <h4 className="text-base font-bold text-center text-balance mb-3">{item.title}</h4>
+              <p className="text-sm text-center text-balance leading-relaxed hyphens-auto" 
                style={{ 
                  wordSpacing: '-0.13em',
                  textJustify: 'inter-word'
