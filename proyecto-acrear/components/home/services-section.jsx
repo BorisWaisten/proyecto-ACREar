@@ -58,8 +58,8 @@ export default function ServicesSection({services}) {
               </svg>
             </div>
 
-            <h3 className="font-bold text-balance text-base md:text-lg mb-3 md:mb-4 leading-tight tracking-tight">{service.title}</h3>
-            <p className="text-sm  lg:text-base mb-4 md:mb-5 text-left  md:w-[200px] lg:w-[250px] leading-tight tracking-tight">{service.description}</p>
+            <h3 className="font-bold text-left text-sm md:text-md mb-3 md:mb-4 leading-tight tracking-tight">{service.title}</h3>
+            <p className="text-sm  lg:text-sm mb-4 md:mb-5 text-left  md:w-[200px] lg:w-[250px] leading-tight tracking-tight">{service.description}</p>
 
             <Link href={service.href}>
               <button className="bg-[var(--color-primary)] hover:brightness-90 text-white font-semibold px-6 py-2 rounded-full transition-all">

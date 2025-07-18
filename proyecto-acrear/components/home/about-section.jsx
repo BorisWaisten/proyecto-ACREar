@@ -89,15 +89,15 @@ export default function AboutSection({ about }) {
   const titleOpacity = useTransform(
     scrollYProgress, 
     isMobile ? [0, 0.002, 0.005] : [0.01, 0.02, 0.06], 
-    isMobile ? [0.4, 0.8, 1] : [0, 1, 1]
+    isMobile ? [0, 0.8, 1] : [0, 1, 1]
   );
   const titleScale = useTransform(scrollYProgress, [0.01, 0.02], isMobile ? [1, 1] : [1.2, 1]);
   const titleY = useTransform(scrollYProgress, [0.01, 0.02], isMobile ? [15, 0] : [30, 0]);
   
   const contentOpacity = useTransform(
     scrollYProgress, 
-    isMobile ? [0.002, 0.01, 0.5] : [0.05, 0.07, 0.8], 
-    isMobile ? [0.5, 1, 1] : [0, 1, 1]
+    isMobile ? [0, 0.01, 0.02] : [0.05, 0.07, 0.8], 
+    isMobile ? [0, .5, 1] : [0, 1, 1]
   );
   const contentScale = useTransform(scrollYProgress, [0.05, 0.06], isMobile ? [1, 1] : [1.15, 1]);
   const contentY = useTransform(scrollYProgress, [0.01, 0.06], isMobile ? [15, 0] : [25, 0]);
@@ -121,7 +121,7 @@ export default function AboutSection({ about }) {
   return (
     <section 
       ref={containerRef}
-      className={`relative  ${isMobile ? 'min-h-[500px]' : 'h-[700px] md:h-[800px]'}`}
+      className={`relative  ${isMobile ? 'min-h-[700px]' : 'h-[700px] md:h-[800px]'}`}
     >
       {/* Logo background layer (centrado, animado, relativo a la sección) */}
       <motion.div
@@ -137,7 +137,7 @@ export default function AboutSection({ about }) {
             alt="Logo ACREarg"
             width={400}
             height={400}
-            className="drop-shadow-2xl w-40 h-40 md:w-70 md:h-70 lg:w-80 lg:h-80 xl:w-[300px] xl:h-[300px]"
+            className="drop-shadow-2xl w-50 h-50 md:w-70 md:h-70 lg:w-80 lg:h-80 xl:w-[300px] xl:h-[300px]"
             priority
           />
         </div>

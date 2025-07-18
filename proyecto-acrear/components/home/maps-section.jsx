@@ -66,7 +66,7 @@ export default function MapSection({ regional, provincias }) {
 
   return (
     <motion.section
-      className="w-[70%] mx-auto min-h-[400px] sm:min-h-[500px] md:h-[600px] lg:h-[600px] relative overflow-hidden mt-4 sm:mt-8"
+      className="sm:w-[70%] mx-auto min-h-[400px] sm:min-h-[500px] md:h-[600px] lg:h-[600px] relative overflow-hidden mt-4 sm:mt-8"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -98,7 +98,7 @@ export default function MapSection({ regional, provincias }) {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <p className="text-lg md:text-2xl font-bold text-center mb-2 mt-2 sm:mt-0 sm:mb-6">
+              <p className="text-lg md:text-2xl font-bold text-center mb-4 mt-4 sm:mt-0 sm:mb-6">
                   {provincia.name}
               </p>
               <div className="flex flex-col w-full h-full text-[var(--color-primary)]  justify-start">
@@ -115,7 +115,7 @@ export default function MapSection({ regional, provincias }) {
                             height={36}
                             className="mb-1 w-5 h-5 sm:w-8 sm:h-8 md:w-8 md:h-8 lg:w-8 lg:h-8 xl:w-10 xl:h-10"
                           />
-                          <p className="text-[0.5rem] md:text-[0.65rem] lg:text-[0.7rem] w-full text-center text-balance leading-tight">{act}</p>
+                          <p className="text-[0.5rem] md:text-[0.65rem] lg:text-[0.7rem] w-full text-center leading-tight">{act}</p>
                         </div>
                       ))}
                     </div>

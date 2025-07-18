@@ -36,7 +36,7 @@ export default function NuestraComunidad({ alliances }) {
     slidesToShow: 4,
     slidesToScroll: 1,
     responsive: [
-      { breakpoint: 640, settings: { slidesToShow: 2 } },
+      { breakpoint: 640, settings: { slidesToShow: 4 } },
       { breakpoint: 768, settings: { slidesToShow: 3 } },
       { breakpoint: 1024, settings: { slidesToShow: 4 } },
       { breakpoint: 1280, settings: { slidesToShow: 4 } },
@@ -61,9 +61,9 @@ export default function NuestraComunidad({ alliances }) {
           <Slider {...settings}>
             {allLogos.map((logo, i) => (
               <div key={i} className="">
-                <div className={`h-28 sm:h-34 sm:w-32 flex items-center justify-center mx-auto  ${
+                <div className={`h-24 sm:h-34 sm:w-32 flex items-center justify-center mx-auto  ${
                   isSmallLogo(logo) 
-                    ? 'scale-125  sm:scale-[1.6] md:scale-[2.8] lg:scale-[2.8]' // Scale aumentado para logos chicos
+                    ? 'scale-[1.5]  sm:scale-[1.6] md:scale-[2.8] lg:scale-[2.8]' // Scale aumentado para logos chicos
                     : ' sm:scale-125 md:scale-[1.8] lg:scale-[1.8]'   // Scale normal para logos regulares
                 }`}>
                   <Image
@@ -72,7 +72,7 @@ export default function NuestraComunidad({ alliances }) {
                     width={180}
                     height={120}
                     quality={100}
-                    className="object-contain w-full max-w-[70px] "
+                    className="object-contain w-[50px] sm:w-full sm:max-w-[70px] "
                   />
                 </div>
               </div>

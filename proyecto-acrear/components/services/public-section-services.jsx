@@ -130,7 +130,7 @@ export default function PublicSectorServices({ publicServices, title }) {
       {/* Desktop: pirámide inversa */}
       <div className="hidden md:flex flex-col items-center space-y-10">
         {/* Fila superior (3) */}
-        <div className="flex justify-center gap-6 lg:w-[75%] ">
+        <div className="flex justify-center gap-6 lg:w-[85%] ">
           {publicServices.slice(0, 3).map((item, i) => (
             <motion.div
               key={i}
@@ -141,8 +141,8 @@ export default function PublicSectorServices({ publicServices, title }) {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <h4 className="text-sm text-balance font-bold text-center mb-3">{item.title}</h4>
-              <p className="text-sm text-center leading-relaxed hyphens-auto" 
+              <h4 className="text-sm text-left h-8 font-bold mb-3">{item.title}</h4>
+              <p className="text-sm text-left leading-relaxed hyphens-auto" 
                style={{ 
                  wordSpacing: '-0.13em',
                  textJustify: 'inter-word'
@@ -154,7 +154,7 @@ export default function PublicSectorServices({ publicServices, title }) {
         </div>
 
         {/* Fila inferior centrada (2) */}
-        <div className="flex justify-center gap-6 md:w-[65%] lg:w-[49%] ">
+        <div className="flex justify-center gap-6 md:w-[65%] lg:w-[57%] ">
           {publicServices.slice(3).map((item, j) => (
             <motion.div
               key={j + 3}
@@ -165,8 +165,8 @@ export default function PublicSectorServices({ publicServices, title }) {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <h4 className="text-md text-balance font-bold text-center mb-3">{item.title}</h4>
-              <p className="text-sm text-center leading-relaxed hyphens-auto" 
+              <h4 className="text-sm text-left h-8 font-bold  mb-3">{item.title}</h4>
+              <p className="text-sm text-left leading-relaxed hyphens-auto" 
                style={{ 
                  wordSpacing: '-0.13em',
                  textJustify: 'inter-word'

@@ -12,20 +12,17 @@ export default function Footer() {
 
   return (
     <footer className="relative text-white bg-gradient-to-b from-[var(--color-accent)] to-[var(--color-primary)]">
-      {/* Elemento decorativo */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+      <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
       
-      <div className="max-w-4xl mx-auto py-8 md:py-10">
+      <div className="max-w-4xl mx-auto pb-6 md:py-10">
         <div className="grid grid-cols-1 md:grid-cols-4">
-          {/* Logo */}
-          <div className="flex flex-col items-start pl-8 sm:pl-0 md:items-center  animate-fade-in transition-all duration-500">
-            <Image className='cursor-pointer scale-[1.7] sm:w-40 sm:h-30 sm:scale-[1.6]' src="/logos/logo-acrearg-blanco2.svg" alt="Logo ACREarg" width={120} height={60} onClick={() => router.push('/')} />
+          <div className="flex flex-col items-start pl-12 sm:pl-0 md:items-center  animate-fade-in transition-all duration-500">
+            <Image className='cursor-pointer scale-[1.7] sm:w-40 sm:h-30 sm:scale-[1.6]' src="/logos/logo-acrearg-blanco2.svg" alt="Logo ACREarg" width={120} height={60} quality={100} onClick={() => router.push('/')} />
           </div>
 
-          {/* Compañía */}
-          <div className="animate-fade-in transition-all duration-500 mx-auto">
-            <h4 className="font-bold mb-3 text-base md:text-lg transition-colors duration-300">{footer[lang].company.title}</h4>
-            <ul className="space-y-2 text-md md:text-base sm:text-center">
+          <div className="animate-fade-in flex flex-col items-start pl-4 sm:pl-0 mb-4 sm:mb-0 transition-all duration-500 ">
+            <h4 className="font-bold mb-1 text-base text-center md:text-lg transition-colors duration-300">{footer[lang].company.title}</h4>
+            <ul className="text-md md:text-base space-y-[.05rem]">
               {footer[lang].company.links.map((link, index) => (
                 <li key={index}>
                   <Link href={link.href} className="hover:text-[var(--color-primary)] transition-all">{link.name}</Link>
@@ -34,10 +31,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contacto */}
-          <div className="animate-fade-in transition-all duration-500 mx-auto">
-            <h4 className="font-bold mb-3 text-base text-center md:text-lg transition-colors duration-300">{footer[lang].contact.title}</h4>
-            <ul className="text-md md:text-base space-y-2">
+          <div className="animate-fade-in flex flex-col items-start pl-4 sm:pl-0 mb-4 sm:mb-0 transition-all duration-500 ">
+            <h4 className="font-bold mb-1 text-base text-center md:text-lg transition-colors duration-300">{footer[lang].contact.title}</h4>
+            <ul className="text-md md:text-base space-y-[.05rem]">
               <li className="hover:text-[var(--color-primary)] transition-all flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
@@ -54,17 +50,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Redes Sociales */}
-          <div className="flex flex-col  animate-fade-in transition-all duration-500 ">
-              <h4 className="font-bold mb-3 text-start sm:text-center text-base md:text-lg  transition-all duration-300">{footer[lang].social.title}</h4>
+          <div className="flex flex-col pl-4 sm:pl-0 animate-fade-in transition-all duration-500 ">
+              <h4 className="font-bold mb-1 text-start sm:text-center text-base md:text-lg  transition-all duration-300">{footer[lang].social.title}</h4>
             <div className='flex flex-col items-start md:items-center justify-center'>
               <SocialIcons />
             </div>
           </div>
         </div>
 
-        {/* Línea divisoria y copyright */}
-        <div className="mt-6 md:mt-4 pt-4 md:pt-2 border-t border-white/20">
+        <div className="mt-2 md:mt-4 pt-4 md:pt-2 border-t border-white/20">
           <p className="text-center text-xs md:text-sm text-white/80">
             {footer[lang].copyright}
           </p>

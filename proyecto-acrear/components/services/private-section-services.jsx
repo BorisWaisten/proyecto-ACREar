@@ -127,8 +127,8 @@ export default function PrivateSectorServices({ privateServices , title}) {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <h4 className="text-sm  font-bold text-center mb-3">{item.title}</h4>
-            <p className="text-sm text-center leading-relaxed hyphens-auto" 
+            <h4 className="text-sm h-8 font-bold text-left mb-3">{item.title}</h4>
+            <p className="text-[.7rem] text-left leading-relaxed hyphens-auto" 
                style={{ 
                  wordSpacing: '-0.13em',
                  textJustify: 'inter-word'
