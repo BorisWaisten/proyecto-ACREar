@@ -73,78 +73,79 @@ export const services ={
   publicTitle:"Sector Público",
   privateTitle:"Sector Privado",
     },
-    en:{
-        title:"Our Services",
-        publicServices:[
-    {
-      title: 'CONSULTING',
-      description:
-        "We provide specialized and statistical consulting and reports to the national, provincial and municipal public sector on foreign trade and internationalization issues for companies in Argentina's regional economies.",
-    },
-    {
-      title: 'Capacity Strengthening',
-      description:
-        "We support the public sector in improving the export capabilities of companies, adding value and integrating them into Argentina's export chains.",
-    },
-    {
-      title: 'Training',
-      description:
-        'We provide professional and specialized training tailored to the needs of the public sector in foreign trade and internationalization of companies.',
-    },
-    {
-      title: 'Institutional and commercial missions',
-      description:
-        'We organize commercial and institutional missions, connecting companies from regional economies with international buyers.',
-    },
-    {
-      title: 'Financing for regional development',
-      description:
-        'We assist local governments in the formulation of projects and the search for national and international financing for infrastructure, production and foreign trade.',
-    },
-  ],
-    privateServices:[
-    {
-      title: 'Internationalization of companies',
-      description:
-        'We accompany companies in their internationalization process with tailor-made strategies, facilitating their insertion in global markets.',
-    },
-    {
-      title: 'Training',
-      description:
-        'We provide training on new trends in international trade, requirements of the target markets, cultural aspects of the target markets, foreign trade tools, international logistics, among others.',
-    },
-    {
-      title: 'Export promotion',
-      description:
-        'We encourage the promotion of the production of regional economies in fairs, business rounds and international platforms, positioning the Argentine offer in the most demanding markets of the world.',
-    },
-    {
-      title: 'Search for clients at destination',
-      description:
-        'We accompany companies in their internationalization process with tailor-made strategies, facilitating their insertion in global markets, from diagnosis to commercial expansion.',
-    },
-    {
-      title: 'Customs services',
-      description:
-        'Accompanying each operation to ensure agility, safety and efficiency, managing documentation and regulatory compliance.',
-    },
-    {
-      title: 'Bonded warehouse services',
-      description:
-        'We offer bonded warehouse services to facilitate the storage of products, optimizing time and logistics costs in operations.',
-    },
-    {
-      title: 'Accounting and tax management for foreign trade operations',
-      description:
-        'We assist in the processing of local and international taxes related to foreign trade. We guarantee fiscal compliance and tax optimization for foreign operations.',
-    },
-    {
-      title: 'Advice in the search for financing',
-      description:
-        'We advise regional companies in the access to credits, support programs and links with investors for productive projects, certifications and international expansion.',
-    },
-  ],
-  publicTitle:"Public Sector",
-  privateTitle:"Private Sector",
+    en: {
+      title: "Our Services",
+      publicServices: [
+        {
+          title: 'CONSULTING',
+          description:
+            'We provide specialized consulting and reports to national, provincial, and municipal public sectors on foreign trade and the internationalization of regional Argentine companies.',
+        },
+        {
+          title: 'CAPACITY BUILDING',
+          description:
+            'We promote actions that enhance export competitiveness, value addition, and the integration of companies into global value chains.',
+        },
+        {
+          title: 'INSTITUTIONAL AND TRADE MISSIONS',
+          description:
+            'We connect municipal, provincial, and national public sectors with international counterparts through trade agendas, institutional meetings, and technical visits.',
+        },
+        {
+          title: 'TRAINING PROGRAMS',
+          description:
+            'We offer professional training programs tailored to the needs of the public sector in foreign trade and business internationalization.',
+        },
+        {
+          title: 'FUNDING FOR REGIONAL DEVELOPMENT',
+          description:
+            'We assist local governments in project development and the search for national and international funding for infrastructure and foreign trade initiatives.',
+        },
+      ],
+      privateServices: [
+        {
+          title: 'BUSINESS INTERNATIONALIZATION',
+          description:
+            'We support companies throughout their internationalization process with tailored strategies, facilitating their entry into global markets.',
+        },
+        {
+          title: 'TRAINING',
+          description:
+            'We provide training on current trends in international trade, target market requirements, cultural aspects, foreign trade tools, and international logistics.',
+        },
+        {
+          title: 'EXPORT PROMOTION',
+          description:
+            'We promote regional production in trade fairs, business matchmaking events, and international platforms, positioning Argentine offerings in demanding markets.',
+        },
+        {
+          title: 'CLIENT SEARCH IN TARGET MARKETS',
+          description:
+            'We support companies from diagnostics to commercial expansion to ease their international market entry.',
+        },
+        {
+          title: 'CUSTOMS SERVICES',
+          description:
+            'We assist in each operation to ensure agility, security, and efficiency, managing documentation and regulatory compliance.',
+        },
+        {
+          title: 'BONDED WAREHOUSE SERVICES',
+          description:
+            'We offer bonded warehouse services to facilitate storage while optimizing time and logistics costs.',
+        },
+        {
+          title: 'ACCOUNTING AND TAX MANAGEMENT IN FOREIGN TRADE',
+          description:
+            'We assist in handling local and international tax obligations, ensuring compliance and optimizing fiscal performance.',
+        },
+        {
+          title: 'FINANCING ADVISORY',
+          description:
+            'We advise companies on accessing credit, support programs, and connections with investors for productive projects and international expansion.',
+        },
+      ],
+      publicTitle: "Public Sector",
+      privateTitle: "Private Sector",
     }
+    
 }

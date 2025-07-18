@@ -37,7 +37,7 @@ export default function SocialIcons() {
 
   return (
     <div className="relative">
-      <ul className="grid grid-cols-5 md:grid-cols-3 lg:grid-cols-5 items-center gap-[0.2rem] mt-2">
+      <ul className="grid grid-cols-5 md:grid-cols-3 lg:grid-cols-5 items-center gap-[0.2rem] sm:gap-1 mt-2">
         {icons.map((item, i) => (
           <li key={i} className="list-none">
             {item.type === 'email' ? (

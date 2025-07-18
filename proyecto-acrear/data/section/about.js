@@ -43,48 +43,49 @@ export const aboutData ={
         ],
         authoritiesTitle:"AUTORIDADES",
     },
-    en:{
-        title:"About Us",
-        mission:{
-            title:"MISSION",
-            text:"Strengthen the productive and export matrix of Argentina's regional economies, encouraging the internationalization of their companies and products, promoting value addition, diversification of the export basket and access to strategic markets.",    
+    en: {
+        title: "About Us",
+        mission: {
+          title: "MISSION",
+          text: "Our mission is to strengthen the productive and export matrix of regional economies in the Argentine Republic by promoting the internationalization of their companies and products, encouraging value addition, diversification of the export basket, and access to strategic markets.",
         },
-        vision:{
-            title:"VISION",
-            text:"Become the institution of reference in the strengthening of regional economies, recognized for its capacity to promote competitive, inclusive and export-oriented development.",
+        vision: {
+          title: "VISION",
+          text: "Our vision is to become the leading institution in strengthening regional economies, recognized for its ability to foster competitive, inclusive, and export-driven development.",
         },
-        objectiveGeneral:{
-            title:"GENERAL OBJECTIVES",
-            text:"To improve the institutional and productive capacities of the public and private sectors, promoting the internationalization of regional economies.",
+        objectiveGeneral: {
+          title: "GENERAL OBJECTIVE",
+          text: "To enhance the institutional and productive capacities of both the Argentine public and private sectors by promoting the internationalization of regional economies.",
         },
-        objectiveSpecifics:{
-            title:"ESPECIFIC OBJECTIVES",
-            objectives:[
-                {
-                    title:"Public Sector",
-                    text:"To strengthen business capacities and promote provincial production through strategic advice, institutional articulation, commercial promotion, search for financing and accompaniment during insertion in international markets.",
-                },
-                {
-                    title:"Private Sector",
-                    text:"To assist the private sector in its international positioning process through trade promotion, search for funding and representation before foreign markets and the regional public sector itself.",
-                },
-                {
-                    title:"Articulation",
-                    text:"To generate a space for linkage between the public and private sectors, and a space for representation before provincial, regional and national policies.",
-                },
-                {
-                    title:"Products",
-                    text:"To enhance the international insertion of Argentine products by linking producers with business opportunities abroad, promoting value addition and territorial identity.",
-                }     
-            ]
+        objectiveSpecifics: {
+          title: "SPECIFIC OBJECTIVES",
+          objectives: [
+            {
+              title: "Public Sector",
+              text: "To strengthen business capacities and promote provincial exportable offerings through strategic advisory services, institutional coordination, trade promotion, financing support, and guidance during integration into international markets.",
+            },
+            {
+              title: "Private Sector",
+              text: "To support the private sector in its international positioning process through internationalization tools, trade promotion, financing search, legal and accounting assistance, and representation in both foreign markets and national/provincial public sectors.",
+            },
+            {
+              title: "Coordination",
+              text: "To create a linkage space between the Argentine public and private sectors, and a platform for representing regional economies for productive and international development.",
+            },
+            {
+              title: "Products",
+              text: "To boost the international insertion of Argentine regional products by connecting producers with foreign business opportunities, promoting value addition and territorial identity.",
+            }
+          ]
         },
         authorities: [
-            { name: 'Pablo Rico', role: 'President', avatar: '/autoridades/pablo-rico.png' },
-            { name: 'Eugenia Neder', role: 'Secretary', avatar: '/autoridades/eugenia-neder.png' },
-            { name: 'Esteban Cordiviola', role: 'Treasurer', avatar: '/autoridades/esteban-cordiviola.jpeg' },
-            { name: 'Laila Abbas', role: 'First Member and Executive Director', avatar: '/autoridades/laila-abbas.png'},
-            { name: 'Samira Manzur', role: 'Second Member', avatar: '/autoridades/samira-manzur.jpeg' },
+          { name: 'Pablo Rico', role: 'President', avatar: '/autoridades/pablo-rico.png' },
+          { name: 'Eugenia Neder', role: 'Secretary', avatar: '/autoridades/eugenia-neder.png' },
+          { name: 'Esteban Cordiviola', role: 'Treasurer', avatar: '/autoridades/esteban-cordiviola.png' },
+          { name: 'Laila Abbas', role: 'First Board Member & Executive Director', avatar: '/autoridades/laila-abbas.png' },
+          { name: 'Samira Manzur', role: 'Alternate Board Member', avatar: '/autoridades/samira-manzur.jpeg' },
         ],
-        authoritiesTitle:"AUTHORITIES",
-    }
+        authoritiesTitle: "AUTHORITIES",
+      }
+      
 }

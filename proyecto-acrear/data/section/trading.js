@@ -20,10 +20,7 @@ export const tradingData = {
       { key: 'frutatropical', label: 'FRUTAS TROPICALES' },
       { key: 'fruticultura', label: 'FRUTICULTURA' },
       { key: 'frutossecos', label: 'FRUTOS SECOS' },
-      { key: 'perasymanzanas', label: 'PERAS Y MANZANAS' },
-      { key: 'cerezas', label: 'CEREZAS' },
       { key: 'citricultura', label: 'CITRICULTURA' },
-      { key: 'arandanos', label: 'ARÁNDANOS' },
       
       // ACEITES Y DERIVADOS
       { key: 'aceitesesenciales', label: 'ACEITES ESENCIALES' },
@@ -47,7 +44,7 @@ export const tradingData = {
       { key: 'olivicultura', label: 'OLIVICULTURA' },
       { key: 'vitivinicultura', label: 'VITIVINICULTURA' },
       { key: 'tabaco', label: 'TABACO' },
-      { key: 'yerba', label: 'YERBA MATE' },
+      { key: 'yerba', label: 'YERBA MATE y TÉ' },
       { key: 'te', label: 'TÉ' },
       { key: 'azucar', label: 'CAÑA DE AZÚCAR' },
       
@@ -85,30 +82,30 @@ export const tradingData = {
   en: {
     title: 'Product Catalog',
     products: [
-      // ANIMAL PRODUCTION
+      // ANIMAL PRODUCTS
       { key: 'carnebov', label: 'BOVINE PRODUCTION' },
-      { key: 'carneovi', label: 'SHEEP PRODUCTION' },
-      { key: 'carnecap', label: 'GOAT PRODUCTION' },
+      { key: 'carneovi', label: 'OVINE PRODUCTION' },
+      { key: 'carnecap', label: 'CAPRINE PRODUCTION' },
       { key: 'carnecam', label: 'CAMELID PRODUCTION' },
-      { key: 'carnepor', label: 'PIG PRODUCTION' },
-      { key: 'avicultura', label: 'POULTRY PRODUCTION' },
+      { key: 'carnepor', label: 'PORCINE PRODUCTION' },
+      { key: 'avicultura', label: 'POULTRY FARMING' },
       { key: 'ovoproducto', label: 'EGG PRODUCTS' },
-      { key: 'apicultura', label: 'BEEKEEPING PRODUCTS' },
+      { key: 'apicultura', label: 'BEEKEEPING' },
       { key: 'lana', label: 'WOOL' },
       
       // FRUITS
-      { key: 'frutafina', label: 'BERRIES & FINE FRUITS' },
+      { key: 'frutafina', label: 'BERRIES' },
       { key: 'frutatropical', label: 'TROPICAL FRUITS' },
-      { key: 'fruticultura', label: 'FRUIT FARMING' },
-      { key: 'frutossecos', label: 'NUTS & DRIED FRUITS' },
-      { key: 'perasymanzanas', label: 'PEARS & APPLES' },
+      { key: 'fruticultura', label: 'FRUIT GROWING' },
+      { key: 'frutossecos', label: 'NUTS' },
+      { key: 'perasymanzanas', label: 'PEARS AND APPLES' },
       { key: 'cerezas', label: 'CHERRIES' },
-      { key: 'citricultura', label: 'CITRUS FRUITS' },
+      { key: 'citricultura', label: 'CITRUS FARMING' },
       { key: 'arandanos', label: 'BLUEBERRIES' },
       
       // OILS AND DERIVATIVES
       { key: 'aceitesesenciales', label: 'ESSENTIAL OILS' },
-      { key: 'harinasaceites', label: 'FLOURS & OILS' },
+      { key: 'harinasaceites', label: 'FLOURS AND OILS' },
       
       // GRAINS AND SEEDS
       { key: 'granos', label: 'GRAINS' },
@@ -120,21 +117,21 @@ export const tradingData = {
       // VEGETABLES AND SPICES
       { key: 'horticultura', label: 'HORTICULTURE' },
       { key: 'ajo', label: 'GARLIC' },
-      { key: 'especia', label: 'AROMATIC HERBS & SPICES' },
+      { key: 'especia', label: 'AROMATIC HERBS AND SPICES' },
       { key: 'alcaparras', label: 'CAPERS' },
       { key: 'lupulo', label: 'HOPS' },
       
       // SPECIALIZED INDUSTRIES
-      { key: 'olivicultura', label: 'OLIVE INDUSTRY' },
-      { key: 'vitivinicultura', label: 'WINE INDUSTRY' },
+      { key: 'olivicultura', label: 'OLIVE GROWING' },
+      { key: 'vitivinicultura', label: 'VITICULTURE AND WINEMAKING' },
       { key: 'tabaco', label: 'TOBACCO' },
       { key: 'yerba', label: 'YERBA MATE' },
       { key: 'te', label: 'TEA' },
       { key: 'azucar', label: 'SUGAR CANE' },
       
       // PRESERVES AND SWEETS
-      { key: 'encurtidos', label: 'PICKLED PRODUCTS' },
-      { key: 'dulcesconservas', label: 'SWEETS & PRESERVES' },
+      { key: 'encurtidos', label: 'PICKLES' },
+      { key: 'dulcesconservas', label: 'SWEETS AND PRESERVES' },
       
       // DAIRY
       { key: 'lacteos', label: 'DAIRY PRODUCTS' },
@@ -146,10 +143,10 @@ export const tradingData = {
       { key: 'legumbres', label: 'LEGUMES' },
       
       // FISHING
-      { key: 'pesca', label: 'FISH & SEAFOOD PRODUCTS' },
+      { key: 'pesca', label: 'FISH AND SEAFOOD PRODUCTS' },
       
       // FORESTRY AND WOOD
-      { key: 'produccionforestal', label: 'FORESTRY PRODUCTION & WOOD INDUSTRY' },
+      { key: 'produccionforestal', label: 'FORESTRY AND WOOD INDUSTRY' },
       
       // HANDICRAFTS
       { key: 'artesanias', label: 'REGIONAL HANDICRAFTS' },
@@ -158,9 +155,10 @@ export const tradingData = {
       { key: 'mineria', label: 'MINING' }
     ],
     cta: {
-      text: 'See our full catalog here',
+      text: 'View our full catalog here',
       btn: 'Download Catalog',
       href: '/catalogo-acrear.pdf'
     }
   }
+  
 };
