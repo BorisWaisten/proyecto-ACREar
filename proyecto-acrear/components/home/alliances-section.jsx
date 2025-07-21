@@ -31,7 +31,7 @@ export default function NuestraComunidad({ alliances }) {
 
   const settings = {
     infinite: true,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 1500,
     slidesToShow: 4,
     slidesToScroll: 1,
