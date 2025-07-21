@@ -35,14 +35,14 @@ export default function StaffSection({ about }) {
         </h3>
         
         {/* Fila superior: secretaria | presidente | tesorero */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-items-center px-2 sm:px-4 md:px-8 lg:px-30 gap-8 sm:gap-0 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-items-center gap-8 sm:gap-0 mb-8 max-w-[800px] mx-auto px-4">
           {topRow.map((person, i) => (
             <Card key={`top-${person.name}-${i}`} {...person} />
           ))}
         </div>
         
         {/* Fila inferior centrada: vocal1 | vocal2 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 justify-items-center md:px-8 lg:px-8 gap-8 sm:gap-0 max-w-[600px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-8 sm:gap-0 max-w-[600px] mx-auto px-10">
           {bottomRow.map((person, i) => (
             <Card key={`bottom-${person.name}-${i}`} {...person} />
           ))}

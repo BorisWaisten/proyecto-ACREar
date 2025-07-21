@@ -65,7 +65,7 @@ export default function MissionSection({ about }) {
                     <h3 className="text-md font-bold mb-1 text-center border-b-2 border-[var(--color-accent)] ">
                       {objective.title}
                     </h3>
-                    <p className=" text-sm sm:text-[.76rem] xl:text-base leading-relaxed text-left tracking-wide">
+                    <p className=" text-sm sm:text-[.7rem] lg:text-[.78rem] xl:text-base leading-relaxed text-left tracking-wide">
                       {objective.text}
                     </p>
                   </div>
@@ -76,7 +76,7 @@ export default function MissionSection({ about }) {
             // Texto normal para otros items
             <div className="flex justify-center items-center mx-auto w-[90%] lg:w-[50%] h-auto mb-4 md:mb-0 sm:min-h-[20vh] sm:max-h-[65vh] bg-white md:p-2 rounded-xl border border-[var(--color-primary)] shadow-sm transition-all duration-500 animate-fade-in">            
               <div className="w-[90%] h-full m-4 lg:mb-2 mx-auto scrollbar-hide">
-                <p className="text-sm md:text-base text-balance lg:text-base text-[var(--color-primary)] whitespace-pre-line leading-none tracking-wide">
+                <p className="text-sm md:text-base text-justify lg:text-base text-[var(--color-primary)]  leading-relaxed tracking-wide">
                   {items[activeIndex].content}
                 </p>
               </div>
