@@ -2,15 +2,14 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import ArgMaps from '@/components/home/arg-maps';
-import MalvMaps from '@/components/home/malv-maps';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/context/language-context';
 
-export default function MapSection({ regional, provincias }) {
+export default function MapSection({ regional, provincias ,textTooltip}) {
   const [selectedId, setSelectedId] = useState(provincias[0].id);
   const provincia = provincias.find((p) => p.id === selectedId);
-  const [carouselIndex, setCarouselIndex] = useState(0);
-  const ITEMS_PER_VIEW = 3;
-  const totalItems = provincia.activities.length;
+  const { language } = useLanguage();
+  
 
   // Solución hydration: detectar desktop solo en cliente
   const [isDesktop, setIsDesktop] = useState(false);
@@ -87,7 +86,7 @@ export default function MapSection({ regional, provincias }) {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <span className="absolute right-4 p-1 sm:p-0 sm:top-0 sm:right-40 text-[0.5rem] rounded-full border-1 border-[rgb(223,116,28,.8)] bg-[rgb(24,49,70,0.8)]  text-[rgb(223,116,28)] sm:text-[0.6rem] text-center">Seleccione provincia</span>
+            <span className="absolute right-4 p-1 sm:p-0 sm:top-0 sm:right-40 text-[0.5rem] rounded-full border-1 border-[rgb(223,116,28,.8)] bg-[rgb(24,49,70,0.8)]  text-[rgb(223,116,28)] sm:text-[0.6rem] text-center">{textTooltip}</span>
             <ArgMaps onSelect={setSelectedId} />
           </motion.div>
 

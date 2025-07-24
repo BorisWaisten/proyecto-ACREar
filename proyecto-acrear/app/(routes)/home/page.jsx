@@ -14,6 +14,9 @@ import AnimatedBackground from '@/components/animations/AnimatedBackground';
 
 export default function HomePage() {
   const { lang, toggleLang } = useLanguage();
+
+  const textTooltip = lang === 'es' ? 'Seleccione provincia' : 'Select province';
+
   return (
     <>
       <AnimatedBackground>
@@ -21,7 +24,7 @@ export default function HomePage() {
         <CounterSection counter={home[lang].counter} />
         <AboutSection about={home[lang].about}/>
         <VideoSection video={home[lang].video}/>
-        <MapSection regional={home[lang].regional} provincias={provincias[lang]}/>
+        <MapSection regional={home[lang].regional} provincias={provincias[lang]} textTooltip={textTooltip}/>
         <ServicesSection services={home[lang].services}/>
         <OfficesSection offices = {home[lang].offices}/>
         <OurAllianceUS alliances={home[lang].alliances}/>
