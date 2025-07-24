@@ -18,9 +18,10 @@ export const tradingData = {
       // FRUTAS
       { key: 'frutafina', label: 'FRUTAS FINAS' },
       { key: 'frutatropical', label: 'FRUTAS TROPICALES' },
-      { key: 'fruticultura', label: 'FRUTICULTURA' },
+      { key: 'frutacarozo', label: 'FRUTAS CAROZOS' },
       { key: 'frutossecos', label: 'FRUTOS SECOS' },
       { key: 'citricultura', label: 'CITRICULTURA' },
+      { key: 'clusterlimonero', label: 'CLUSTER LIMONERO' },
       
       // ACEITES Y DERIVADOS
       { key: 'aceitesesenciales', label: 'ACEITES ESENCIALES' },
@@ -29,7 +30,6 @@ export const tradingData = {
       // GRANOS Y SEMILLAS
       { key: 'granos', label: 'GRANOS' },
       { key: 'semillas', label: 'SEMILLAS' },
-      { key: 'mani', label: 'MANÍ' },
       { key: 'industriamaní', label: 'INDUSTRIA DEL MANÍ' },
       { key: 'alfalfa', label: 'ALFALFA' },
       
@@ -49,14 +49,18 @@ export const tradingData = {
       
       // CONSERVAS Y DULCES
       { key: 'encurtidos', label: 'ENCURTIDOS' },
-      { key: 'dulcesconservas', label: 'DULCES Y CONSERVAS' },
+      { key: 'conservas', label: 'CONSERVAS' },
+      { key: 'dulces', label: 'DULCES' },
+      { key: 'bebidas', label: 'BEBIDAS' },
       
       // LÁCTEOS
-      { key: 'lacteos', label: 'LÁCTEOS' },
+      { key: 'lacteosquesos', label: 'LÁCTEOS Y QUESOS' },
       
       // FIBRAS Y TEXTILES
       { key: 'algodon', label: 'ALGODÓN' },
       
+
+
       // LEGUMBRES
       { key: 'legumbres', label: 'LEGUMBRES' },
       
@@ -95,12 +99,13 @@ export const tradingData = {
       // FRUITS
       { key: 'frutafina', label: 'BERRIES' },
       { key: 'frutatropical', label: 'TROPICAL FRUITS' },
-      { key: 'fruticultura', label: 'FRUIT GROWING' },
+      { key: 'frutacarozo', label: 'FRUIT GROWING' },
       { key: 'frutossecos', label: 'NUTS' },
       { key: 'perasymanzanas', label: 'PEARS AND APPLES' },
       { key: 'cerezas', label: 'CHERRIES' },
       { key: 'citricultura', label: 'CITRUS FARMING' },
       { key: 'arandanos', label: 'BLUEBERRIES' },
+      { key: 'clusterlimonero', label: 'LIME GROWING' },
       
       // OILS AND DERIVATIVES
       { key: 'aceitesesenciales', label: 'ESSENTIAL OILS' },
@@ -109,7 +114,6 @@ export const tradingData = {
       // GRAINS AND SEEDS
       { key: 'granos', label: 'GRAINS' },
       { key: 'semillas', label: 'SEEDS' },
-      { key: 'mani', label: 'PEANUTS' },
       { key: 'industriamaní', label: 'PEANUT INDUSTRY' },
       { key: 'alfalfa', label: 'ALFALFA' },
       
@@ -130,10 +134,12 @@ export const tradingData = {
       
       // PRESERVES AND SWEETS
       { key: 'encurtidos', label: 'PICKLES' },
-      { key: 'dulcesconservas', label: 'SWEETS AND PRESERVES' },
+      { key: 'conservas', label: 'SWEETS AND PRESERVES' },
+      { key: 'dulces', label: 'SWEETS' },
+      { key: 'bebidas', label: 'BEVERAGES' },
       
       // DAIRY
-      { key: 'lacteos', label: 'DAIRY PRODUCTS' },
+      { key: 'lacteosquesos', label: 'DAIRY PRODUCTS AND CHEESE' },
       
       // FIBERS AND TEXTILES
       { key: 'algodon', label: 'COTTON' },

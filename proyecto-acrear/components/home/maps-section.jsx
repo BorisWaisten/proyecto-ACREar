@@ -87,6 +87,7 @@ export default function MapSection({ regional, provincias }) {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
+            <span className="absolute top-0 right-40 text-[0.5rem] rounded-full border-1 border-[rgb(223,116,28,.8)] bg-[rgb(24,49,70,0.8)]  text-[rgb(223,116,28)] sm:text-[0.6rem] text-center">Seleccione provincia</span>
             <ArgMaps onSelect={setSelectedId} />
           </motion.div>
 
