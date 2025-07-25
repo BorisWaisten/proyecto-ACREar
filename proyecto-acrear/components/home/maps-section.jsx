@@ -86,7 +86,7 @@ export default function MapSection({ regional, provincias ,textTooltip}) {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <span className="absolute right-4 p-1 sm:p-0 sm:top-0 sm:right-40 text-[0.5rem] rounded-full border-1 border-[rgb(223,116,28,.8)] bg-[rgb(24,49,70,0.8)]  text-[rgb(223,116,28)] sm:text-[0.6rem] text-center">{textTooltip}</span>
+            <span className="absolute right-4 p-1 sm:p-1 sm:top-0 sm:right-40 text-[0.5rem] rounded-full border-1 border-[rgb(223,116,28,.8)] bg-[rgb(24,49,70,0.8)]  text-[rgb(223,116,28)] sm:text-[0.6rem] text-center">{textTooltip}</span>
             <ArgMaps onSelect={setSelectedId} />
           </motion.div>
 
