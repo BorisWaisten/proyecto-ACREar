@@ -15,7 +15,7 @@ import AnimatedBackground from '@/components/animations/AnimatedBackground';
 export default function HomePage() {
   const { lang, toggleLang } = useLanguage();
 
-  const textTooltip = lang === 'es' ? 'Seleccione provincia' : 'Select province';
+  const textTooltip = lang === 'es' ? 'seleccione provincia' : 'select province';
 
   return (
     <>
