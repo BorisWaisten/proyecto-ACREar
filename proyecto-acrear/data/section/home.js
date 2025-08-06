@@ -33,7 +33,7 @@ export const home = {
                 '/socios/socio-3.png',
                 '/socios/socio-4.png',
                 '/socios/socio-5.png',
-                '/socios/socio-6.png',
+                '/socios/socio-6.svg',
                 '/socios/socio-7.png',
                 '/socios/socio-8.png',
                 '/socios/socio-9.png',
@@ -60,11 +60,7 @@ export const home = {
                 label: 'Entidades que nos apoyan',
                 logos: [
                 '/entidades/entidad-1.png',
-                '/entidades/entidad-2.png',
-                '/entidades/entidad-4.png',
-                '/entidades/entidad-5.png',
                 '/entidades/entidad-6.png',
-                '/entidades/entidad-7.png',
                 ],
             },
         },
@@ -284,7 +280,7 @@ export const home = {
           sectorPrivate: {
             title: 'SERVICES FOR THE PRIVATE SECTOR',
             description:
-              'We support companies in their path to internationalization, offering concrete solutions in representation, export services, customs support, and commercial expansion.',
+              'We empower businesses to internationalize by providing concrete solutions in representation, export, customs services, and commercial expansion.',
             href: '/services',
           },
           sectorPublic: {
@@ -294,9 +290,9 @@ export const home = {
             href: '/services',
           },
           publicPrivate: {
-            title: 'PUBLIC-PRIVATE LINKAGES',
+            title: 'PUBLIC-PRIVATE PARTNERSHIP',
             description:
-              'We create an active space for dialogue and collaboration to design effective trade policies that connect the State with the regional productive network.',
+              'We create an active space for dialogue and collaboration to design effective commercial policies that connect the state with the regional productive fabric.',
             href: '/services',
           },
           button: "See More",

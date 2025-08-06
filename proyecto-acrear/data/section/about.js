@@ -39,7 +39,7 @@ export const aboutData ={
             { name: 'Eugenia Neder', role: 'Secretaria', avatar: '/autoridades/eugenia-neder.png' },
             { name: 'Esteban Cordiviola', role: 'Tesorero', avatar: '/autoridades/esteban-cordiviola.png' },
             { name: 'Laila Abbas', role: 'Vocal Primera y Directora Ejecutiva', avatar: '/autoridades/laila-abbas.png'},
-            { name: 'Samira Manzur', role: 'Vocal Suplente', avatar: '/autoridades/samira-manzur.jpeg' },
+            { name: 'Samira Manzur', role: 'Titular Segunda', avatar: '/autoridades/samira-manzur.jpeg' },
         ],
         authoritiesTitle:"AUTORIDADES",
     },
@@ -83,7 +83,7 @@ export const aboutData ={
           { name: 'Eugenia Neder', role: 'Secretary', avatar: '/autoridades/eugenia-neder.png' },
           { name: 'Esteban Cordiviola', role: 'Treasurer', avatar: '/autoridades/esteban-cordiviola.png' },
           { name: 'Laila Abbas', role: 'First Board Member & Executive Director', avatar: '/autoridades/laila-abbas.png' },
-          { name: 'Samira Manzur', role: 'Alternate Board Member', avatar: '/autoridades/samira-manzur.jpeg' },
+          { name: 'Samira Manzur', role: 'Second Starter', avatar: '/autoridades/samira-manzur.jpeg' },
         ],
         authoritiesTitle: "AUTHORITIES",
       }

@@ -14,7 +14,8 @@ export default function NuestraComunidad({ alliances }) {
     '/entidades/entidad-7.png',
     '/socios/socio-5.png',
     '/socios/socio-7.png',
-    '/socios/socio-4.png'
+    '/socios/socio-4.png',
+    '/socios/socio-6.svg'
   ];
 
   // Función para verificar si un logo es pequeño
@@ -31,7 +32,7 @@ export default function NuestraComunidad({ alliances }) {
 
   const settings = {
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 1500,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -64,7 +65,7 @@ export default function NuestraComunidad({ alliances }) {
                 <div className={`h-24 sm:h-34 sm:w-32 flex items-center justify-center mx-auto  ${
                   isSmallLogo(logo) 
                     ? 'scale-[1.5]  sm:scale-[1.6] md:scale-[2.8] lg:scale-[2.8]' // Scale aumentado para logos chicos
-                    : ' sm:scale-125 md:scale-[1.8] lg:scale-[1.8]'   // Scale normal para logos regulares
+                    : ' sm:scale-125 md:scale-[1.8] lg:scale-[2]'   // Scale normal para logos regulares
                 }`}>
                   <Image
                     src={logo}

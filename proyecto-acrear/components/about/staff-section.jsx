@@ -22,7 +22,7 @@ export default function StaffSection({ about }) {
   const authorities = about.authorities;
   
   // Crear la pirámide invertida
-  const topRow = [authorities[1], authorities[0], authorities[2]]; // secretaria, presidente, tesorero
+  const topRow = [authorities[0], authorities[1], authorities[2]]; // secretaria, presidente, tesorero
   const bottomRow = [authorities[3], authorities[4]]; // vocal1, vocal2
 
   return (
