@@ -98,13 +98,9 @@ export const tradingData = {
       // FRUITS
       { key: 'frutafina', label: 'BERRIES' },
       { key: 'frutatropical', label: 'TROPICAL FRUITS' },
-      { key: 'frutacarozo', label: 'FRUIT GROWING' },
-      { key: 'frutossecos', label: 'NUTS' },
-      { key: 'perasymanzanas', label: 'PEARS AND APPLES' },
-      { key: 'cerezas', label: 'CHERRIES' },
       { key: 'citricultura', label: 'CITRUS FARMING' },
-      { key: 'arandanos', label: 'BLUEBERRIES' },
-      { key: 'clusterlimonero', label: 'LIME GROWING' },
+      { key: 'frutacarozo', label: 'STONE FRUITS' },
+      { key: 'frutossecos', label: 'NUTS' },
       
       // OILS AND DERIVATIVES
       { key: 'aceitesesenciales', label: 'ESSENTIAL OILS' },
@@ -127,13 +123,12 @@ export const tradingData = {
       { key: 'olivicultura', label: 'OLIVE GROWING' },
       { key: 'vitivinicultura', label: 'VITICULTURE AND WINEMAKING' },
       { key: 'tabaco', label: 'TOBACCO' },
-      { key: 'yerba', label: 'YERBA MATE' },
-      { key: 'te', label: 'TEA' },
+      { key: 'yerba', label: 'YERBA MATE AND TEA' },
       { key: 'azucar', label: 'SUGAR CANE' },
       
       // PRESERVES AND SWEETS
       { key: 'encurtidos', label: 'PICKLES' },
-      { key: 'conservas', label: 'SWEETS AND PRESERVES' },
+      { key: 'conservas', label: 'PRESERVES' },
       { key: 'dulces', label: 'SWEETS' },
       { key: 'bebidas', label: 'BEVERAGES' },
       
