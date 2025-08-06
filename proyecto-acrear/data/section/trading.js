@@ -19,7 +19,7 @@ export const tradingData = {
       { key: 'frutafina', label: 'FRUTAS FINAS' },
       { key: 'frutatropical', label: 'FRUTAS TROPICALES' },
       { key: 'citricultura', label: 'CITRICULTURA' },
-      { key: 'frutacarozo', label: 'FRUTAS DE CAROZOS' },
+      { key: 'frutacarozo', label: 'FRUTAS DE CAROZO' },
       { key: 'frutossecos', label: 'FRUTOS SECOS' },
       
       // ACEITES Y DERIVADOS

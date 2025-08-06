@@ -10,6 +10,7 @@ export default function NuestraComunidad({ alliances }) {
   const smallLogos = [
     '/empresas/empresa-5.png',
     '/empresas/empresa-1.png',
+    '/entidades/entidad-1.png',
     '/entidades/entidad-3.png',
     '/entidades/entidad-7.png',
     '/socios/socio-5.png',
@@ -32,7 +33,7 @@ export default function NuestraComunidad({ alliances }) {
 
   const settings = {
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 1500,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -62,19 +63,26 @@ export default function NuestraComunidad({ alliances }) {
           <Slider {...settings}>
             {allLogos.map((logo, i) => (
               <div key={i} className="">
-                <div className={`h-24 sm:h-34 sm:w-32 flex items-center justify-center mx-auto  ${
-                  isSmallLogo(logo) 
-                    ? 'scale-[1.5]  sm:scale-[1.6] md:scale-[2.8] lg:scale-[2.8]' // Scale aumentado para logos chicos
-                    : ' sm:scale-125 md:scale-[1.8] lg:scale-[2]'   // Scale normal para logos regulares
-                }`}>
-                  <Image
-                    src={logo}
-                    alt={`logo-${i}`}
-                    width={180}
-                    height={120}
-                    quality={100}
-                    className="object-contain w-[50px] sm:w-full sm:max-w-[70px] "
-                  />
+                <div className="h-24 sm:h-34 sm:w-32 flex items-center justify-center mx-auto">
+                  {isSmallLogo(logo) ? (
+                    <Image
+                      src={logo}
+                      alt={`logo-${i}`}
+                      width={180}
+                      height={120}
+                      quality={100}
+                      className="object-contain md:px-1 w-[50px] sm:w-full sm:max-w-[70px] scale-[1.5] sm:scale-[1.6] md:scale-[2.8] lg:scale-[3]"
+                    />
+                  ) : (
+                    <Image
+                      src={logo}
+                      alt={`logo-${i}`}
+                      width={180}
+                      height={120}
+                      quality={100}
+                      className="object-contain w-[50px] sm:w-full sm:max-w-[70px] sm:scale-125 md:scale-[1.8] lg:scale-[2.2]"
+                    />
+                  )}
                 </div>
               </div>
             ))}
