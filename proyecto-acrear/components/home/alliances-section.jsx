@@ -11,10 +11,7 @@ export default function NuestraComunidad({ alliances }) {
     '/empresas/empresa-5.png',
     '/empresas/empresa-1.png',
     '/entidades/entidad-1.png',
-    '/entidades/entidad-3.png',
-    '/entidades/entidad-7.png',
     '/socios/socio-5.png',
-    '/socios/socio-7.png',
     '/socios/socio-4.png',
     '/socios/socio-6.svg'
   ];
