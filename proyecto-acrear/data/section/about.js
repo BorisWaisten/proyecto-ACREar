@@ -80,7 +80,7 @@ export const aboutData ={
         },
         authorities: [
           { name: 'Pablo Rico', role: 'President', avatar: '/autoridades/pablo-rico.png' },
-          { name: 'Eugenia Neder', role: 'Secretary', avatar: '/autoridades/eugenia-neder.png' },
+          { name: 'Eugenia Neder', role: 'Secretariat Authority', avatar: '/autoridades/eugenia-neder.png' },
           { name: 'Esteban Cordiviola', role: 'Treasurer', avatar: '/autoridades/esteban-cordiviola.png' },
           { name: 'Laila Abbas', role: 'First Board Member & Executive Director', avatar: '/autoridades/laila-abbas.png' },
           { name: 'Samira Manzur', role: 'Second Board Member', avatar: '/autoridades/samira-manzur.jpeg' },
