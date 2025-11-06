@@ -8,8 +8,8 @@ export const footer = {
         company: {
             title: 'Compañía',
             links: [
-                { name: 'Nosotros', href: '/nosotros' },
-                { name: 'Servicios', href: '/servicios' },
+                { name: 'Nosotros', href: '/about' },
+                { name: 'Servicios', href: '/services' },
                 { name: 'Trading', href: '/trading' }
             ]
         },
@@ -32,8 +32,8 @@ export const footer = {
         company: {
             title: 'Company',
             links: [
-                { name: 'About Us', href: '/nosotros' },
-                { name: 'Services', href: '/servicios' },
+                { name: 'About Us', href: '/about' },
+                { name: 'Services', href: '/services' },
                 { name: 'Trading', href: '/trading' }
             ]
         },

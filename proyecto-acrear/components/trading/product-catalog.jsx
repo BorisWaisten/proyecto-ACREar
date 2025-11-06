@@ -35,13 +35,13 @@ export default function ProductCatalog({trading}) {
             key={p.key}
             onClick={() => handleSelect(p.key)}
             className={clsx(
-              'w-[3.5rem] h-12 md:w-28 md:h-28 rounded-full flex items-center justify-center font-semibold transition-all duration-300 text-white',
+              'w-[3.5rem] h-[3.5rem] md:w-28 md:h-28 rounded-full flex items-center justify-center font-semibold transition-all duration-300 text-white',
               activeProduct === p.key
                 ? 'bg-[var(--color-primary)] scale-110'
                 : 'bg-[var(--color-accent)] hover:bg-[var(--color-primary)]'
             )}
           >
-            <span className="text-center text-[0.5rem] md:text-xs">{p.label}</span>
+            <span className="text-center text-[0.35rem] md:text-xs">{p.label}</span>
           </button>
         ))}
       </div>
