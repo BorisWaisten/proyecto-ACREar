@@ -18,7 +18,7 @@ export const aboutData ={
             objectives:[
                 {
                     title:"Sector público",
-                    text:"Fortalecer las capacidades empresariales y promocionar oferta exportableprovincial a través del asesoramiento estratégico, la articulación institucional, la promoción comercial, la búsqueda de financiamiento y el acompañamiento durante la inserción en los mercados internacionales.",
+                    text:"Fortalecer las capacidades empresariales y promocionar oferta exportable provincial a través del asesoramiento estratégico, la articulación institucional, la promoción comercial, la búsqueda de financiamiento y el acompañamiento durante la inserción en los mercados internacionales.",
                 },
                 {
                     title:"Sector privado",
