@@ -8,13 +8,19 @@ import Layout from '../components/layout';
 export const metadata = {
   title: 'ACREarg',
   description: 'Cámara Argentina de Economías Regionales',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
-      <body className='overflow-x-hidden scroll-smooth sm:scroll-auto'>
+    <html lang="es" suppressHydrationWarning>
+      <body className='overflow-x-hidden scroll-smooth sm:scroll-auto' suppressHydrationWarning>
         <LanguageProvider>
           <Layout>
             {children}

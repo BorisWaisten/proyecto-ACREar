@@ -1,9 +1,47 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import clsx from 'clsx';
+
+function ProductImage({ product, n, className, width = 400, height = 300 }) {
+  const [ext, setExt] = useState('png');
+  const [hasError, setHasError] = useState(false);
+  
+  useEffect(() => {
+    setExt('png');
+    setHasError(false);
+  }, [product, n]);
+  
+  const handleError = () => {
+    if (ext === 'png') {
+      setExt('jpg');
+    } else {
+      setHasError(true);
+    }
+  };
+
+  if (hasError) {
+    return (
+      <div className={`${className} bg-gray-200 flex items-center justify-center`}>
+        <span className="text-gray-400 text-sm">Sin imagen</span>
+      </div>
+    );
+  }
+  
+  return (
+    <img
+      src={`/fotos/${product}/${product}${n}.${ext}`}
+      alt={`${product} ${n}`}
+      width={width}
+      height={height}
+      className={className}
+      onError={handleError}
+    />
+  );
+}
+
 const sliderSettings = {
   dots: true,
   infinite: true,
@@ -53,11 +91,10 @@ export default function ProductCatalog({trading}) {
             {[1, 2, 3, 4].map((n) => (
               <div key={n} className="px-2">
                 <div className="bg-white rounded-lg shadow-md overflow-hidden h-48 flex items-center justify-center transition-transform transform hover:scale-105">
-                  <Image
-                    src={`/fotos/${activeProduct}/${activeProduct}${n}.jpg`}
-                    alt={`${activeProduct} ${n}`}
-                    width={400}
-                    height={300}
+                  <ProductImage
+                    key={`${activeProduct}-${n}`}
+                    product={activeProduct}
+                    n={n}
                     className="object-cover h-48 w-full"
                   />
                 </div>
@@ -75,11 +112,10 @@ export default function ProductCatalog({trading}) {
               key={n}
               className="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform"
             >
-              <Image
-                src={`/fotos/${activeProduct}/${activeProduct}${n}.jpg`}
-                alt={`${activeProduct} ${n}`}
-                width={400}
-                height={300}
+              <ProductImage
+                key={`${activeProduct}-${n}`}
+                product={activeProduct}
+                n={n}
                 className="object-cover h-48 md:w-full md:h-64"
               />
             </div>

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+'use client';
 
 export default function AnimatedBackground({ children, className = '' }) {
   return (
