@@ -15,7 +15,8 @@ export const footer = {
         },
         contact: {
             title: 'Contacto',
-            email: 'info@acrearg.com',
+            email1: 'info@acrearg.com',
+            email2: 'trade@acrearg.com',
             phone: '+5493853100841'
         },
         social: {
@@ -39,7 +40,8 @@ export const footer = {
         },
         contact: {
             title: 'Contact',
-            email: 'info@acrearg.com',
+            email1: 'info@acrearg.com',
+            email2: 'trade@acrearg.com',
             phone: '+5493853100841'
         },
         social: {
